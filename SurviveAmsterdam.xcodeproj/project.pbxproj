@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		93DBCDC84051FB0C5850CAEE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E956F80539400BE4C65325 /* Pods.framework */; };
+		D905AF041C8B688900BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
+		D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF051C8B68D400BF541D /* ModelTests.swift */; };
+		D905AF081C8B691E00BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
 		D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C09D81C8B4BC6004256D4 /* R.generated.swift */; };
 		D94C09E01C8B56A5004256D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94C09E21C8B56A5004256D4 /* Localizable.strings */; };
 		D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5309B1C8B3EA800958961 /* AppDelegate.swift */; };
 		D9C530A31C8B3EA800958961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A11C8B3EA800958961 /* Main.storyboard */; };
 		D9C530A51C8B3EA800958961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A41C8B3EA800958961 /* Assets.xcassets */; };
 		D9C530A81C8B3EA800958961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A61C8B3EA800958961 /* LaunchScreen.storyboard */; };
-		D9C530B31C8B3EA900958961 /* SurviveAmsterdamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530B21C8B3EA900958961 /* SurviveAmsterdamTests.swift */; };
-		D9C530BE1C8B3EA900958961 /* SurviveAmsterdamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530BD1C8B3EA900958961 /* SurviveAmsterdamUITests.swift */; };
 		D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */; };
 		D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530D21C8B48DA00958961 /* LocationsListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,19 +29,14 @@
 			remoteGlobalIDString = D9C530971C8B3EA800958961;
 			remoteInfo = SurviveAmsterdam;
 		};
-		D9C530BA1C8B3EA900958961 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9C530901C8B3EA800958961 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D9C530971C8B3EA800958961;
-			remoteInfo = SurviveAmsterdam;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089AFE7701B5F8CAAFFE7954 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0A2337336C8DDB938F140873 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A2E956F80539400BE4C65325 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D905AF031C8B688900BF541D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
+		D905AF051C8B68D400BF541D /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		D94C09D81C8B4BC6004256D4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D94C09DB1C8B4E0C004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D94C09E11C8B56A5004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -52,11 +48,7 @@
 		D9C530A71C8B3EA800958961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C530A91C8B3EA800958961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C530AE1C8B3EA900958961 /* SurviveAmsterdamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurviveAmsterdamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9C530B21C8B3EA900958961 /* SurviveAmsterdamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurviveAmsterdamTests.swift; sourceTree = "<group>"; };
 		D9C530B41C8B3EA900958961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C530B91C8B3EA900958961 /* SurviveAmsterdamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurviveAmsterdamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9C530BD1C8B3EA900958961 /* SurviveAmsterdamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurviveAmsterdamUITests.swift; sourceTree = "<group>"; };
-		D9C530BF1C8B3EA900958961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9C530CB1C8B3EC300958961 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		D9C530CC1C8B3EC300958961 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListViewController.swift; path = Product/ViewControllers/ProductsListViewController.swift; sourceTree = "<group>"; };
@@ -73,13 +65,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D9C530AB1C8B3EA900958961 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9C530B61C8B3EA900958961 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -104,6 +89,14 @@
 				A2E956F80539400BE4C65325 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D905AF021C8B685400BF541D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D905AF031C8B688900BF541D /* Model.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D94C09DC1C8B55CD004256D4 /* Generated */ = {
@@ -136,7 +129,6 @@
 			children = (
 				D9C5309A1C8B3EA800958961 /* SurviveAmsterdam */,
 				D9C530B11C8B3EA900958961 /* SurviveAmsterdamTests */,
-				D9C530BC1C8B3EA900958961 /* SurviveAmsterdamUITests */,
 				D9C530991C8B3EA800958961 /* Products */,
 				43D2FE47B8643B1AC37EF9DA /* Pods */,
 				7FA760C025724AE2F20AA3AA /* Frameworks */,
@@ -148,7 +140,6 @@
 			children = (
 				D9C530981C8B3EA800958961 /* SurviveAmsterdam.app */,
 				D9C530AE1C8B3EA900958961 /* SurviveAmsterdamTests.xctest */,
-				D9C530B91C8B3EA900958961 /* SurviveAmsterdamUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,14 +147,15 @@
 		D9C5309A1C8B3EA800958961 /* SurviveAmsterdam */ = {
 			isa = PBXGroup;
 			children = (
+				D905AF021C8B685400BF541D /* Model */,
+				D9C530A91C8B3EA800958961 /* Info.plist */,
+				D9C5309B1C8B3EA800958961 /* AppDelegate.swift */,
+				D9C530A41C8B3EA800958961 /* Assets.xcassets */,
 				D94C09DC1C8B55CD004256D4 /* Generated */,
+				D94C09E21C8B56A5004256D4 /* Localizable.strings */,
 				D9C530D11C8B48BE00958961 /* Location */,
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
-				D9C5309B1C8B3EA800958961 /* AppDelegate.swift */,
-				D9C530A41C8B3EA800958961 /* Assets.xcassets */,
-				D9C530A91C8B3EA800958961 /* Info.plist */,
-				D94C09E21C8B56A5004256D4 /* Localizable.strings */,
 			);
 			path = SurviveAmsterdam;
 			sourceTree = "<group>";
@@ -171,19 +163,10 @@
 		D9C530B11C8B3EA900958961 /* SurviveAmsterdamTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9C530B21C8B3EA900958961 /* SurviveAmsterdamTests.swift */,
 				D9C530B41C8B3EA900958961 /* Info.plist */,
+				D905AF051C8B68D400BF541D /* ModelTests.swift */,
 			);
 			path = SurviveAmsterdamTests;
-			sourceTree = "<group>";
-		};
-		D9C530BC1C8B3EA900958961 /* SurviveAmsterdamUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D9C530BD1C8B3EA900958961 /* SurviveAmsterdamUITests.swift */,
-				D9C530BF1C8B3EA900958961 /* Info.plist */,
-			);
-			path = SurviveAmsterdamUITests;
 			sourceTree = "<group>";
 		};
 		D9C530CD1C8B487A00958961 /* Product */ = {
@@ -252,24 +235,6 @@
 			productReference = D9C530AE1C8B3EA900958961 /* SurviveAmsterdamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D9C530B81C8B3EA900958961 /* SurviveAmsterdamUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9C530C81C8B3EA900958961 /* Build configuration list for PBXNativeTarget "SurviveAmsterdamUITests" */;
-			buildPhases = (
-				D9C530B51C8B3EA900958961 /* Sources */,
-				D9C530B61C8B3EA900958961 /* Frameworks */,
-				D9C530B71C8B3EA900958961 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D9C530BB1C8B3EA900958961 /* PBXTargetDependency */,
-			);
-			name = SurviveAmsterdamUITests;
-			productName = SurviveAmsterdamUITests;
-			productReference = D9C530B91C8B3EA900958961 /* SurviveAmsterdamUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,10 +250,6 @@
 						DevelopmentTeam = GK5S624D99;
 					};
 					D9C530AD1C8B3EA900958961 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = D9C530971C8B3EA800958961;
-					};
-					D9C530B81C8B3EA900958961 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = D9C530971C8B3EA800958961;
 					};
@@ -310,7 +271,6 @@
 			targets = (
 				D9C530971C8B3EA800958961 /* SurviveAmsterdam */,
 				D9C530AD1C8B3EA900958961 /* SurviveAmsterdamTests */,
-				D9C530B81C8B3EA900958961 /* SurviveAmsterdamUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -328,13 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D9C530AC1C8B3EA900958961 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9C530B71C8B3EA900958961 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,6 +367,7 @@
 				D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */,
 				D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */,
 				D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */,
+				D905AF041C8B688900BF541D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,15 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C530B31C8B3EA900958961 /* SurviveAmsterdamTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D9C530B51C8B3EA900958961 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9C530BE1C8B3EA900958961 /* SurviveAmsterdamUITests.swift in Sources */,
+				D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */,
+				D905AF081C8B691E00BF541D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +387,6 @@
 			isa = PBXTargetDependency;
 			target = D9C530971C8B3EA800958961 /* SurviveAmsterdam */;
 			targetProxy = D9C530AF1C8B3EA900958961 /* PBXContainerItemProxy */;
-		};
-		D9C530BB1C8B3EA900958961 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D9C530971C8B3EA800958961 /* SurviveAmsterdam */;
-			targetProxy = D9C530BA1C8B3EA900958961 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -611,30 +553,6 @@
 			};
 			name = Release;
 		};
-		D9C530C91C8B3EA900958961 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SurviveAmsterdamUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SurviveAmsterdam;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		D9C530CA1C8B3EA900958961 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SurviveAmsterdamUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdamUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SurviveAmsterdam;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -661,15 +579,6 @@
 			buildConfigurations = (
 				D9C530C61C8B3EA900958961 /* Debug */,
 				D9C530C71C8B3EA900958961 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D9C530C81C8B3EA900958961 /* Build configuration list for PBXNativeTarget "SurviveAmsterdamUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D9C530C91C8B3EA900958961 /* Debug */,
-				D9C530CA1C8B3EA900958961 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
