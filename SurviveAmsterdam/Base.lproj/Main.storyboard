@@ -98,7 +98,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6rh-Oc-CIO">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="nC9-Lc-b3v"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nC9-Lc-b3v"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuq-qF-omh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,7 +177,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lNC-TX-h3Z">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="SoG-OI-QRk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SoG-OI-QRk"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Pc-iL-VK5" userLabel="First Responder" sceneMemberID="firstResponder"/>

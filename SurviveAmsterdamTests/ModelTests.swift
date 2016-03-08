@@ -46,8 +46,14 @@ class ModelTests: XCTestCase {
         
         XCTAssertNotNil(shop, "")
         
+        shop.setupModel(name, address: address, shopImage: nil)
+        
         XCTAssertEqual(shop.name, name)
         XCTAssertEqual(shop.address, address)
+        
+        let shopCopy = Shop()
+        shopCopy.copyFromShop(shop)
+        
+        XCTAssertEqual(shopCopy, shop)
     }
-
 }

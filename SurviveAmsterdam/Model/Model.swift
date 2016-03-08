@@ -19,9 +19,9 @@ class Product: Object {
         return "id"
     }
     
-    func setupModel(name:String?, shop:Shop, productImage:NSData?) {
+    func setupModel(name:String, shop:Shop, productImage:NSData?) {
         self.id = NSUUID().UUIDString
-        self.name = name ?? ""
+        self.name = name
         self.productImage = productImage
         self.shops.append(shop)
     }
@@ -43,6 +43,20 @@ class Shop: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    func setupModel(name:String, address:String, shopImage:NSData?) {
+        self.id = NSUUID().UUIDString
+        self.name = name
+        self.address = address
+        self.shopImage = shopImage
+    }
+    
+    func copyFromShop(shop: Shop) {
+        self.id = shop.id
+        self.name = shop.name
+        self.address = shop.address
+        self.shopImage = shop.shopImage
+    }
 }
 
 
@@ -53,7 +67,18 @@ extension Product {
     }
 }
 
+extension Shop {
+    override internal func isEqual(object: AnyObject?) -> Bool {
+        guard let shop = object as? Shop else { return false }
+        return self == shop
+    }
+}
+
 //MARK: Equatable methods
 func ==(lhs: Product, rhs: Product) -> Bool {
     return lhs.id == rhs.id && lhs.name == rhs.name
+}
+
+func ==(lhs: Shop, rhs: Shop) -> Bool {
+    return lhs.id == rhs.id && lhs.name == rhs.name && lhs.address == rhs.address
 }
