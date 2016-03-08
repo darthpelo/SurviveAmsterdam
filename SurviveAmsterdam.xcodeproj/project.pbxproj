@@ -15,6 +15,7 @@
 		D94C09E01C8B56A5004256D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94C09E21C8B56A5004256D4 /* Localizable.strings */; };
 		D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
 		D95F77B31C8EADDF00C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
+		D9613E6A1C8F7A5400ADAFA4 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */; };
 		D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5309B1C8B3EA800958961 /* AppDelegate.swift */; };
 		D9C530A31C8B3EA800958961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A11C8B3EA800958961 /* Main.storyboard */; };
 		D9C530A51C8B3EA800958961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A41C8B3EA800958961 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		D94C09E11C8B56A5004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D94C09E31C8B56A7004256D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D95F77B11C8EAC9900C4C59B /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateProductViewController.swift; path = Product/ViewControllers/CreateProductViewController.swift; sourceTree = "<group>"; };
 		D9C530981C8B3EA800958961 /* SurviveAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurviveAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C5309B1C8B3EA800958961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C530A21C8B3EA800958961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */,
+				D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */,
 				D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */,
 				D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */,
+				D9613E6A1C8F7A5400ADAFA4 /* CreateProductViewController.swift in Sources */,
 				D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */,
 				D905AF041C8B688900BF541D /* Model.swift in Sources */,
 				D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class ProductCell: UITableViewCell {
     
@@ -16,21 +17,60 @@ final class ProductCell: UITableViewCell {
 }
 
 final class ProductsListViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var productsList: Results<(Product)>?
+    private let modelManager = ModelManager()
+    
     override func viewDidLoad() {
         title = NSLocalizedString("products", comment: "")
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        do {
+//            let product = Product()
+//            let shop = Shop()
+//            shop.setupModel("ah", address: "", shopImage: nil)
+//            product.setupModel("sugo", shop: shop, productImage: nil)
+//            try ModelManager().saveProduct(product)
+//        } catch ModelManagerError.SaveFailed {
+//            print("Save failed")
+//        } catch {
+//            
+//        }
+        
+        do {
+            productsList = try modelManager.getProducts()
+        } catch {
+            //
+        }
+        
+        tableView.reloadData()
+    }
 
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        
+    }
 }
 
 extension ProductsListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return productsList?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.productCell.identifier, forIndexPath: indexPath) as! ProductCell
         
+        guard let productsList = productsList else {
+            return cell
+        }
+        
+        let product = productsList[indexPath.row]
+        
+        cell.productNameLabel.text = product.name
+
         return cell
     }
 }
