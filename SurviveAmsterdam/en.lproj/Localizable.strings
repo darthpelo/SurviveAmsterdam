@@ -8,3 +8,7 @@
 
 "shops" = "Shops";
 "products" = "Products";
+"save" = "Save";
+"saveHint" = "Save the new product and come back to the products list";
+
+"add.product.tap.label" = "Tap to add an image";
