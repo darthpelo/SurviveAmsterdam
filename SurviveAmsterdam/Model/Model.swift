@@ -19,11 +19,13 @@ class Product: Object {
         return "id"
     }
     
-    func setupModel(name:String, shop:Shop, productImage:NSData?) {
+    func setupModel(name:String, shop:Shop?, productImage:NSData?) {
         self.id = NSUUID().UUIDString
         self.name = name
         self.productImage = productImage
-        self.shops.append(shop)
+        if let shop = shop {
+            self.shops.append(shop)
+        }
     }
     
     func copyFromProduct(product: Product) {

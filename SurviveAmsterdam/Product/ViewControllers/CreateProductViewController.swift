@@ -69,7 +69,7 @@ final class CreateProductViewController: UIViewController {
         
         let newProduct = Product()
         
-        newProduct.setupModel(name, shop: Shop(), productImage: imageData)
+        newProduct.setupModel(name, shop: nil, productImage: imageData)
         
         do {
             try ModelManager().saveProduct(newProduct)
@@ -78,6 +78,8 @@ final class CreateProductViewController: UIViewController {
         } catch {
             
         }
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func keyboardWillShow() {
