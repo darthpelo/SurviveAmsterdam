@@ -11,6 +11,7 @@
 		D905AF041C8B688900BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
 		D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF051C8B68D400BF541D /* ModelTests.swift */; };
 		D905AF081C8B691E00BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
+		D93C41B91C92211900DBC5A5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */; };
 		D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C09D81C8B4BC6004256D4 /* R.generated.swift */; };
 		D94C09E01C8B56A5004256D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94C09E21C8B56A5004256D4 /* Localizable.strings */; };
 		D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
@@ -41,6 +42,7 @@
 		A2E956F80539400BE4C65325 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D905AF031C8B688900BF541D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		D905AF051C8B68D400BF541D /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		D94C09D81C8B4BC6004256D4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D94C09DB1C8B4E0C004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D94C09E11C8B56A5004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */,
+				D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93C41B91C92211900DBC5A5 /* UIImageExtensions.swift in Sources */,
 				D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */,
 				D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */,
 				D9A649FD1C90D2A8004672D8 /* UIViewExtensions.swift in Sources */,

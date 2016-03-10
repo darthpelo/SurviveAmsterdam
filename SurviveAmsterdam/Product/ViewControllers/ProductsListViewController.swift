@@ -70,6 +70,10 @@ extension ProductsListViewController: UITableViewDataSource {
         let product = productsList[indexPath.row]
         
         cell.productNameLabel.text = product.name
+        
+        if let image = product.productImage {
+            cell.thumbView.image = UIImage(data: image)?.resizeByWidth(cell.thumbView.bounds.width)
+        }
 
         return cell
     }

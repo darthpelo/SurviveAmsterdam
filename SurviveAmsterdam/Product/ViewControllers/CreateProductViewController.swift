@@ -18,6 +18,8 @@ final class CreateProductViewController: UIViewController {
     private let kOFFSET_FOR_KEYBOARD:CGFloat = 120.0
     private var contentOffset: CGFloat?
     
+    private var imagePicker: UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +51,7 @@ final class CreateProductViewController: UIViewController {
     //MARK: - Internal functions
     
     func addNewImage() {
-        
+        prepareImagePicker()
     }
     
     func closeKeyboard() {
@@ -61,14 +63,13 @@ final class CreateProductViewController: UIViewController {
             return
         }
         
-        guard let image = photoImageView.image,
-            let imageRappresentation = UIImagePNGRepresentation(image) else {
+        guard let imageData = photoImageView.convertImageToData() else {
                 return
         }
         
         let newProduct = Product()
         
-        newProduct.setupModel(name, shop: Shop(), productImage: imageRappresentation)
+        newProduct.setupModel(name, shop: Shop(), productImage: imageData)
         
         do {
             try ModelManager().saveProduct(newProduct)
@@ -98,6 +99,30 @@ final class CreateProductViewController: UIViewController {
             }
         }
     }
+    
+    private func prepareImagePicker(){
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let picture = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default) { (action) -> Void in
+            self.imagePicker =  UIImagePickerController()
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = .Camera
+            
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let gallery = UIAlertAction(title: NSLocalizedString("Galerij", comment: ""), style: .Default) { (action) -> Void in
+            self.openPicker()
+        }
+        
+        let cancel = UIAlertAction(title: "Annuleren", style: .Cancel, handler: nil)
+        
+        actionSheet.addAction(picture)
+        actionSheet.addAction(gallery)
+        actionSheet.addAction(cancel)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
+    }
 }
 
 extension CreateProductViewController: UITextFieldDelegate {
@@ -105,5 +130,35 @@ extension CreateProductViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
+    }
+}
+
+extension CreateProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func openPicker() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            imagePicker.navigationBar.translucent = false
+//            imagePicker.navigationBar.barTintColor = UIColor.rbwCobaltBlueColor()
+            imagePicker.navigationBar.tintColor = .whiteColor()
+            imagePicker.navigationBar.titleTextAttributes = [
+                NSForegroundColorAttributeName : UIColor.whiteColor()
+            ]
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        photoImageView.image = image?.resizeByWidth(photoImageView.bounds.width)
     }
 }
