@@ -14,8 +14,11 @@ final class CreateProductViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var shopTextField: UITextField!
     
-    private let kOFFSET_FOR_KEYBOARD:CGFloat = 120.0
+    @IBOutlet var textFields: [UITextField]!
+    
+    private let kOFFSET_FOR_KEYBOARD:CGFloat = 100.0
     private var contentOffset: CGFloat?
     
     private var imagePicker: UIImagePickerController!
@@ -55,11 +58,15 @@ final class CreateProductViewController: UIViewController {
     }
     
     func closeKeyboard() {
-        textField.resignFirstResponder()
+        textFields.forEach{$0.resignFirstResponder()}
     }
     
     func saveProduct() {
         guard let name = textField.text else {
+            return
+        }
+        
+        guard let shopName = shopTextField.text else {
             return
         }
         
@@ -68,8 +75,10 @@ final class CreateProductViewController: UIViewController {
         }
         
         let newProduct = Product()
+        let shop = Shop()
+        shop.setupModel(shopName, address: "", shopImage: nil)
         
-        newProduct.setupModel(name, shop: nil, productImage: imageData)
+        newProduct.setupModel(name, shop: shop, productImage: imageData)
         
         do {
             try ModelManager().saveProduct(newProduct)
@@ -105,7 +114,7 @@ final class CreateProductViewController: UIViewController {
     private func prepareImagePicker(){
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        let picture = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default) { (action) -> Void in
+        let picture = UIAlertAction(title: NSLocalizedString("camera", comment: ""), style: .Default) { (action) -> Void in
             self.imagePicker =  UIImagePickerController()
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = .Camera
@@ -113,11 +122,11 @@ final class CreateProductViewController: UIViewController {
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
         }
         
-        let gallery = UIAlertAction(title: NSLocalizedString("Galerij", comment: ""), style: .Default) { (action) -> Void in
+        let gallery = UIAlertAction(title: NSLocalizedString("library", comment: ""), style: .Default) { (action) -> Void in
             self.openPicker()
         }
         
-        let cancel = UIAlertAction(title: "Annuleren", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .Cancel, handler: nil)
         
         actionSheet.addAction(picture)
         actionSheet.addAction(gallery)
