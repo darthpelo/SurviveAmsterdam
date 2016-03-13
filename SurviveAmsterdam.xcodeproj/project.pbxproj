@@ -25,6 +25,7 @@
 		D9C530A81C8B3EA800958961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A61C8B3EA800958961 /* LaunchScreen.storyboard */; };
 		D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */; };
 		D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530D21C8B48DA00958961 /* LocationsListViewController.swift */; };
+		D9CD4B891C95D3FF00047018 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4B881C95D3FF00047018 /* keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D9C530CC1C8B3EC300958961 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListViewController.swift; path = Product/ViewControllers/ProductsListViewController.swift; sourceTree = "<group>"; };
 		D9C530D21C8B48DA00958961 /* LocationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Location/ViewControllers/LocationsListViewController.swift; sourceTree = "<group>"; };
+		D9CD4B881C95D3FF00047018 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				D905AF021C8B685400BF541D /* Model */,
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
+				D9CD4B881C95D3FF00047018 /* keys.plist */,
 			);
 			path = SurviveAmsterdam;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CD4B891C95D3FF00047018 /* keys.plist in Resources */,
 				D9C530A81C8B3EA800958961 /* LaunchScreen.storyboard in Resources */,
 				D94C09E01C8B56A5004256D4 /* Localizable.strings in Resources */,
 				D9C530A51C8B3EA800958961 /* Assets.xcassets in Resources */,
@@ -553,6 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = SurviveAmsterdam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdam;
