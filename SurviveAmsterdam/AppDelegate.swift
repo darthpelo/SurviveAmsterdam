@@ -9,7 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
-
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        
+        let config = Realm.Configuration(
+            schemaVersion: 2,
+            
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                    migration.enumerate(Product.className()) { oldObject, newObject in
+                        let imageData = oldObject!["productImage"] as? NSData
+                        newObject!["productThumbnail"] = imageData
+                    }
+                }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
+        
+        let _ = try! Realm()
 
         return true
     }

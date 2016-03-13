@@ -50,8 +50,16 @@ final class ProductsListViewController: UIViewController {
         tableView.reloadData()
     }
 
-    @IBAction func addButtonPressed(sender: AnyObject) {
-        
+    @IBAction func addButtonPressed(sender: AnyObject) {}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
+            let indexPath = tableView.indexPathForSelectedRow,
+            let list = productsList,
+            let vc = segue.destinationViewController as? ProductDetailViewController {
+                let product = list[indexPath.row]
+                vc.productId = product.id
+        }
     }
 }
 
@@ -72,7 +80,7 @@ extension ProductsListViewController: UITableViewDataSource {
         cell.productNameLabel.text = product.name
         cell.shopNameLabel.text = product.shops.first?.name
         
-        if let image = product.productImage {
+        if let image = product.productThumbnail {
             cell.thumbView.image = UIImage(data: image)?.resizeByWidth(cell.thumbView.bounds.width)
         }
 
@@ -81,5 +89,7 @@ extension ProductsListViewController: UITableViewDataSource {
 }
 
 extension ProductsListViewController: UITableViewDelegate {
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(R.segue.productsListViewController.productDetailSegue, sender: self)
+    }
 }

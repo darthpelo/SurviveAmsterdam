@@ -89,6 +89,19 @@ struct ModelManager {
         }
     }
     
+    func getProductMatchingID(query:String) throws -> Results<(Product)> {
+        do {
+            let realm = try Realm()
+            let result = realm.objects(Product).filter(NSPredicate(format: "id ==[c] %@", query))
+            if result.count == 0 {
+                throw ModelManagerError.QueryFailed
+            }
+            return result
+        } catch {
+            throw ModelManagerError.QueryFailed
+        }
+    }
+    
     func saveProduct(newProduct: Product) throws {
         let realm = try! Realm()
         

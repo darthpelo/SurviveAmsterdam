@@ -22,6 +22,7 @@ final class CreateProductViewController: UIViewController {
     private var contentOffset: CGFloat?
     
     private var imagePicker: UIImagePickerController!
+    private var productImage:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,15 +71,21 @@ final class CreateProductViewController: UIViewController {
             return
         }
         
-        guard let imageData = photoImageView.convertImageToData() else {
+        guard let thumbnail = photoImageView.convertImageToData() else {
                 return
+        }
+        
+        guard let image = productImage else {
+            return
         }
         
         let newProduct = Product()
         let shop = Shop()
+        let imageData = UIImageJPEGRepresentation(image, 1)
+        
         shop.setupModel(shopName, address: "", shopImage: nil)
         
-        newProduct.setupModel(name, shop: shop, productImage: imageData)
+        newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
         do {
             try ModelManager().saveProduct(newProduct)
@@ -171,5 +178,6 @@ extension CreateProductViewController: UIImagePickerControllerDelegate, UINaviga
 
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         photoImageView.image = image?.resizeByWidth(photoImageView.bounds.width)
+        productImage = image
     }
 }
