@@ -26,6 +26,7 @@
 		D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */; };
 		D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530D21C8B48DA00958961 /* LocationsListViewController.swift */; };
 		D9CD4B891C95D3FF00047018 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4B881C95D3FF00047018 /* keys.plist */; };
+		D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4B8A1C95F18400047018 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListViewController.swift; path = Product/ViewControllers/ProductsListViewController.swift; sourceTree = "<group>"; };
 		D9C530D21C8B48DA00958961 /* LocationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsListViewController.swift; path = Location/ViewControllers/LocationsListViewController.swift; sourceTree = "<group>"; };
 		D9CD4B881C95D3FF00047018 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
+		D9CD4B8A1C95F18400047018 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
 				D9CD4B881C95D3FF00047018 /* keys.plist */,
+				D9CD4B8A1C95F18400047018 /* Constants.swift */,
 			);
 			path = SurviveAmsterdam;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D93C41B91C92211900DBC5A5 /* UIImageExtensions.swift in Sources */,
+				D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */,
 				D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */,
 				D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */,
 				D9A649FD1C90D2A8004672D8 /* UIViewExtensions.swift in Sources */,

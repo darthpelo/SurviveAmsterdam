@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import QuadratTouch
 
 final class ProductCell: UITableViewCell {
     
@@ -29,17 +30,20 @@ final class ProductsListViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-//        do {
-//            let product = Product()
-//            let shop = Shop()
-//            shop.setupModel("ah", address: "", shopImage: nil)
-//            product.setupModel("sugo", shop: shop, productImage: nil)
-//            try ModelManager().saveProduct(product)
-//        } catch ModelManagerError.SaveFailed {
-//            print("Save failed")
-//        } catch {
-//            
-//        }
+        let session = Session.sharedSession()
+        
+        var parameters = [Parameter.query:"Burgers"]
+        parameters += [Parameter.near:"Amsterdam"]
+        //            parameters += self.location.parameters()
+        let searchTask = session.venues.search(parameters) { (result) -> Void in
+            if let response = result.response, let venues = response["venues"] {
+                for i in 0..<venues.count {
+                    print(venues[i])
+                }
+                
+            }
+        }
+        searchTask.start()
         
         do {
             productsList = try modelManager.getProducts()
