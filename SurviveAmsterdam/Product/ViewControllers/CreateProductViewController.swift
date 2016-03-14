@@ -14,11 +14,15 @@ final class CreateProductViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var shopTextField: UITextField!
     
-    private let kOFFSET_FOR_KEYBOARD:CGFloat = 120.0
+    @IBOutlet var textFields: [UITextField]!
+    
+    private let kOFFSET_FOR_KEYBOARD:CGFloat = 100.0
     private var contentOffset: CGFloat?
     
     private var imagePicker: UIImagePickerController!
+    private var productImage:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +59,7 @@ final class CreateProductViewController: UIViewController {
     }
     
     func closeKeyboard() {
-        textField.resignFirstResponder()
+        textFields.forEach{$0.resignFirstResponder()}
     }
     
     func saveProduct() {
@@ -63,13 +67,25 @@ final class CreateProductViewController: UIViewController {
             return
         }
         
-        guard let imageData = photoImageView.convertImageToData() else {
+        guard let shopName = shopTextField.text else {
+            return
+        }
+        
+        guard let thumbnail = photoImageView.convertImageToData() else {
                 return
         }
         
-        let newProduct = Product()
+        guard let image = productImage else {
+            return
+        }
         
-        newProduct.setupModel(name, shop: Shop(), productImage: imageData)
+        let newProduct = Product()
+        let shop = Shop()
+        let imageData = UIImageJPEGRepresentation(image, 1)
+        
+        shop.setupModel(shopName, address: "", shopImage: nil)
+        
+        newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
         do {
             try ModelManager().saveProduct(newProduct)
@@ -78,6 +94,8 @@ final class CreateProductViewController: UIViewController {
         } catch {
             
         }
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func keyboardWillShow() {
@@ -103,7 +121,7 @@ final class CreateProductViewController: UIViewController {
     private func prepareImagePicker(){
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        let picture = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .Default) { (action) -> Void in
+        let picture = UIAlertAction(title: NSLocalizedString("camera", comment: ""), style: .Default) { (action) -> Void in
             self.imagePicker =  UIImagePickerController()
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = .Camera
@@ -111,11 +129,11 @@ final class CreateProductViewController: UIViewController {
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
         }
         
-        let gallery = UIAlertAction(title: NSLocalizedString("Galerij", comment: ""), style: .Default) { (action) -> Void in
+        let gallery = UIAlertAction(title: NSLocalizedString("library", comment: ""), style: .Default) { (action) -> Void in
             self.openPicker()
         }
         
-        let cancel = UIAlertAction(title: "Annuleren", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .Cancel, handler: nil)
         
         actionSheet.addAction(picture)
         actionSheet.addAction(gallery)
@@ -160,5 +178,6 @@ extension CreateProductViewController: UIImagePickerControllerDelegate, UINaviga
 
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         photoImageView.image = image?.resizeByWidth(photoImageView.bounds.width)
+        productImage = image
     }
 }

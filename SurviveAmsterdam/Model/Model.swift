@@ -13,23 +13,29 @@ class Product: Object {
     dynamic var id: String?
     dynamic var name = ""
     dynamic var productImage:NSData?
+    dynamic var productThumbnail:NSData?
     var shops = List<Shop>()
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    func setupModel(name:String, shop:Shop, productImage:NSData?) {
+    func setupModel(name:String, shop:Shop?, productImage:NSData?, productThumbnail:NSData?) {
         self.id = NSUUID().UUIDString
         self.name = name
         self.productImage = productImage
-        self.shops.append(shop)
+        self.productThumbnail = productThumbnail
+        
+        if let shop = shop {
+            self.shops.append(shop)
+        }
     }
     
     func copyFromProduct(product: Product) {
         self.id = product.id
         self.name = product.name
         self.productImage = product.productImage
+        self.productThumbnail = product.productThumbnail
         self.shops = product.shops
     }
 }

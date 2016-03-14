@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+import RealmSwift
+import QuadratTouch
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,31 +21,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
+        
+        realmMigration()
+        
+        foursquareSetup()
+
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation:  AnyObject) -> Bool {
+        return Session.sharedSession().handleURL(url)
     }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    private func foursquareSetup() {
+        var keys: NSDictionary?
+        
+        if let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        
+        if let dict = keys {
+            let foursquare = dict["foursquare"]
+            let applicationId = foursquare?[Constants.keys.foursquareClientID] as? String
+            let clientKey = foursquare?[Constants.keys.foursquareClientSecret] as? String
+            
+            let client = Client(clientID:applicationId!,
+                clientSecret:clientKey!,
+                redirectURL:"surviveamsterdam://foursquare")
+            let configuration = Configuration(client:client)
+            Session.setupSharedSessionWithConfiguration(configuration)
+        }
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    private func realmMigration() {
+        let config = Realm.Configuration(
+            schemaVersion: 2,
+            
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                    migration.enumerate(Product.className()) { oldObject, newObject in
+                        let imageData = oldObject!["productImage"] as? NSData
+                        newObject!["productThumbnail"] = imageData
+                    }
+                }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
+        
+        let _ = try! Realm()
     }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
 
