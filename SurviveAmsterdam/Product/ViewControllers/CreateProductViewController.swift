@@ -14,9 +14,16 @@ final class CreateProductViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var shopTextField: UITextField!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var shopNameLabel: UILabel! {
+        didSet {
+            shopNameLabel.text = NSLocalizedString("near.shop.name.label", comment: "")
+        }
+    }
     
     @IBOutlet var textFields: [UITextField]!
+    
+    @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     
     private let kOFFSET_FOR_KEYBOARD:CGFloat = 100.0
     private var contentOffset: CGFloat?
@@ -52,6 +59,14 @@ final class CreateProductViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
+            if let vc = segue.destinationViewController as? NearShopsViewController {
+                vc.selectShopAction = self.setShopLabel
+            }
+        }
+    }
+    
     //MARK: - Internal functions
     
     func addNewImage() {
@@ -67,7 +82,7 @@ final class CreateProductViewController: UIViewController {
             return
         }
         
-        guard let shopName = shopTextField.text else {
+        guard let shopName = shopNameLabel.text else {
             return
         }
         
@@ -104,6 +119,10 @@ final class CreateProductViewController: UIViewController {
     
     func keyboardWillHide() {
         setViewMovedUp(false)
+    }
+    
+    private func setShopLabel(shop: NearShop) {
+        shopNameLabel.text = shop.shopName
     }
     
     private func setViewMovedUp(movedUp: Bool) {

@@ -1,9 +1,11 @@
-//  Created by Sem Shafiq on 11/12/15.
 
 
 import Foundation
 import UIKit
+import CoreLocation
+import QuadratTouch
 
+//  Created by Sem Shafiq on 11/12/15.
 extension UIImage {
     public func resizeByWidth(newWidth: CGFloat) -> UIImage {
         let scale = newWidth / self.size.width
@@ -36,5 +38,22 @@ extension UIImageView {
             return nil
         }
         return UIImageJPEGRepresentation(image, 1)
+    }
+}
+
+extension CLLocation {
+    func parameters() -> Parameters
+    {
+        let ll      = "\(self.coordinate.latitude),\(self.coordinate.longitude)"
+        let llAcc   = "\(self.horizontalAccuracy)"
+        let alt     = "\(self.altitude)"
+        let altAcc  = "\(self.verticalAccuracy)"
+        let parameters = [
+            Parameter.ll:ll,
+            Parameter.llAcc:llAcc,
+            Parameter.alt:alt,
+            Parameter.altAcc:altAcc
+        ]
+        return parameters
     }
 }

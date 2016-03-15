@@ -67,5 +67,7 @@
 			</array>
 		</dict>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your message goes here</string>
 </dict>
 </plist>
