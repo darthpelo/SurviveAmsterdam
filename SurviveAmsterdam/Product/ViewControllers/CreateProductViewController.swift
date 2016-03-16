@@ -49,7 +49,7 @@ final class CreateProductViewController: UIViewController {
         photoImageView.userInteractionEnabled = true
         photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "addNewImage"))
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
+//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
     }
     
     override func viewWillDisappear(animated: Bool) {

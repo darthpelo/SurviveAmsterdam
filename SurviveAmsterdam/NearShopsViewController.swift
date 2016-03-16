@@ -30,6 +30,8 @@ final class NearShopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.setupLocationManager()
     }
 
@@ -52,8 +54,11 @@ extension NearShopsViewController: UITableViewDataSource {
 }
 
 extension NearShopsViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let shop = shopsList[indexPath.row]
         selectShopAction!(shop)
     }
@@ -67,7 +72,7 @@ extension NearShopsViewController: CLLocationManagerDelegate {
         if #available(iOS 9, *) {
             manager.requestLocation()
         } else {
-            manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             manager.startUpdatingLocation()
         }
     }
@@ -84,13 +89,13 @@ extension NearShopsViewController: CLLocationManagerDelegate {
             
             let searchTask = session.venues.search(parameters) { (result) -> Void in
                 if let response = result.response, let venues = response["venues"] {
+                    self.shopsList.removeAll()
                     for i in 0..<venues.count {
                         let dict = venues[i] as! NSDictionary
                         let shop = NearShop(shopName: dict["name"] as! String)
                         self.shopsList.append(shop)
-                        self.tableView.reloadData()
                     }
-                    
+                    self.tableView.reloadData()
                 }
             }
             searchTask.start()
