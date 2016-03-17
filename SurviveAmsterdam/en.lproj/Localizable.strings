@@ -11,6 +11,7 @@
 "save" = "Save";
 "saveHint" = "Save the new product and come back to the products list";
 
+"near.shop.name.label" = "Chose a shop";
 "add.product.tap.label" = "Tap to add an image";
 
 "camera" = "Photo";

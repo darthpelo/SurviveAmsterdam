@@ -12,13 +12,14 @@
 		D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF051C8B68D400BF541D /* ModelTests.swift */; };
 		D905AF081C8B691E00BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
 		D91D1A7B1C938050008992E8 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */; };
-		D93C41B91C92211900DBC5A5 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */; };
+		D93C41B91C92211900DBC5A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C41B81C92211900DBC5A5 /* Extensions.swift */; };
 		D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C09D81C8B4BC6004256D4 /* R.generated.swift */; };
 		D94C09E01C8B56A5004256D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94C09E21C8B56A5004256D4 /* Localizable.strings */; };
 		D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
 		D95F77B31C8EADDF00C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
 		D9613E6A1C8F7A5400ADAFA4 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */; };
 		D9A649FD1C90D2A8004672D8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */; };
+		D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */; };
 		D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5309B1C8B3EA800958961 /* AppDelegate.swift */; };
 		D9C530A31C8B3EA800958961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A11C8B3EA800958961 /* Main.storyboard */; };
 		D9C530A51C8B3EA800958961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A41C8B3EA800958961 /* Assets.xcassets */; };
@@ -46,7 +47,7 @@
 		D905AF031C8B688900BF541D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		D905AF051C8B68D400BF541D /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = Product/ViewControllers/ProductDetailViewController.swift; sourceTree = "<group>"; };
-		D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		D93C41B81C92211900DBC5A5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D94C09D81C8B4BC6004256D4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		D94C09DB1C8B4E0C004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D94C09E11C8B56A5004256D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		D95F77B11C8EAC9900C4C59B /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateProductViewController.swift; path = Product/ViewControllers/CreateProductViewController.swift; sourceTree = "<group>"; };
 		D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Extensions/UIViewExtensions.swift; sourceTree = "<group>"; };
+		D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearShopsViewController.swift; sourceTree = "<group>"; };
 		D9C530981C8B3EA800958961 /* SurviveAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurviveAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C5309B1C8B3EA800958961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C530A21C8B3EA800958961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */,
-				D93C41B81C92211900DBC5A5 /* UIImageExtensions.swift */,
+				D93C41B81C92211900DBC5A5 /* Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -172,18 +174,18 @@
 		D9C5309A1C8B3EA800958961 /* SurviveAmsterdam */ = {
 			isa = PBXGroup;
 			children = (
-				D905AF091C8B83F900BF541D /* Extensions */,
 				D9C530A91C8B3EA800958961 /* Info.plist */,
+				D9CD4B881C95D3FF00047018 /* keys.plist */,
 				D9C5309B1C8B3EA800958961 /* AppDelegate.swift */,
+				D9CD4B8A1C95F18400047018 /* Constants.swift */,
 				D9C530A41C8B3EA800958961 /* Assets.xcassets */,
-				D94C09DC1C8B55CD004256D4 /* Generated */,
 				D94C09E21C8B56A5004256D4 /* Localizable.strings */,
+				D905AF091C8B83F900BF541D /* Extensions */,
+				D94C09DC1C8B55CD004256D4 /* Generated */,
 				D9C530D11C8B48BE00958961 /* Location */,
 				D905AF021C8B685400BF541D /* Model */,
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
-				D9CD4B881C95D3FF00047018 /* keys.plist */,
-				D9CD4B8A1C95F18400047018 /* Constants.swift */,
 			);
 			path = SurviveAmsterdam;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 				D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */,
 				D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */,
 				D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */,
+				D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -408,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D93C41B91C92211900DBC5A5 /* UIImageExtensions.swift in Sources */,
+				D93C41B91C92211900DBC5A5 /* Extensions.swift in Sources */,
 				D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */,
 				D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */,
 				D9C530D31C8B48DA00958961 /* LocationsListViewController.swift in Sources */,
@@ -418,6 +421,7 @@
 				D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */,
 				D91D1A7B1C938050008992E8 /* ProductDetailViewController.swift in Sources */,
 				D905AF041C8B688900BF541D /* Model.swift in Sources */,
+				D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */,
 				D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

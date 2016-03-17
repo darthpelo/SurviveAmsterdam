@@ -69,7 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Realm.Configuration.defaultConfiguration = config
         
-        let _ = try! Realm()
+        do {
+            let _ = try Realm()
+        } catch let error as NSError {
+            // handle error
+            print("\(error.debugDescription)")
+        }
+
     }
 }
 
