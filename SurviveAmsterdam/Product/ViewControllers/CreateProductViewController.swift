@@ -10,7 +10,6 @@ import UIKit
 
 final class CreateProductViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -30,6 +29,7 @@ final class CreateProductViewController: UIViewController {
     
     private var imagePicker: UIImagePickerController!
     private var productImage:UIImage?
+    private var shop = Shop()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ final class CreateProductViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
             if let vc = segue.destinationViewController as? NearShopsViewController {
-                vc.selectShopAction = self.setShopLabel
+                vc.delegate = self
             }
         }
     }
@@ -82,7 +82,7 @@ final class CreateProductViewController: UIViewController {
             return
         }
         
-        guard let shopName = shopNameLabel.text else {
+        guard let _ = shopNameLabel.text else {
             return
         }
         
@@ -95,10 +95,8 @@ final class CreateProductViewController: UIViewController {
         }
         
         let newProduct = Product()
-        let shop = Shop()
+
         let imageData = UIImageJPEGRepresentation(image, 1)
-        
-        shop.setupModel(shopName, address: "", shopImage: nil)
         
         newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
@@ -121,20 +119,16 @@ final class CreateProductViewController: UIViewController {
         setViewMovedUp(false)
     }
     
-    private func setShopLabel(shop: NearShop) {
-        shopNameLabel.text = shop.shopName
-    }
-    
     private func setViewMovedUp(movedUp: Bool) {
-        UIView.animateWithDuration(0.3) { () -> Void in
-            if (movedUp) {
-                self.contentOffset = self.scrollView.contentOffset.y
-                self.scrollView.contentOffset = CGPointMake(0, self.kOFFSET_FOR_KEYBOARD)
-            } else {
-                // revert back to the normal state.
-                self.scrollView.contentOffset = CGPointMake(0, self.contentOffset ?? 0)
-            }
-        }
+//        UIView.animateWithDuration(0.3) { () -> Void in
+//            if (movedUp) {
+//                self.contentOffset = self.scrollView.contentOffset.y
+//                self.scrollView.contentOffset = CGPointMake(0, self.kOFFSET_FOR_KEYBOARD)
+//            } else {
+//                // revert back to the normal state.
+//                self.scrollView.contentOffset = CGPointMake(0, self.contentOffset ?? 0)
+//            }
+//        }
     }
     
     private func prepareImagePicker(){
@@ -159,6 +153,13 @@ final class CreateProductViewController: UIViewController {
         actionSheet.addAction(cancel)
         
         presentViewController(actionSheet, animated: true, completion: nil)
+    }
+}
+
+extension CreateProductViewController: NearShopsViewControllerDelegate {
+    func selectedShop(shop: NearShop) {
+        self.shop.setupModel(shop.shopName, address: shop.address, shopImage: nil)
+        shopNameLabel.text = shop.shopName
     }
 }
 

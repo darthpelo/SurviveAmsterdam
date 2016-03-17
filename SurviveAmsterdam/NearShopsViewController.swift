@@ -10,19 +10,29 @@ import UIKit
 import QuadratTouch
 import CoreLocation
 
+protocol NearShopsViewControllerDelegate {
+    func selectedShop(shop: NearShop)
+}
+
 final class NearShopsCell: UITableViewCell {
     
 }
 
 struct NearShop {
     var shopName:String
+    var address:String
 }
 
 final class NearShopsViewController: UIViewController {
 
-    var selectShopAction:((NearShop) -> ())?
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var delegate: NearShopsViewControllerDelegate?
+    
+    private let sum = {(shop: NearShop) -> NearShop in
+        return shop
+    }
     
     private var shopsList: [NearShop] = []
     private let manager = CLLocationManager()
@@ -30,11 +40,12 @@ final class NearShopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.activityIndicator.startAnimating()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         self.setupLocationManager()
     }
-
 }
 
 extension NearShopsViewController: UITableViewDataSource {
@@ -48,6 +59,7 @@ extension NearShopsViewController: UITableViewDataSource {
         let shop = shopsList[indexPath.row]
         
         cell.textLabel?.text = shop.shopName
+        cell.detailTextLabel?.text = shop.address
         
         return cell
     }
@@ -57,10 +69,10 @@ extension NearShopsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let shop = shopsList[indexPath.row]
-        selectShopAction!(shop)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        delegate?.selectedShop( sum(shopsList[indexPath.row]))
     }
 }
 
@@ -86,16 +98,25 @@ extension NearShopsViewController: CLLocationManagerDelegate {
             let cat = Constants().categoryID() ?? ""
             parameters += [Parameter.categoryId:cat]
             parameters += [Parameter.intent:"checkin"]
+            parameters += [Parameter.radius:"800"]
             
             let searchTask = session.venues.search(parameters) { (result) -> Void in
-                if let response = result.response, let venues = response["venues"] {
-                    self.shopsList.removeAll()
-                    for i in 0..<venues.count {
-                        let dict = venues[i] as! NSDictionary
-                        let shop = NearShop(shopName: dict["name"] as! String)
-                        self.shopsList.append(shop)
-                    }
-                    self.tableView.reloadData()
+                if let response = result.response,
+                    let venues = response["venues"] {
+                        self.shopsList.removeAll()
+                        for i in 0..<venues.count {
+                            if let dict = venues[i] as? NSDictionary,
+                                let name = dict["name"] as? String,
+                                let location = dict["location"] as? NSDictionary,
+                                let address = location["address"] as? String {
+                                    if !name.containsString("Coffeeshop") {
+                                        let shop = NearShop(shopName: name, address: address)
+                                        self.shopsList.append(shop)
+                                    }
+                            }
+                        }
+                        self.tableView.reloadData()
+                        self.activityIndicator.stopAnimating()
                 }
             }
             searchTask.start()
