@@ -97,8 +97,9 @@ extension NearShopsViewController: CLLocationManagerDelegate {
             var parameters = location.parameters()
             let cat = Constants().categoryID() ?? ""
             parameters += [Parameter.categoryId:cat]
-            parameters += [Parameter.intent:"checkin"]
+            parameters += [Parameter.intent:"browse"]
             parameters += [Parameter.radius:"800"]
+            parameters += [Parameter.limit:"20"]
             
             let searchTask = session.venues.search(parameters) { (result) -> Void in
                 if let response = result.response,
