@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import QuadratTouch
-import CoreLocation
 
 protocol NearShopsViewControllerDelegate {
     func selectedShop(shop: NearShop)
@@ -35,7 +33,6 @@ final class NearShopsViewController: UIViewController {
     }
     
     private var shopsList: [NearShop] = []
-    private let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +40,14 @@ final class NearShopsViewController: UIViewController {
         self.activityIndicator.startAnimating()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.setupLocationManager()
+        self.shopsList = LocationManager.sharedInstance.shopsList
+        self.activityIndicator.stopAnimating()
+        tableView.reloadData()
     }
 }
 
@@ -73,58 +76,5 @@ extension NearShopsViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         delegate?.selectedShop( sum(shopsList[indexPath.row]))
-    }
-}
-
-extension NearShopsViewController: CLLocationManagerDelegate {
-    func setupLocationManager() {
-        
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        if #available(iOS 9, *) {
-            manager.requestLocation()
-        } else {
-            manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            manager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("Found user's location: \(location)")
-            let session = Session.sharedSession()
-            
-            var parameters = location.parameters()
-            let cat = Constants().categoryID() ?? ""
-            parameters += [Parameter.categoryId:cat]
-            parameters += [Parameter.intent:"browse"]
-            parameters += [Parameter.radius:"800"]
-            parameters += [Parameter.limit:"20"]
-            
-            let searchTask = session.venues.search(parameters) { (result) -> Void in
-                if let response = result.response,
-                    let venues = response["venues"] {
-                        self.shopsList.removeAll()
-                        for i in 0..<venues.count {
-                            if let dict = venues[i] as? NSDictionary,
-                                let name = dict["name"] as? String,
-                                let location = dict["location"] as? NSDictionary,
-                                let address = location["address"] as? String {
-                                    if !name.containsString("Coffeeshop") {
-                                        let shop = NearShop(shopName: name, address: address)
-                                        self.shopsList.append(shop)
-                                    }
-                            }
-                        }
-                        self.tableView.reloadData()
-                        self.activityIndicator.stopAnimating()
-                }
-            }
-            searchTask.start()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("Failed to find user's location: \(error.localizedDescription)")
     }
 }

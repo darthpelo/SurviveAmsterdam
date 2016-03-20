@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realmMigration()
         
         foursquareSetup()
+        
+        LocationManager.sharedInstance.setupLocationManager()
 
         return true
     }
