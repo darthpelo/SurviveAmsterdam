@@ -14,9 +14,9 @@ final class CreateProductViewController: UIViewController {
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var shopNameLabel: UILabel! {
+    @IBOutlet weak var shopNameLabel: UITextField! {
         didSet {
-            shopNameLabel.text = NSLocalizedString("near.shop.name.label", comment: "")
+            shopNameLabel.placeholder = NSLocalizedString("near.shop.name.label", comment: "")
         }
     }
     
@@ -29,7 +29,7 @@ final class CreateProductViewController: UIViewController {
     
     private var imagePicker: UIImagePickerController!
     private var productImage:UIImage?
-    private var shop = Shop()
+    private var shop: Shop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +98,11 @@ final class CreateProductViewController: UIViewController {
 
         let imageData = UIImageJPEGRepresentation(image, 1)
         
+        if let shopName = shopNameLabel.text where self.shop == nil {
+            self.shop = Shop()
+            self.shop?.setupModel(shopName, address: nil, shopImage: nil)
+        }
+        
         newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
         do {
@@ -158,7 +163,8 @@ final class CreateProductViewController: UIViewController {
 
 extension CreateProductViewController: NearShopsViewControllerDelegate {
     func selectedShop(shop: NearShop) {
-        self.shop.setupModel(shop.shopName, address: shop.address, shopImage: nil)
+        self.shop = Shop()
+        self.shop!.setupModel(shop.shopName, address: shop.address, shopImage: nil)
         shopNameLabel.text = shop.shopName
     }
 }

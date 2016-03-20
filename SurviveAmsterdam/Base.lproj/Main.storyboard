@@ -66,12 +66,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-8O-aeQ">
-                                        <rect key="frame" x="157" y="88" width="427" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-47-AdS">
                                         <rect key="frame" x="157" y="36" width="427" height="24"/>
                                         <accessibility key="accessibilityConfiguration" hint="Insert the product name." label="Product Name"/>
@@ -95,25 +89,33 @@
                                             <segue destination="8ni-ZT-n2p" kind="embed" identifier="NearShopsSegue" id="EiG-mc-EZO"/>
                                         </connections>
                                     </containerView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paA-TD-QfI">
+                                        <rect key="frame" x="157" y="84" width="427" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="i0t-XT-Azj" id="svI-Nu-gtD"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Mjd-hJ-1GI" firstAttribute="top" secondItem="W2D-Ff-FWK" secondAttribute="bottom" constant="24" id="7K2-ae-vDt"/>
-                                    <constraint firstItem="4cK-8O-aeQ" firstAttribute="leading" secondItem="0Wi-47-AdS" secondAttribute="leading" id="Ago-Ar-z4S"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="height" secondItem="W2D-Ff-FWK" secondAttribute="height" id="Bit-tG-JRO"/>
                                     <constraint firstItem="W2D-Ff-FWK" firstAttribute="leading" secondItem="ST0-u0-xJC" secondAttribute="leading" constant="16" id="ByU-AX-bmR"/>
                                     <constraint firstItem="0Wi-47-AdS" firstAttribute="top" secondItem="ST0-u0-xJC" secondAttribute="top" constant="36" id="ERt-UI-TYy"/>
                                     <constraint firstAttribute="trailing" secondItem="Mjd-hJ-1GI" secondAttribute="trailing" id="Iq3-WZ-nXV"/>
                                     <constraint firstAttribute="bottom" secondItem="Mjd-hJ-1GI" secondAttribute="bottom" constant="8" id="IrV-2a-m8N"/>
                                     <constraint firstItem="0Wi-47-AdS" firstAttribute="leading" secondItem="W2D-Ff-FWK" secondAttribute="trailing" constant="13" id="LbQ-aY-QcL"/>
+                                    <constraint firstItem="paA-TD-QfI" firstAttribute="trailing" secondItem="0Wi-47-AdS" secondAttribute="trailing" id="Lto-uo-1Hc"/>
+                                    <constraint firstItem="paA-TD-QfI" firstAttribute="leading" secondItem="0Wi-47-AdS" secondAttribute="leading" id="SI2-iE-nYH"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="width" secondItem="W2D-Ff-FWK" secondAttribute="width" id="Tqm-yj-5qb"/>
-                                    <constraint firstItem="4cK-8O-aeQ" firstAttribute="top" secondItem="0Wi-47-AdS" secondAttribute="bottom" constant="28" id="YW2-pq-qw5"/>
-                                    <constraint firstItem="4cK-8O-aeQ" firstAttribute="trailing" secondItem="0Wi-47-AdS" secondAttribute="trailing" id="cq9-D6-K0Y"/>
                                     <constraint firstItem="W2D-Ff-FWK" firstAttribute="top" secondItem="ST0-u0-xJC" secondAttribute="top" constant="8" id="eTy-Ps-5Ge"/>
                                     <constraint firstItem="Mjd-hJ-1GI" firstAttribute="leading" secondItem="ST0-u0-xJC" secondAttribute="leading" id="fSQ-Vr-k2C"/>
                                     <constraint firstAttribute="trailing" secondItem="0Wi-47-AdS" secondAttribute="trailing" constant="16" id="gE5-Vw-Jwb"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="centerY" secondItem="W2D-Ff-FWK" secondAttribute="centerY" id="wQb-tb-d5C"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="centerX" secondItem="W2D-Ff-FWK" secondAttribute="centerX" id="wsD-CC-hqS"/>
+                                    <constraint firstItem="paA-TD-QfI" firstAttribute="top" secondItem="0Wi-47-AdS" secondAttribute="bottom" constant="24" id="zbV-jB-ZJd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -129,7 +131,7 @@
                         <outlet property="containerView" destination="Mjd-hJ-1GI" id="0Nm-wz-wf9"/>
                         <outlet property="photoImageView" destination="W2D-Ff-FWK" id="5az-ef-Wkd"/>
                         <outlet property="photoLabe" destination="NZP-Mw-oRc" id="Szp-LJ-NFY"/>
-                        <outlet property="shopNameLabel" destination="4cK-8O-aeQ" id="eNT-JC-3oq"/>
+                        <outlet property="shopNameLabel" destination="paA-TD-QfI" id="Gae-vh-rc1"/>
                         <outlet property="textField" destination="0Wi-47-AdS" id="eIq-8B-Kh2"/>
                         <outletCollection property="textFields" destination="0Wi-47-AdS" collectionClass="NSMutableArray" id="jGr-bp-ySh"/>
                     </connections>

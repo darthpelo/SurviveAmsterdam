@@ -43,14 +43,14 @@ class Product: Object {
 class Shop: Object {
     dynamic var id: String?
     dynamic var name = ""
-    dynamic var address = ""
+    dynamic var address:String?
     dynamic var shopImage:NSData?
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    func setupModel(name:String, address:String, shopImage:NSData?) {
+    func setupModel(name:String, address:String?, shopImage:NSData?) {
         self.id = NSUUID().UUIDString
         self.name = name
         self.address = address

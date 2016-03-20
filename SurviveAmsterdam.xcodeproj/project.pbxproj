@@ -18,6 +18,7 @@
 		D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
 		D95F77B31C8EADDF00C4C59B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F77B11C8EAC9900C4C59B /* ModelManager.swift */; };
 		D9613E6A1C8F7A5400ADAFA4 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */; };
+		D986D1AC1C9F20F10084CAF1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986D1AB1C9F20F10084CAF1 /* LocationManager.swift */; };
 		D9A649FD1C90D2A8004672D8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */; };
 		D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */; };
 		D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5309B1C8B3EA800958961 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		D94C09E31C8B56A7004256D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D95F77B11C8EAC9900C4C59B /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateProductViewController.swift; path = Product/ViewControllers/CreateProductViewController.swift; sourceTree = "<group>"; };
+		D986D1AB1C9F20F10084CAF1 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Location/Manager/LocationManager.swift; sourceTree = "<group>"; };
 		D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Extensions/UIViewExtensions.swift; sourceTree = "<group>"; };
 		D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearShopsViewController.swift; sourceTree = "<group>"; };
 		D9C530981C8B3EA800958961 /* SurviveAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurviveAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		D986D1AD1C9F21020084CAF1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D986D1AB1C9F20F10084CAF1 /* LocationManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		D9C5308F1C8B3EA800958961 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		D9C530D11C8B48BE00958961 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				D986D1AD1C9F21020084CAF1 /* Manager */,
 				D94C09E41C8B570B004256D4 /* ViewControllers */,
 			);
 			name = Location;
@@ -423,6 +434,7 @@
 				D905AF041C8B688900BF541D /* Model.swift in Sources */,
 				D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */,
 				D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */,
+				D986D1AC1C9F20F10084CAF1 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
