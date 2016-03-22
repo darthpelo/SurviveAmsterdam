@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol NearShopsViewControllerDelegate {
-    func selectedShop(shop: NearShop)
-}
-
 final class NearShopsCell: UITableViewCell {
     
 }
@@ -23,31 +19,34 @@ struct NearShop {
 
 final class NearShopsViewController: UIViewController {
 
+    var selectShopAction:((NearShop) -> ())?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    var delegate: NearShopsViewControllerDelegate?
-    
-    private let sum = {(shop: NearShop) -> NearShop in
-        return shop
-    }
     
     private var shopsList: [NearShop] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.activityIndicator.startAnimating()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        if LocationManager.sharedInstance.shopsList.count > 0 {
+            self.shopsList = LocationManager.sharedInstance.shopsList
+            self.tableView.reloadData()
+        } else {
+            self.activityIndicator.startAnimating()
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NearShopsViewController.updateShopsTable), name: Constants.observer.newShopsList, object: nil)
+        }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.shopsList = LocationManager.sharedInstance.shopsList
-        self.activityIndicator.stopAnimating()
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func updateShopsTable() {
+        shopsList = LocationManager.sharedInstance.shopsList
         tableView.reloadData()
+        self.activityIndicator.stopAnimating()
     }
 }
 
@@ -75,6 +74,7 @@ extension NearShopsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        delegate?.selectedShop( sum(shopsList[indexPath.row]))
+        let shop = shopsList[indexPath.row]
+        selectShopAction!(shop)
     }
 }

@@ -36,18 +36,18 @@ final class CreateProductViewController: UIViewController {
         
         photoLabe.text = NSLocalizedString("add.product.tap.label", comment: "")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:"saveProduct")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(CreateProductViewController.saveProduct))
         navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("saveHint", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
 
         photoImageView.userInteractionEnabled = true
-        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "addNewImage"))
+        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateProductViewController.addNewImage)))
         
 //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
     }
@@ -62,7 +62,9 @@ final class CreateProductViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
             if let vc = segue.destinationViewController as? NearShopsViewController {
-                vc.delegate = self
+                vc.selectShopAction = { [weak self] shop in
+                    self?.setShopLabel(shop)
+                }
             }
         }
     }
@@ -124,6 +126,10 @@ final class CreateProductViewController: UIViewController {
         setViewMovedUp(false)
     }
     
+    private func setShopLabel(shop: NearShop) {
+        shopNameLabel.text = shop.shopName
+    }
+    
     private func setViewMovedUp(movedUp: Bool) {
 //        UIView.animateWithDuration(0.3) { () -> Void in
 //            if (movedUp) {
@@ -161,7 +167,7 @@ final class CreateProductViewController: UIViewController {
     }
 }
 
-extension CreateProductViewController: NearShopsViewControllerDelegate {
+extension CreateProductViewController {
     func selectedShop(shop: NearShop) {
         self.shop = Shop()
         self.shop!.setupModel(shop.shopName, address: shop.address, shopImage: nil)

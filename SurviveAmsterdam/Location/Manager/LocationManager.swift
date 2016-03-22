@@ -23,10 +23,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var shopsList: [NearShop] = []
     private var lastLocation = CLLocation()
     
-//    private override init() {
-//        super.init()
-//    }
-    
     func setupLocationManager() {
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
@@ -53,19 +49,20 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             
             let searchTask = session.venues.search(parameters) { (result) -> Void in
                 if let response = result.response,
-                    let venues = response["venues"] {
-                        self.shopsList.removeAll()
-                        for i in 0..<venues.count {
-                            if let dict = venues[i] as? NSDictionary,
-                                let name = dict["name"] as? String,
-                                let location = dict["location"] as? NSDictionary,
-                                let address = location["address"] as? String {
-                                    if !name.containsString("Coffeeshop") {
-                                        let shop = NearShop(shopName: name, address: address)
-                                        self.shopsList.append(shop)
-                                    }
+                    let venues = response["venues"] where venues.count > 0 {
+                    self.shopsList.removeAll()
+                    for i in 0..<venues.count {
+                        if let dict = venues[i] as? NSDictionary,
+                            let name = dict["name"] as? String,
+                            let location = dict["location"] as? NSDictionary,
+                            let address = location["address"] as? String {
+                            if !name.containsString("Coffeeshop") {
+                                let shop = NearShop(shopName: name, address: address)
+                                self.shopsList.append(shop)
                             }
                         }
+                    }
+                    NSNotificationCenter.defaultCenter().postNotificationName(Constants.observer.newShopsList, object: nil)
                 }
             }
             searchTask.start()
