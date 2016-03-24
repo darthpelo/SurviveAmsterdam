@@ -28,7 +28,6 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     
-    private let kOFFSET_FOR_KEYBOARD:CGFloat = 100.0
     private var contentOffset: CGFloat?
     
     private var imagePicker: UIImagePickerController!
@@ -47,20 +46,8 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
-
         photoImageView.userInteractionEnabled = true
         photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateProductViewController.addNewImage)))
-        
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -77,10 +64,6 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
     
     func addNewImage() {
         prepareImagePicker()
-    }
-    
-    func closeKeyboard() {
-        textFields.forEach{$0.resignFirstResponder()}
     }
     
     func saveProduct() {
@@ -133,28 +116,8 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    func keyboardWillShow() {
-        setViewMovedUp(true)
-    }
-    
-    func keyboardWillHide() {
-        setViewMovedUp(false)
-    }
-    
     private func setShopLabel(shop: NearShop) {
         shopNameLabel.text = shop.shopName
-    }
-    
-    private func setViewMovedUp(movedUp: Bool) {
-//        UIView.animateWithDuration(0.3) { () -> Void in
-//            if (movedUp) {
-//                self.contentOffset = self.scrollView.contentOffset.y
-//                self.scrollView.contentOffset = CGPointMake(0, self.kOFFSET_FOR_KEYBOARD)
-//            } else {
-//                // revert back to the normal state.
-//                self.scrollView.contentOffset = CGPointMake(0, self.contentOffset ?? 0)
-//            }
-//        }
     }
     
     private func prepareImagePicker(){
