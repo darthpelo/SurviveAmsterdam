@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realmMigration()
         
         foursquareSetup()
+        
+        LocationManager.sharedInstance.setupLocationManager()
 
         return true
     }
@@ -56,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func realmMigration() {
         let config = Realm.Configuration(
-            schemaVersion: 2,
+            schemaVersion: 3,
             
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < 1) {

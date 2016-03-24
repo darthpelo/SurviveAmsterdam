@@ -14,9 +14,9 @@ final class CreateProductViewController: UIViewController {
     @IBOutlet weak var photoLabe: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var shopNameLabel: UILabel! {
+    @IBOutlet weak var shopNameLabel: UITextField! {
         didSet {
-            shopNameLabel.text = NSLocalizedString("near.shop.name.label", comment: "")
+            shopNameLabel.placeholder = NSLocalizedString("near.shop.name.label", comment: "")
         }
     }
     
@@ -29,25 +29,25 @@ final class CreateProductViewController: UIViewController {
     
     private var imagePicker: UIImagePickerController!
     private var productImage:UIImage?
-    private var shop = Shop()
+    private var shop: Shop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         photoLabe.text = NSLocalizedString("add.product.tap.label", comment: "")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:"saveProduct")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(CreateProductViewController.saveProduct))
         navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("saveHint", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
 
         photoImageView.userInteractionEnabled = true
-        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "addNewImage"))
+        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateProductViewController.addNewImage)))
         
 //        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
     }
@@ -62,7 +62,9 @@ final class CreateProductViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
             if let vc = segue.destinationViewController as? NearShopsViewController {
-                vc.delegate = self
+                vc.selectShopAction = { [weak self] shop in
+                    self?.setShopLabel(shop)
+                }
             }
         }
     }
@@ -98,6 +100,11 @@ final class CreateProductViewController: UIViewController {
 
         let imageData = UIImageJPEGRepresentation(image, 1)
         
+        if let shopName = shopNameLabel.text where self.shop == nil {
+            self.shop = Shop()
+            self.shop?.setupModel(shopName, address: nil, shopImage: nil)
+        }
+        
         newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
         do {
@@ -117,6 +124,10 @@ final class CreateProductViewController: UIViewController {
     
     func keyboardWillHide() {
         setViewMovedUp(false)
+    }
+    
+    private func setShopLabel(shop: NearShop) {
+        shopNameLabel.text = shop.shopName
     }
     
     private func setViewMovedUp(movedUp: Bool) {
@@ -156,9 +167,10 @@ final class CreateProductViewController: UIViewController {
     }
 }
 
-extension CreateProductViewController: NearShopsViewControllerDelegate {
+extension CreateProductViewController {
     func selectedShop(shop: NearShop) {
-        self.shop.setupModel(shop.shopName, address: shop.address, shopImage: nil)
+        self.shop = Shop()
+        self.shop!.setupModel(shop.shopName, address: shop.address, shopImage: nil)
         shopNameLabel.text = shop.shopName
     }
 }

@@ -14,6 +14,10 @@ struct Constants {
         static let foursquareClientSecret = "clientsecret"
     }
     
+    struct observer {
+        static let newShopsList = "com.alessioroberto.SurviveAmsterdam.newShopsList"
+    }
+    
     func categoryID() -> String? {
         var keys: NSDictionary?
         
