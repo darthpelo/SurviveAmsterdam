@@ -14,10 +14,11 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="3cI-Hw-gEN" kind="relationship" relationship="viewControllers" id="SCk-xI-iOa"/>
-                        <segue destination="u4b-fJ-kqC" kind="relationship" relationship="viewControllers" id="lJk-CL-Jjy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -67,8 +68,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-47-AdS">
-                                        <rect key="frame" x="157" y="36" width="427" height="24"/>
+                                        <rect key="frame" x="157" y="36" width="427" height="34"/>
                                         <accessibility key="accessibilityConfiguration" hint="Insert the product name." label="Product Name"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="fdx-hu-u2o"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         <userDefinedRuntimeAttributes>
@@ -90,7 +94,10 @@
                                         </connections>
                                     </containerView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paA-TD-QfI">
-                                        <rect key="frame" x="157" y="84" width="427" height="21"/>
+                                        <rect key="frame" x="157" y="90" width="427" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3gd-h7-I80"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -115,7 +122,7 @@
                                     <constraint firstAttribute="trailing" secondItem="0Wi-47-AdS" secondAttribute="trailing" constant="16" id="gE5-Vw-Jwb"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="centerY" secondItem="W2D-Ff-FWK" secondAttribute="centerY" id="wQb-tb-d5C"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="centerX" secondItem="W2D-Ff-FWK" secondAttribute="centerX" id="wsD-CC-hqS"/>
-                                    <constraint firstItem="paA-TD-QfI" firstAttribute="top" secondItem="0Wi-47-AdS" secondAttribute="bottom" constant="24" id="zbV-jB-ZJd"/>
+                                    <constraint firstItem="paA-TD-QfI" firstAttribute="top" secondItem="0Wi-47-AdS" secondAttribute="bottom" constant="20" id="zbV-jB-ZJd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -298,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="1780" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Feedback View Controller-->
         <scene sceneID="XWq-Hp-GyM">
             <objects>
-                <viewController id="t3O-MT-eWL" sceneMemberID="viewController">
+                <viewController id="t3O-MT-eWL" customClass="FeedbackViewController" customModule="SurviveAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="23z-yd-NF2"/>
                         <viewControllerLayoutGuide type="bottom" id="WLS-p3-xKW"/>
@@ -310,12 +317,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cam-Vh-pJx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cam-Vh-pJx">
                                 <rect key="frame" x="16" y="80" width="568" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.64705884459999996" green="0.64705884459999996" blue="0.64705884459999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,8 +344,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iSb-Ts-ai4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="p2w-nR-rT1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="p2w-nR-rT1">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="t3O-MT-eWL" id="W2S-xb-bcB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sendButton" destination="p2w-nR-rT1" id="igG-NE-FZH"/>
+                        <outlet property="textView" destination="cam-Vh-pJx" id="thl-Qr-7in"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzP-Te-hz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,11 +363,12 @@
         <scene sceneID="7JN-ZE-hFg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3cI-Hw-gEN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Products" id="duv-oX-mmA"/>
+                    <tabBarItem key="tabBarItem" title="Products" image="productIcon" id="duv-oX-mmA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uhn-rW-YfK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -444,4 +470,7 @@
             <point key="canvasLocation" x="957" y="-1286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="productIcon" width="30" height="30"/>
+    </resources>
 </document>

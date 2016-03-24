@@ -49,7 +49,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             
             let searchTask = session.venues.search(parameters) { (result) -> Void in
                 if let response = result.response,
-                    let venues = response["venues"] where venues.count > 0 {
+                    let venues = response["venues"] as? NSArray where venues.count > 0 {
                     self.shopsList.removeAll()
                     for i in 0..<venues.count {
                         if let dict = venues[i] as? NSDictionary,

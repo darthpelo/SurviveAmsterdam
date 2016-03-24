@@ -28,6 +28,7 @@
 		D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */; };
 		D9CD4B891C95D3FF00047018 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4B881C95D3FF00047018 /* keys.plist */; };
 		D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4B8A1C95F18400047018 /* Constants.swift */; };
+		D9D54E811CA2064A007805F4 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListViewController.swift; path = Product/ViewControllers/ProductsListViewController.swift; sourceTree = "<group>"; };
 		D9CD4B881C95D3FF00047018 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		D9CD4B8A1C95F18400047018 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				D905AF021C8B685400BF541D /* Model */,
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
+				D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */,
 			);
 			path = SurviveAmsterdam;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				D91D1A7B1C938050008992E8 /* ProductDetailViewController.swift in Sources */,
 				D905AF041C8B688900BF541D /* Model.swift in Sources */,
 				D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */,
+				D9D54E811CA2064A007805F4 /* FeedbackViewController.swift in Sources */,
 				D95F77B21C8EAC9900C4C59B /* ModelManager.swift in Sources */,
 				D986D1AC1C9F20F10084CAF1 /* LocationManager.swift in Sources */,
 			);
