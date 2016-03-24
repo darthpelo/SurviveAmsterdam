@@ -16,6 +16,13 @@ class ProductDetailViewController: UIViewController {
     
     var productId: String?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(ProductDetailViewController.editProduct))
+        navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("editHint", comment: "")
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -35,5 +42,9 @@ class ProductDetailViewController: UIViewController {
                 
             }
         }
+    }
+    
+    func editProduct() {
+        
     }
 }

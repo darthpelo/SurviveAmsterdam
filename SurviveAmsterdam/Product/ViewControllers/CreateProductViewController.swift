@@ -8,11 +8,15 @@
 
 import UIKit
 
-final class CreateProductViewController: UIViewController {
+final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField! {
+        didSet {
+            textField.placeholder = NSLocalizedString("add.product.no.name.alert", comment: "")
+        }
+    }
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var shopNameLabel: UITextField! {
         didSet {
@@ -80,7 +84,18 @@ final class CreateProductViewController: UIViewController {
     }
     
     func saveProduct() {
-        guard let name = textField.text else {
+        guard let name = textField.text where !name.isEmpty else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         

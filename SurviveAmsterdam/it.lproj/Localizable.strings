@@ -10,14 +10,18 @@
 "products" = "Prodotti";
 "save" = "Salva";
 "saveHint" = "Salva il nuovo prodotto e torna alla lista dei prodotti";
+"edit" = "Modifica";
+"editHint" = "Modifica il nome del prodotto ed il negozio";
 
 "near.shop.name.label" = "Seleziona il negozio";
 "add.product.tap.label" = "Tappa per aggiungere una foto";
+"add.product.no.name.alert" = "Inserire il nome del prodotto";
 
 "camera" = "Fotocamera";
 "library" = "Galleria";
 
 "cancel" = "Annula";
+"alert" = "Attenzione";
 
 "send" = "Invia";
 "feedback" = "I tuoi suggerimenti";

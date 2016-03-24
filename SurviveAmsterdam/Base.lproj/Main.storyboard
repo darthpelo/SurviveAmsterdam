@@ -190,6 +190,10 @@
                             <constraint firstItem="fMH-za-MKr" firstAttribute="centerX" secondItem="R1I-i5-AVv" secondAttribute="centerX" id="uoh-nX-gnb"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="8KB-Sm-d9q"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productImageview" destination="fMH-za-MKr" id="W28-9c-5eE"/>
                         <outlet property="productNameLabel" destination="w9j-1j-lGv" id="sfu-EE-5qk"/>
