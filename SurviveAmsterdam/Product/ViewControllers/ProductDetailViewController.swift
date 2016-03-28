@@ -20,7 +20,7 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(ProductDetailViewController.editProduct))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: .editProductButtonTapped)
         navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("editHint", comment: "")
     }
     
@@ -55,7 +55,11 @@ class ProductDetailViewController: UIViewController {
         }
     }
     
-    func editProduct() {
+    func editProductButtonTapped() {
         self.performSegueWithIdentifier(R.segue.productDetailViewController.editProductSegue.identifier, sender: self)
     }
+}
+
+private extension Selector {
+    static let editProductButtonTapped = #selector(ProductDetailViewController.editProductButtonTapped)
 }

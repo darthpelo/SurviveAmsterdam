@@ -39,7 +39,7 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         
         photoLabe.text = NSLocalizedString("add.product.tap.label", comment: "")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(CreateProductViewController.saveProduct))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("save", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: .saveProductButtonTapped)
         navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("saveHint", comment: "")
     }
     
@@ -47,7 +47,7 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         super.viewWillAppear(animated)
         
         photoImageView.userInteractionEnabled = true
-        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateProductViewController.addNewImage)))
+        photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: .addNewImageTapped))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -62,11 +62,11 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
     
     //MARK: - Internal functions
     
-    func addNewImage() {
+    func addNewImageTapped() {
         prepareImagePicker()
     }
     
-    func saveProduct() {
+    func saveProductButtonTapped() {
         guard let name = textField.text where !name.isEmpty else {
             if #available(iOS 9, *) {
                 let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
@@ -223,4 +223,11 @@ extension CreateProductViewController: UIImagePickerControllerDelegate, UINaviga
         photoImageView.image = image?.resizeByWidth(photoImageView.bounds.width)
         productImage = image
     }
+}
+
+private extension Selector {
+    static let saveProductButtonTapped =
+        #selector(CreateProductViewController.saveProductButtonTapped)
+    
+    static let addNewImageTapped = #selector(CreateProductViewController.addNewImageTapped)
 }
