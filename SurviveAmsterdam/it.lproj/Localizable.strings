@@ -25,3 +25,6 @@
 
 "send" = "Invia";
 "feedback" = "I tuoi suggerimenti";
+
+"edit.shop.name.label" = "Nome del Negozio";
+"edit.product.name.label" = "Nome del Prodotto";
