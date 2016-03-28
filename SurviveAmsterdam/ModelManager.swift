@@ -34,6 +34,19 @@ struct ModelManager {
         }
     }
     
+    func getShopMatchingID(query:String) throws -> Results<(Shop)> {
+        do {
+            let realm = try Realm()
+            let result = realm.objects(Shop).filter(NSPredicate(format: "id ==[c] %@", query))
+            if result.count == 0 {
+                throw ModelManagerError.QueryFailed
+            }
+            return result
+        } catch {
+            throw ModelManagerError.QueryFailed
+        }
+    }
+    
     func saveShop(newShop: Shop) throws {
         let realm = try! Realm()
         

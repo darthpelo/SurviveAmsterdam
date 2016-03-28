@@ -25,3 +25,6 @@
 
 "send" = "Send";
 "feedback" = "Your suggestiongs";
+
+"edit.shop.name.label" = "Shop Name";
+"edit.product.name.label" = "Product Name";

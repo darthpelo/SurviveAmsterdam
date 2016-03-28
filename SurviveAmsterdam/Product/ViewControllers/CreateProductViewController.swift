@@ -82,15 +82,48 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
             return
         }
         
-        guard let _ = shopNameLabel.text else {
+        guard let shopName = shopNameLabel.text where !shopName.isEmpty else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         
         guard let thumbnail = photoImageView.convertImageToData() else {
-                return
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
+            return
         }
         
         guard let image = productImage else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         
@@ -98,7 +131,7 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
 
         let imageData = UIImageJPEGRepresentation(image, 1)
         
-        if let shopName = shopNameLabel.text where self.shop == nil {
+        if self.shop == nil {
             self.shop = Shop()
             self.shop?.setupModel(shopName, address: nil, shopImage: nil)
         }
