@@ -29,6 +29,7 @@
 		D9CD4B891C95D3FF00047018 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9CD4B881C95D3FF00047018 /* keys.plist */; };
 		D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD4B8A1C95F18400047018 /* Constants.swift */; };
 		D9D54E811CA2064A007805F4 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */; };
+		D9D54EFB1CA49F8C007805F4 /* EditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D54EFA1CA49F8C007805F4 /* EditProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		D9CD4B881C95D3FF00047018 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		D9CD4B8A1C95F18400047018 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		D9D54EFA1CA49F8C007805F4 /* EditProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProductViewController.swift; path = Product/ViewControllers/EditProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,10 +222,11 @@
 		D9C530CE1C8B488100958961 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */,
 				D9613E691C8F7A5400ADAFA4 /* CreateProductViewController.swift */,
-				D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */,
+				D9D54EFA1CA49F8C007805F4 /* EditProductViewController.swift */,
 				D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */,
+				D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */,
+				D9C530CF1C8B48B100958961 /* ProductsListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D54EFB1CA49F8C007805F4 /* EditProductViewController.swift in Sources */,
 				D93C41B91C92211900DBC5A5 /* Extensions.swift in Sources */,
 				D9CD4B8B1C95F18400047018 /* Constants.swift in Sources */,
 				D9C530D01C8B48B100958961 /* ProductsListViewController.swift in Sources */,

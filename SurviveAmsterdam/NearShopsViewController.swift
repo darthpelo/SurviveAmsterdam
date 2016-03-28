@@ -34,7 +34,7 @@ final class NearShopsViewController: UIViewController {
             self.tableView.reloadData()
         } else {
             self.activityIndicator.startAnimating()
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NearShopsViewController.updateShopsTable), name: Constants.observer.newShopsList, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: .updateShopsTableNotification, name: Constants.observer.newShopsList, object: nil)
         }
     }
     
@@ -43,7 +43,7 @@ final class NearShopsViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func updateShopsTable() {
+    func updateShopsTableNotification() {
         shopsList = LocationManager.sharedInstance.shopsList
         tableView.reloadData()
         self.activityIndicator.stopAnimating()
@@ -77,4 +77,8 @@ extension NearShopsViewController: UITableViewDelegate {
         let shop = shopsList[indexPath.row]
         selectShopAction!(shop)
     }
+}
+
+private extension Selector {
+    static let updateShopsTableNotification = #selector(NearShopsViewController.updateShopsTableNotification)
 }

@@ -3,14 +3,14 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
   - QuadratTouch (1.1.1)
-  - R.swift (1.4.1):
-    - R.swift.Library (~> 1.2.1)
-  - R.swift.Library (1.2.1)
-  - Realm (0.98.5):
-    - Realm/Headers (= 0.98.5)
-  - Realm/Headers (0.98.5)
-  - RealmSwift (0.98.5):
-    - Realm (= 0.98.5)
+  - R.swift (2.0.0):
+    - R.swift.Library (~> 2.0.0)
+  - R.swift.Library (2.0.0)
+  - Realm (0.98.6):
+    - Realm/Headers (= 0.98.6)
+  - Realm/Headers (0.98.6)
+  - RealmSwift (0.98.6):
+    - Realm (= 0.98.6)
 
 DEPENDENCIES:
   - Crashlytics
@@ -23,9 +23,9 @@ SPEC CHECKSUMS:
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
-  R.swift: 5b5ecb904cd448cfdacd3b0eca4f470b46f5dbdd
-  R.swift.Library: 811be8902fe0ec3bc717b9affe5c6029b84dd361
-  Realm: db08379969e45cea2edd1c3c0a090fe9e22d2d2f
-  RealmSwift: cb11ad1c35e15dc982f2dbf5afe2a3124193a358
+  R.swift: ceb3d2897a26bb5811e08f531184bbba8e4a7110
+  R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
+  Realm: 44803f35418c5d89b27825a564247fcd190de37e
+  RealmSwift: c7239c52c83f8c43525a5269ba7be1694da33afc
 
 COCOAPODS: 0.39.0

@@ -57,3 +57,15 @@ extension CLLocation {
         return parameters
     }
 }
+
+extension UIViewController {
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension String {
+    var length: Int {
+        return characters.count
+    }
+}
