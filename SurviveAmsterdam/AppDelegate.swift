@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
         
         realmMigration()
@@ -29,9 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         LocationManager.sharedInstance.setupLocationManager()
         
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.orangeColor()]
-        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        applicationAppearance()
 
         return true
     }
@@ -82,6 +81,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("\(error.debugDescription)")
         }
 
+    }
+}
+
+extension AppDelegate {
+    private func applicationAppearance() {
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().titleTextAttributes =  [
+            NSFontAttributeName: R.font.sanFranciscoDisplayMedium(size: 16)!,
+            NSForegroundColorAttributeName: UIColor.orangeColor()
+        ]
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [
+                NSFontAttributeName: R.font.sanFranciscoDisplayLight(size: 16)!,
+                NSForegroundColorAttributeName: UIColor.orangeColor()
+            ],
+            forState: UIControlState.Normal
+        )
     }
 }
 

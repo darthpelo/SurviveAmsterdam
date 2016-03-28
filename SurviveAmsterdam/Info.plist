@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -69,5 +69,13 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>SanFranciscoDisplay-Regular.otf</string>
+        <string>SanFranciscoDisplay-Medium.otf</string>
+        <string>SanFranciscoDisplay-Light.otf</string>
+        <string>SanFranciscoDisplay-Ultralight.otf</string>
+        <string>SanFranciscoDisplay-Bold.otf</string>
+    </array>
 </dict>
 </plist>
