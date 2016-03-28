@@ -15,6 +15,14 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var shopNameLabel: UILabel!
     
     var productId: String?
+    private var product: Product?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action:#selector(ProductDetailViewController.editProduct))
+        navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("editHint", comment: "")
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,17 +31,31 @@ class ProductDetailViewController: UIViewController {
             do {
                 let result = try ModelManager().getProductMatchingID(productId)
                 if let prod = result.first {
-                    let product = Product()
-                    product.copyFromProduct(prod)
-                    if let image = product.productImage {
+                    product = Product()
+                    product?.copyFromProduct(prod)
+                    if let image = product?.productImage {
                         self.productImageview.image = UIImage(data: image)
                     }
-                    self.productNameLabel.text = product.name
-                    self.shopNameLabel.text = product.shops.first?.name
+                    self.productNameLabel.text = product?.name
+                    self.shopNameLabel.text = product?.shops.first?.name
                 }
             } catch {
                 
             }
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == R.segue.productDetailViewController.editProductSegue.identifier {
+            if let navBar = segue.destinationViewController as? UINavigationController,
+                let vc = navBar.topViewController as? EditProductViewController,
+                let product = self.product {
+                vc.product = product
+            }
+        }
+    }
+    
+    func editProduct() {
+        self.performSegueWithIdentifier(R.segue.productDetailViewController.editProductSegue.identifier, sender: self)
     }
 }

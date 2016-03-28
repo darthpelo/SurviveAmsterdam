@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         foursquareSetup()
         
         LocationManager.sharedInstance.setupLocationManager()
+        
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.orangeColor()]
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
 
         return true
     }

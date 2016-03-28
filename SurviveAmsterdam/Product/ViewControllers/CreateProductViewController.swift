@@ -8,11 +8,15 @@
 
 import UIKit
 
-final class CreateProductViewController: UIViewController {
+final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var photoLabe: UILabel!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField! {
+        didSet {
+            textField.placeholder = NSLocalizedString("add.product.no.name.alert", comment: "")
+        }
+    }
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var shopNameLabel: UITextField! {
         didSet {
@@ -24,7 +28,6 @@ final class CreateProductViewController: UIViewController {
     
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     
-    private let kOFFSET_FOR_KEYBOARD:CGFloat = 100.0
     private var contentOffset: CGFloat?
     
     private var imagePicker: UIImagePickerController!
@@ -43,20 +46,8 @@ final class CreateProductViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateProductViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
-
         photoImageView.userInteractionEnabled = true
         photoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CreateProductViewController.addNewImage)))
-        
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeKeyboard"))
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -75,24 +66,64 @@ final class CreateProductViewController: UIViewController {
         prepareImagePicker()
     }
     
-    func closeKeyboard() {
-        textFields.forEach{$0.resignFirstResponder()}
-    }
-    
     func saveProduct() {
-        guard let name = textField.text else {
+        guard let name = textField.text where !name.isEmpty else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         
-        guard let _ = shopNameLabel.text else {
+        guard let shopName = shopNameLabel.text where !shopName.isEmpty else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         
         guard let thumbnail = photoImageView.convertImageToData() else {
-                return
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
+            return
         }
         
         guard let image = productImage else {
+            if #available(iOS 9, *) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                let alertView = UIAlertView(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), delegate: self, cancelButtonTitle: nil, otherButtonTitles: "OK")
+                alertView.alertViewStyle = .Default
+                alertView.show()
+            }
             return
         }
         
@@ -100,7 +131,7 @@ final class CreateProductViewController: UIViewController {
 
         let imageData = UIImageJPEGRepresentation(image, 1)
         
-        if let shopName = shopNameLabel.text where self.shop == nil {
+        if self.shop == nil {
             self.shop = Shop()
             self.shop?.setupModel(shopName, address: nil, shopImage: nil)
         }
@@ -118,28 +149,8 @@ final class CreateProductViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    func keyboardWillShow() {
-        setViewMovedUp(true)
-    }
-    
-    func keyboardWillHide() {
-        setViewMovedUp(false)
-    }
-    
     private func setShopLabel(shop: NearShop) {
         shopNameLabel.text = shop.shopName
-    }
-    
-    private func setViewMovedUp(movedUp: Bool) {
-//        UIView.animateWithDuration(0.3) { () -> Void in
-//            if (movedUp) {
-//                self.contentOffset = self.scrollView.contentOffset.y
-//                self.scrollView.contentOffset = CGPointMake(0, self.kOFFSET_FOR_KEYBOARD)
-//            } else {
-//                // revert back to the normal state.
-//                self.scrollView.contentOffset = CGPointMake(0, self.contentOffset ?? 0)
-//            }
-//        }
     }
     
     private func prepareImagePicker(){
