@@ -20,6 +20,7 @@ final class ProductsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var productsList: Results<(Product)>?
+    private var searchProductList: Results<(Product)>?
     private let modelManager = ModelManager()
     
     private var searchController:UISearchController = UISearchController(searchResultsController: nil)
@@ -27,7 +28,30 @@ final class ProductsListViewController: UIViewController {
     
     override func viewDidLoad() {
         title = NSLocalizedString("products", comment: "")
+        setupSearchBar()
+        getProducts()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if searchProductList == nil { getProducts() }
+    }
+
+    @IBAction func addButtonPressed(sender: AnyObject) {}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
+            let indexPath = tableView.indexPathForSelectedRow {
+            let list = searchProductList != nil ? searchProductList : productsList
+            if let vc = segue.destinationViewController as? ProductDetailViewController {
+                let product = list![indexPath.row]
+                vc.productId = product.id
+            }
+        }
+    }
+
+    private func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         if #available(iOS 9.0, *) {
@@ -43,36 +67,15 @@ final class ProductsListViewController: UIViewController {
         tableView.tableHeaderView = searchController.searchBar
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    private func getProducts() {
         do {
             productsList = try modelManager.getProducts()
-        } catch {
-            //
-        }
-        
-        tableView.reloadData()
-    }
-
-    @IBAction func addButtonPressed(sender: AnyObject) {}
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
-            let indexPath = tableView.indexPathForSelectedRow,
-            let list = productsList,
-            let vc = segue.destinationViewController as? ProductDetailViewController {
-                let product = list[indexPath.row]
-                vc.productId = product.id
-        }
+            tableView.reloadData()
+        } catch {}
     }
 }
 
-extension ProductsListViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
+extension ProductsListViewController: UITableViewDataSource {    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
@@ -88,17 +91,15 @@ extension ProductsListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsList?.count ?? 0
+        return searchProductList?.count ?? (productsList?.count ?? 0)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.productCell.identifier, forIndexPath: indexPath) as! ProductCell
         
-        guard let productsList = productsList else {
-            return cell
-        }
+        let productsList = searchProductList != nil ? searchProductList : self.productsList
         
-        let product = productsList[indexPath.row]
+        let product = productsList![indexPath.row]
         
         cell.productNameLabel.text = product.name
         cell.shopNameLabel.text = product.shops.first?.name
@@ -119,35 +120,16 @@ extension ProductsListViewController: UITableViewDelegate {
 
 extension ProductsListViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        do {
-            productsList = try modelManager.getProducts()
-        } catch {
-            //
-        }
-        
-        tableView.reloadData()
+        searchProductList = nil
+        getProducts()
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         if let query = searchController.searchBar.text where searchController.active && !query.isEmpty {
             do {
-                try productsList = modelManager.getProductsMatching(query)
+                searchProductList = try modelManager.getProductsMatching(query)
                 tableView.reloadData()
             } catch {}
         }
     }
-}
-
-extension UISearchBar {
-    
-    func setBarTintColorWithAnimation(color:UIColor) {
-        let transition = CATransition()
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = kCATransitionFade
-        transition.duration = 0.2
-        
-        layer.addAnimation(transition, forKey: nil)
-        barTintColor = color
-    }
-    
 }
