@@ -69,3 +69,15 @@ extension String {
         return characters.count
     }
 }
+
+extension UISearchBar {
+    func setBarTintColorWithAnimation(color:UIColor) {
+        let transition = CATransition()
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionFade
+        transition.duration = 0.2
+        
+        layer.addAnimation(transition, forKey: nil)
+        barTintColor = color
+    }
+}

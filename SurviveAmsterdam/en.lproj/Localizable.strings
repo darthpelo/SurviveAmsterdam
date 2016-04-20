@@ -12,6 +12,7 @@
 "saveHint" = "Save the new product and come back to the products list";
 "edit" = "Edit";
 "editHint" = "Change the product's name and the shop";
+"searchbar.placeolder" = "Search";
 
 "near.shop.name.label" = "Chose a shop";
 "add.product.tap.label" = "Tap to add an image";
