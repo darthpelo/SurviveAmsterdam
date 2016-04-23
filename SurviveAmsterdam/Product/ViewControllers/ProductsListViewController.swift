@@ -68,6 +68,7 @@ final class ProductsListViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.tintColor = UIColor.whiteColor()
         searchController.searchBar.barTintColor = UIColor.orangeColor()
+        searchController.searchBar.translucent = true
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar

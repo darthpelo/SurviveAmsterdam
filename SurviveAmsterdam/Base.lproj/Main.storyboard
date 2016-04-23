@@ -9,11 +9,13 @@
         <mutableArray key="SanFranciscoDisplay-Bold.otf">
             <string>SanFranciscoDisplay-Bold</string>
         </mutableArray>
+        <mutableArray key="SanFranciscoDisplay-Medium.otf">
+            <string>SanFranciscoDisplay-Medium</string>
+        </mutableArray>
         <mutableArray key="SanFranciscoDisplay-Regular.otf">
             <string>SanFranciscoDisplay-Regular</string>
         </mutableArray>
         <mutableArray key="SanFranciscoText-Regular.otf">
-            <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
@@ -54,11 +56,11 @@
                         <viewControllerLayoutGuide type="bottom" id="of7-kW-wjM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="86E-in-F6g">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ST0-u0-xJC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-Mw-oRc">
                                         <rect key="frame" x="16" y="8" width="128" height="128"/>
@@ -88,7 +90,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Wi-47-AdS">
-                                        <rect key="frame" x="157" y="36" width="427" height="34"/>
+                                        <rect key="frame" x="157" y="8" width="427" height="34"/>
                                         <accessibility key="accessibilityConfiguration" hint="Insert the product name." label="Product Name"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="fdx-hu-u2o"/>
@@ -113,10 +115,16 @@
                                             <segue destination="8ni-ZT-n2p" kind="embed" identifier="NearShopsSegue" id="EiG-mc-EZO"/>
                                         </connections>
                                     </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbK-LH-tKZ">
+                                        <rect key="frame" x="283" y="155" width="34.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paA-TD-QfI">
-                                        <rect key="frame" x="157" y="90" width="427" height="30"/>
+                                        <rect key="frame" x="157" y="62" width="427" height="34"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="3gd-h7-I80"/>
+                                            <constraint firstAttribute="height" constant="34" id="3gd-h7-I80"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -124,12 +132,6 @@
                                             <outlet property="delegate" destination="i0t-XT-Azj" id="svI-Nu-gtD"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbK-LH-tKZ">
-                                        <rect key="frame" x="283" y="155" width="34.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="SanFranciscoDisplay-Bold" family="San Francisco Display" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -137,11 +139,11 @@
                                     <constraint firstItem="Mjd-hJ-1GI" firstAttribute="top" secondItem="W2D-Ff-FWK" secondAttribute="bottom" constant="44" id="7K2-ae-vDt"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="height" secondItem="W2D-Ff-FWK" secondAttribute="height" id="Bit-tG-JRO"/>
                                     <constraint firstItem="W2D-Ff-FWK" firstAttribute="leading" secondItem="ST0-u0-xJC" secondAttribute="leading" constant="16" id="ByU-AX-bmR"/>
-                                    <constraint firstItem="0Wi-47-AdS" firstAttribute="top" secondItem="ST0-u0-xJC" secondAttribute="top" constant="36" id="ERt-UI-TYy"/>
                                     <constraint firstAttribute="trailing" secondItem="Mjd-hJ-1GI" secondAttribute="trailing" id="Iq3-WZ-nXV"/>
                                     <constraint firstAttribute="bottom" secondItem="Mjd-hJ-1GI" secondAttribute="bottom" constant="8" id="IrV-2a-m8N"/>
                                     <constraint firstItem="0Wi-47-AdS" firstAttribute="leading" secondItem="W2D-Ff-FWK" secondAttribute="trailing" constant="13" id="LbQ-aY-QcL"/>
                                     <constraint firstItem="paA-TD-QfI" firstAttribute="trailing" secondItem="0Wi-47-AdS" secondAttribute="trailing" id="Lto-uo-1Hc"/>
+                                    <constraint firstItem="0Wi-47-AdS" firstAttribute="top" secondItem="W2D-Ff-FWK" secondAttribute="top" id="Mso-qS-VCU"/>
                                     <constraint firstItem="paA-TD-QfI" firstAttribute="leading" secondItem="0Wi-47-AdS" secondAttribute="leading" id="SI2-iE-nYH"/>
                                     <constraint firstItem="NZP-Mw-oRc" firstAttribute="width" secondItem="W2D-Ff-FWK" secondAttribute="width" id="Tqm-yj-5qb"/>
                                     <constraint firstItem="W2D-Ff-FWK" firstAttribute="top" secondItem="ST0-u0-xJC" secondAttribute="top" constant="8" id="eTy-Ps-5Ge"/>
@@ -185,17 +187,23 @@
                         <viewControllerLayoutGuide type="bottom" id="mzj-ax-Q2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R1I-i5-AVv">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-1j-lGv">
-                                <rect key="frame" x="24" y="264" width="42" height="21"/>
+                                <rect key="frame" x="24" y="328" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-TJ-V5C">
+                                <rect key="frame" x="24" y="365" width="34.5" height="17"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fMH-za-MKr">
-                                <rect key="frame" x="24" y="8" width="552" height="240"/>
+                                <rect key="frame" x="24" y="72" width="552" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="iTy-4n-Ohg"/>
                                 </constraints>
@@ -211,12 +219,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-TJ-V5C">
-                                <rect key="frame" x="24" y="301" width="34.5" height="17"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -254,15 +256,15 @@
                         <viewControllerLayoutGuide type="bottom" id="7Gl-D8-FTE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0yb-kX-EH2">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wqH-aw-w6g">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="84" id="NZa-vv-4kp" customClass="ProductCell" customModule="SurviveAmsterdam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="84"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NZa-vv-4kp" id="5iv-0y-Sgp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
@@ -270,7 +272,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSv-LM-Wtd">
                                                     <rect key="frame" x="88" y="8" width="496" height="19.5"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -301,7 +303,7 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeP-sF-9fT">
                                                     <rect key="frame" x="88" y="56" width="496" height="16"/>
-                                                    <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -336,7 +338,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.39607843139999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wqH-aw-w6g" firstAttribute="centerY" secondItem="0yb-kX-EH2" secondAttribute="centerY" id="221-fb-YQ8"/>
                             <constraint firstItem="wqH-aw-w6g" firstAttribute="centerX" secondItem="0yb-kX-EH2" secondAttribute="centerX" id="8LK-yC-0Fs"/>
@@ -421,7 +423,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3cI-Hw-gEN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Products" image="productIcon" id="duv-oX-mmA"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="uhn-rW-YfK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uhn-rW-YfK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -516,22 +518,22 @@
                         <viewControllerLayoutGuide type="bottom" id="9BX-AL-RBg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rvh-g7-8yg">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-YT-rDf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-YT-rDf">
                                 <rect key="frame" x="24" y="80" width="34.5" height="17"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-hy-UOp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-hy-UOp">
                                 <rect key="frame" x="24" y="160" width="34.5" height="17"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-vh-AF9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-vh-AF9">
                                 <rect key="frame" x="24" y="185" width="552" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="ted-Pp-0pl"/>
@@ -542,7 +544,7 @@
                                     <outlet property="delegate" destination="03Q-o0-yiD" id="bVb-5r-xTr"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCj-3X-5aP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCj-3X-5aP">
                                 <rect key="frame" x="24" y="105" width="552" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="9Rb-y6-lZg"/>
@@ -615,7 +617,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q0j-5q-4wV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8i8-gB-1wh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8i8-gB-1wh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
