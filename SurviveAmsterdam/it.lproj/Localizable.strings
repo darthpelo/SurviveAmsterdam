@@ -15,6 +15,7 @@
 "searchbar.placeolder" = "Cerca";
 
 "near.shop.name.label" = "Seleziona il negozio";
+"near.shop.title.label" = "Negozi vicino alla tua posizione";
 "add.product.tap.label" = "Tappa per aggiungere una foto";
 "add.product.no.name.alert" = "Inserire il nome del prodotto";
 

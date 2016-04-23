@@ -15,6 +15,7 @@
 "searchbar.placeolder" = "Search";
 
 "near.shop.name.label" = "Chose a shop";
+"near.shop.title.label" = "Shops near you";
 "add.product.tap.label" = "Tap to add an image";
 "add.product.no.name.alert" = "Insert product name";
 

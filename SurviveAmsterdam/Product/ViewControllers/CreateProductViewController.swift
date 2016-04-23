@@ -23,6 +23,11 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
             shopNameLabel.placeholder = NSLocalizedString("near.shop.name.label", comment: "")
         }
     }
+    @IBOutlet weak var shopsLabel: UILabel! {
+        didSet {
+            shopsLabel.text = NSLocalizedString("near.shop.title.label", comment: "")
+        }
+    }
     
     @IBOutlet var textFields: [UITextField]!
     
