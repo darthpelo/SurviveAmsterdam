@@ -14,6 +14,11 @@ final class ProductCell: UITableViewCell {
     @IBOutlet weak var thumbView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView! {
+        didSet {
+            separatorView.backgroundColor = UIColor.orangeColor()
+        }
+    }
 }
 
 final class ProductsListViewController: UIViewController {
@@ -62,6 +67,8 @@ final class ProductsListViewController: UIViewController {
         searchController.searchBar.placeholder = NSLocalizedString("searchbar.placeolder", comment: "")
         searchController.searchBar.delegate = self
         searchController.searchBar.tintColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor.orangeColor()
+        searchController.searchBar.translucent = true
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar

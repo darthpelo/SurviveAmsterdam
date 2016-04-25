@@ -88,16 +88,17 @@ extension AppDelegate {
     private func applicationAppearance() {
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         
-        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
         UINavigationBar.appearance().titleTextAttributes =  [
             NSFontAttributeName: R.font.sanFranciscoDisplayMedium(size: 16)!,
-            NSForegroundColorAttributeName: UIColor.orangeColor()
+            NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
         
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [
                 NSFontAttributeName: R.font.sanFranciscoDisplayLight(size: 16)!,
-                NSForegroundColorAttributeName: UIColor.orangeColor()
+                NSForegroundColorAttributeName: UIColor.whiteColor()
             ],
             forState: UIControlState.Normal
         )
