@@ -12,8 +12,10 @@
 "saveHint" = "Salva il nuovo prodotto e torna alla lista dei prodotti";
 "edit" = "Modifica";
 "editHint" = "Modifica il nome del prodotto ed il negozio";
+"searchbar.placeolder" = "Cerca";
 
 "near.shop.name.label" = "Seleziona il negozio";
+"near.shop.title.label" = "Negozi vicino alla tua posizione";
 "add.product.tap.label" = "Tappa per aggiungere una foto";
 "add.product.no.name.alert" = "Inserire il nome del prodotto";
 

@@ -95,3 +95,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
 fi
+if [[ "$CONFIGURATION" == "Test" ]]; then
+  install_framework "Pods/QuadratTouch.framework"
+  install_framework "Pods/Rswift.framework"
+  install_framework "Pods/Realm.framework"
+  install_framework "Pods/RealmSwift.framework"
+fi
