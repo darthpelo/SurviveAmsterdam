@@ -219,6 +219,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LI0-kK-LGN">
+                                <rect key="frame" x="285" y="394" width="30" height="34"/>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="hse-mx-PmN" eventType="touchUpInside" id="YMe-jL-jbH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -228,17 +234,18 @@
                             <constraint firstItem="4g8-TJ-V5C" firstAttribute="leading" secondItem="w9j-1j-lGv" secondAttribute="leading" id="cJN-Ly-fQt"/>
                             <constraint firstItem="w9j-1j-lGv" firstAttribute="top" secondItem="fMH-za-MKr" secondAttribute="bottom" constant="16" id="fSK-OU-4XV"/>
                             <constraint firstItem="fMH-za-MKr" firstAttribute="leading" secondItem="R1I-i5-AVv" secondAttribute="leading" constant="24" id="mJf-5y-PmJ"/>
+                            <constraint firstItem="LI0-kK-LGN" firstAttribute="top" secondItem="4g8-TJ-V5C" secondAttribute="bottom" constant="12" id="uTE-sP-kNq"/>
                             <constraint firstItem="fMH-za-MKr" firstAttribute="centerX" secondItem="R1I-i5-AVv" secondAttribute="centerX" id="uoh-nX-gnb"/>
+                            <constraint firstItem="LI0-kK-LGN" firstAttribute="centerX" secondItem="R1I-i5-AVv" secondAttribute="centerX" id="xM0-H2-eID"/>
                             <constraint firstItem="w9j-1j-lGv" firstAttribute="leading" secondItem="fMH-za-MKr" secondAttribute="leading" id="yRC-1p-lou"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="8KB-Sm-d9q"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="productImageview" destination="fMH-za-MKr" id="W28-9c-5eE"/>
                         <outlet property="productNameLabel" destination="w9j-1j-lGv" id="sfu-EE-5qk"/>
+                        <outlet property="shareButton" destination="LI0-kK-LGN" id="xfd-r1-WjU"/>
                         <outlet property="shopNameLabel" destination="4g8-TJ-V5C" id="Ymw-GQ-nGA"/>
                         <segue destination="Q0j-5q-4wV" kind="presentation" identifier="EditProductSegue" id="9he-rw-70S"/>
                     </connections>
