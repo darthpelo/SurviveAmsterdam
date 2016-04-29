@@ -11,6 +11,7 @@
 		D905AF041C8B688900BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
 		D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF051C8B68D400BF541D /* ModelTests.swift */; };
 		D905AF081C8B691E00BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
+		D91225E51CD260F000903FB3 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91225E41CD260F000903FB3 /* CloudKit.framework */; };
 		D91D1A7B1C938050008992E8 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */; };
 		D93C41B91C92211900DBC5A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93C41B81C92211900DBC5A5 /* Extensions.swift */; };
 		D94C09D91C8B4BC6004256D4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94C09D81C8B4BC6004256D4 /* R.generated.swift */; };
@@ -71,6 +72,8 @@
 		A2E956F80539400BE4C65325 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D905AF031C8B688900BF541D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		D905AF051C8B68D400BF541D /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		D91225E31CD260CA00903FB3 /* SurviveAmsterdam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SurviveAmsterdam.entitlements; sourceTree = "<group>"; };
+		D91225E41CD260F000903FB3 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D91D1A7A1C938050008992E8 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = Product/ViewControllers/ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D93C41B81C92211900DBC5A5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D94C09D81C8B4BC6004256D4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -128,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DBCDC84051FB0C5850CAEE /* Pods.framework in Frameworks */,
+				D91225E51CD260F000903FB3 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 		7FA760C025724AE2F20AA3AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D91225E41CD260F000903FB3 /* CloudKit.framework */,
 				A2E956F80539400BE4C65325 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -231,6 +236,7 @@
 		D9C5309A1C8B3EA800958961 /* SurviveAmsterdam */ = {
 			isa = PBXGroup;
 			children = (
+				D91225E31CD260CA00903FB3 /* SurviveAmsterdam.entitlements */,
 				D9EBC1B21CA9CEAF000F7885 /* Fonts */,
 				D9C530A91C8B3EA800958961 /* Info.plist */,
 				D9CD4B881C95D3FF00047018 /* keys.plist */,
@@ -373,6 +379,11 @@
 					D9C530971C8B3EA800958961 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = GK5S624D99;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					D9C530AD1C8B3EA900958961 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -636,10 +647,11 @@
 			baseConfigurationReference = 0A2337336C8DDB938F140873 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurviveAmsterdam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdam;
+				PRODUCT_BUNDLE_IDENTIFIER = SurviveAmsterdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Test;
@@ -742,11 +754,12 @@
 			baseConfigurationReference = 089AFE7701B5F8CAAFFE7954 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = SurviveAmsterdam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdam;
+				PRODUCT_BUNDLE_IDENTIFIER = SurviveAmsterdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -756,10 +769,11 @@
 			baseConfigurationReference = 0A2337336C8DDB938F140873 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SurviveAmsterdam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.SurviveAmsterdam;
+				PRODUCT_BUNDLE_IDENTIFIER = SurviveAmsterdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

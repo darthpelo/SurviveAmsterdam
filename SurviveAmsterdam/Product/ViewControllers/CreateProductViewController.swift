@@ -143,15 +143,24 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         
         newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
-        do {
-            try ModelManager().saveProduct(newProduct)
-        } catch ModelManagerError.SaveFailed {
-            
-        } catch {
-            
-        }
+        let manager = ModelManager()
         
-        self.navigationController?.popViewControllerAnimated(true)
+        manager.saveProduct(newProduct) { (error) in
+            if (error != nil) {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""),
+                                                        message: NSLocalizedString("cloudkit.auth.error", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.navigationController?.popViewControllerAnimated(true)
+                })
+            }
+        }
     }
     
     private func setShopLabel(shop: NearShop) {
