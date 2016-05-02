@@ -59,7 +59,8 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
             if let vc = segue.destinationViewController as? NearShopsViewController {
                 vc.selectShopAction = { [weak self] shop in
-                    self?.setShopLabel(shop)
+                    guard let strongSelf = self else {return}
+                    strongSelf.setShopLabel(shop)
                 }
             }
         }
@@ -145,19 +146,21 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         
         let manager = ModelManager()
         
-        manager.saveProduct(newProduct) { (error) in
-            if (error != nil) {
+        manager.saveProduct(newProduct) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            
+            if (error == nil) {
+                dispatch_async(dispatch_get_main_queue(), {
+                    strongSelf.navigationController?.popViewControllerAnimated(true)
+                })
+            } else {
                 let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""),
                                                         message: NSLocalizedString("cloudkit.auth.error", comment: ""), preferredStyle: .Alert)
                 let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alertController.addAction(OKAction)
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                })
-            } else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.navigationController?.popViewControllerAnimated(true)
+                    strongSelf.presentViewController(alertController, animated: true, completion: nil)
                 })
             }
         }
