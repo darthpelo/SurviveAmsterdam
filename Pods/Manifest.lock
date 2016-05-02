@@ -6,11 +6,11 @@ PODS:
   - R.swift (2.1.0):
     - R.swift.Library (~> 2.0.0)
   - R.swift.Library (2.0.0)
-  - Realm (0.99.0):
-    - Realm/Headers (= 0.99.0)
-  - Realm/Headers (0.99.0)
-  - RealmSwift (0.99.0):
-    - Realm (= 0.99.0)
+  - Realm (0.100.0):
+    - Realm/Headers (= 0.100.0)
+  - Realm/Headers (0.100.0)
+  - RealmSwift (0.100.0):
+    - Realm (= 0.100.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
   R.swift: efff131531b5cf142e28fd94957806ff71ccbcf2
   R.swift.Library: 9f4b2d12040daa1ffe336d8f7e1574f73721fd01
-  Realm: cf275f109b94e5399896960c90285a043edb3d56
-  RealmSwift: f40e5634bbc74f063163561d02acc4aa040d40a5
+  Realm: b13b548e712d28a66678970c45cd245ebb94ba3b
+  RealmSwift: 1bb0ba2ceaa06b65d740b4f91bfa06e3fd1b805c
 
 COCOAPODS: 0.39.0
