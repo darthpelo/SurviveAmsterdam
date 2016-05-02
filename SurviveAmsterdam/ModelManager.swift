@@ -125,7 +125,9 @@ class ModelManager {
                 realm.add(newProduct)
                 let productRecord = CloudProduct(productRecordID: newProduct.id!,
                     productRecordName: newProduct.name,
-                    productRecordShop: newProduct.shops.first?.name ?? "")
+                    productRecordShopName: newProduct.shops.first?.name ?? "",
+                    productRecordShopAddress: newProduct.shops.first?.address ?? "")
+                
                 saveOnCloudKit(productRecord, completion: { (error) in
                     if error != nil {
                         completion(ModelManagerError.CloudKtFailed)
@@ -169,7 +171,8 @@ extension ModelManager {
     struct CloudProduct {
         let productRecordID:String
         let productRecordName:String
-        let productRecordShop:String
+        let productRecordShopName:String
+        let productRecordShopAddress:String
     }
     
     func saveOnCloudKit(newProduct: CloudProduct, completion: (ModelManagerError?) -> Void ) {
@@ -180,7 +183,8 @@ extension ModelManager {
                 let productRecordID = CKRecordID(recordName: newProduct.productRecordID)
                 let productRecord = CKRecord(recordType: "Product", recordID: productRecordID)
                 productRecord["name"] = newProduct.productRecordName
-                productRecord["shop"] = newProduct.productRecordShop
+                productRecord["shopName"] = newProduct.productRecordShopName
+                productRecord["shopAddress"] = newProduct.productRecordShopAddress
                 //                productRecord["image"] = newProduct.productImage
                 let myContainer = CKContainer.defaultContainer()
                 let privateDatabase = myContainer.privateCloudDatabase
@@ -196,5 +200,32 @@ extension ModelManager {
                 })
             }
         }
+    }
+    
+    func getAllRecords(completionHandler: (ModelManagerError?) -> Void) {
+        let predicate = NSPredicate(value: true)
+        
+        let query =  CKQuery(recordType: "Product", predicate: predicate)
+        
+        let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
+        privateDatabase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) in
+            if (results?.count == 0 || error != nil) {
+                completionHandler(ModelManagerError.CloudKtFailed)
+            } else {
+                let realm = try! Realm()
+
+                results?.forEach({ record in
+                    let product = Product()
+                    let shop = Shop()
+                    shop.setupModel(record["shopName"] as! String, address: record["shopAddress"] as? String, shopImage: nil)
+                    product.setupModel(record["name"] as! String, shop: shop, productImage: nil, productThumbnail: nil)
+                    
+                    try! realm.write {
+                        realm.add(product)
+                    }
+                })
+                completionHandler(nil)
+            }
+        })
     }
 }

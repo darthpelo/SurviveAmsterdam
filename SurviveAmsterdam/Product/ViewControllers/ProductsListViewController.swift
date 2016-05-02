@@ -77,7 +77,20 @@ final class ProductsListViewController: UIViewController {
     private func getProducts() {
         do {
             productsList = try modelManager.getProducts()
-            tableView.reloadData()
+            
+            if productsList?.count == 0 {
+                ModelManager().getAllRecords({ (error) in
+                    if error == nil {
+                        self.productsList = try! self.modelManager.getProducts()
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.tableView.reloadData()
+                        })
+                    }
+                })
+            } else {
+                tableView.reloadData()
+            }
         } catch {}
     }
 }
