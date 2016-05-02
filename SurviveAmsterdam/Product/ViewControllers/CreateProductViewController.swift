@@ -59,7 +59,8 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         if segue.identifier == R.segue.createProductViewController.nearShopsSegue.identifier {
             if let vc = segue.destinationViewController as? NearShopsViewController {
                 vc.selectShopAction = { [weak self] shop in
-                    self?.setShopLabel(shop)
+                    guard let strongSelf = self else {return}
+                    strongSelf.setShopLabel(shop)
                 }
             }
         }
@@ -143,15 +144,26 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
         
         newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
-        do {
-            try ModelManager().saveProduct(newProduct)
-        } catch ModelManagerError.SaveFailed {
-            
-        } catch {
-            
-        }
+        let manager = ModelManager()
         
-        self.navigationController?.popViewControllerAnimated(true)
+        manager.saveProduct(newProduct) { [weak self] (error) in
+            guard let strongSelf = self else { return }
+            
+            if (error == nil) {
+                dispatch_async(dispatch_get_main_queue(), {
+                    strongSelf.navigationController?.popViewControllerAnimated(true)
+                })
+            } else {
+                let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""),
+                                                        message: NSLocalizedString("cloudkit.auth.error", comment: ""), preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OKAction)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    strongSelf.presentViewController(alertController, animated: true, completion: nil)
+                })
+            }
+        }
     }
     
     private func setShopLabel(shop: NearShop) {

@@ -77,8 +77,18 @@ final class ProductsListViewController: UIViewController {
     private func getProducts() {
         do {
             productsList = try modelManager.getProducts()
-            tableView.reloadData()
+            
+            if productsList?.count == 0 {
+                ModelManager().getAllRecords({ [weak self] error in
+                    guard let strongSelf = self else { return }
+                    if error == nil {
+                        strongSelf.productsList = try! strongSelf.modelManager.getProducts()
+                    }
+                })
+            }
         } catch {}
+        
+        tableView.reloadData()
     }
 }
 

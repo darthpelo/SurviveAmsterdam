@@ -7,15 +7,17 @@
 //
 
 import RealmSwift
+import CloudKit
 
 enum ModelManagerError: ErrorType {
     case SaveFailed
     case QueryFailed
     case DeleteFailed
     case UpdateFailed
+    case CloudKtFailed
 }
 
-struct ModelManager {
+class ModelManager {
     func getShops() throws -> Results<(Shop)> {
         do {
             let realm = try Realm()
@@ -115,15 +117,27 @@ struct ModelManager {
         }
     }
     
-    func saveProduct(newProduct: Product) throws {
+    func saveProduct(newProduct: Product, completion: (ModelManagerError?) -> Void ) {
         let realm = try! Realm()
         
         do {
             try realm.write {
                 realm.add(newProduct)
+                let productRecord = CloudProduct(productRecordID: newProduct.id!,
+                    productRecordName: newProduct.name,
+                    productRecordShopName: newProduct.shops.first?.name ?? "",
+                    productRecordShopAddress: newProduct.shops.first?.address ?? "")
+                
+                saveOnCloudKit(productRecord, completion: { (error) in
+                    if error != nil {
+                        completion(ModelManagerError.CloudKtFailed)
+                    } else {
+                        completion(nil)
+                    }
+                })
             }
         } catch {
-            throw ModelManagerError.SaveFailed
+            completion(ModelManagerError.SaveFailed)
         }
     }
     
@@ -150,5 +164,68 @@ struct ModelManager {
         } catch {
             throw ModelManagerError.UpdateFailed
         }
+    }
+}
+
+extension ModelManager {
+    struct CloudProduct {
+        let productRecordID:String
+        let productRecordName:String
+        let productRecordShopName:String
+        let productRecordShopAddress:String
+    }
+    
+    func saveOnCloudKit(newProduct: CloudProduct, completion: (ModelManagerError?) -> Void ) {
+        CKContainer.defaultContainer().accountStatusWithCompletionHandler { (accountStatus, error) in
+            if accountStatus == .NoAccount {
+                completion(ModelManagerError.CloudKtFailed)
+            } else {
+                let productRecordID = CKRecordID(recordName: newProduct.productRecordID)
+                let productRecord = CKRecord(recordType: "Product", recordID: productRecordID)
+                productRecord["name"] = newProduct.productRecordName
+                productRecord["shopName"] = newProduct.productRecordShopName
+                productRecord["shopAddress"] = newProduct.productRecordShopAddress
+                //                productRecord["image"] = newProduct.productImage
+                let myContainer = CKContainer.defaultContainer()
+                let privateDatabase = myContainer.privateCloudDatabase
+                privateDatabase.saveRecord(productRecord, completionHandler: { (productRecord, error) in
+                    if (error == nil) {
+                        print("saved on cloud")
+                        completion(nil)
+                    } else {
+                        print("error")
+                        print(error.debugDescription)
+                        completion(ModelManagerError.CloudKtFailed)
+                    }
+                })
+            }
+        }
+    }
+    
+    func getAllRecords(completionHandler: (ModelManagerError?) -> Void) {
+        let predicate = NSPredicate(value: true)
+        
+        let query =  CKQuery(recordType: "Product", predicate: predicate)
+        
+        let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
+        privateDatabase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) in
+            if (results?.count == 0 || error != nil) {
+                completionHandler(ModelManagerError.CloudKtFailed)
+            } else {
+                let realm = try! Realm()
+
+                results?.forEach({ record in
+                    let product = Product()
+                    let shop = Shop()
+                    shop.setupModel(record["shopName"] as! String, address: record["shopAddress"] as? String, shopImage: nil)
+                    product.setupModel(record["name"] as! String, shop: shop, productImage: nil, productThumbnail: nil)
+                    
+                    try! realm.write {
+                        realm.add(product)
+                    }
+                })
+                completionHandler(nil)
+            }
+        })
     }
 }
