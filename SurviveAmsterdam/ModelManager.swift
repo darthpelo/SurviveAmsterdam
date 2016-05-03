@@ -142,10 +142,10 @@ class ModelManager {
     }
     
     func deleteProcut(product: Product) throws {
+        deleteRecord(product.id!)
         let realm = try! Realm()
         
         do {
-            
             try realm.write {
                 realm.delete(product)
             }
@@ -175,7 +175,34 @@ extension ModelManager {
         let productRecordShopAddress:String
     }
     
-    func saveOnCloudKit(newProduct: CloudProduct, completion: (ModelManagerError?) -> Void ) {
+    func getAllRecords(completionHandler: (ModelManagerError?) -> Void) {
+        let predicate = NSPredicate(value: true)
+        
+        let query =  CKQuery(recordType: "Product", predicate: predicate)
+        
+        let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
+        privateDatabase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) in
+            if (results?.count == 0 || error != nil) {
+                completionHandler(ModelManagerError.CloudKtFailed)
+            } else {
+                let realm = try! Realm()
+
+                results?.forEach({ record in
+                    let product = Product()
+                    let shop = Shop()
+                    shop.setupModel(record["shopName"] as! String, address: record["shopAddress"] as? String, shopImage: nil)
+                    let recordID = record.recordID.recordName
+                    product.setupModelID(recordID, name: record["name"] as! String, shop: shop, productImage: nil, productThumbnail: nil)
+                    try! realm.write {
+                        realm.add(product)
+                    }
+                })
+                completionHandler(nil)
+            }
+        })
+    }
+    
+    private func saveOnCloudKit(newProduct: CloudProduct, completion: (ModelManagerError?) -> Void ) {
         CKContainer.defaultContainer().accountStatusWithCompletionHandler { (accountStatus, error) in
             if accountStatus == .NoAccount {
                 completion(ModelManagerError.CloudKtFailed)
@@ -202,30 +229,10 @@ extension ModelManager {
         }
     }
     
-    func getAllRecords(completionHandler: (ModelManagerError?) -> Void) {
-        let predicate = NSPredicate(value: true)
-        
-        let query =  CKQuery(recordType: "Product", predicate: predicate)
-        
+    private func deleteRecord(id: String) {
         let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
-        privateDatabase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) in
-            if (results?.count == 0 || error != nil) {
-                completionHandler(ModelManagerError.CloudKtFailed)
-            } else {
-                let realm = try! Realm()
-
-                results?.forEach({ record in
-                    let product = Product()
-                    let shop = Shop()
-                    shop.setupModel(record["shopName"] as! String, address: record["shopAddress"] as? String, shopImage: nil)
-                    product.setupModel(record["name"] as! String, shop: shop, productImage: nil, productThumbnail: nil)
-                    
-                    try! realm.write {
-                        realm.add(product)
-                    }
-                })
-                completionHandler(nil)
-            }
-        })
+        privateDatabase.deleteRecordWithID(CKRecordID(recordName: id)) { (recordID, error) in
+            assert(error == nil)
+        }
     }
 }

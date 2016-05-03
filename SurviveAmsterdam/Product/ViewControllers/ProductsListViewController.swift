@@ -34,7 +34,6 @@ final class ProductsListViewController: UIViewController {
     override func viewDidLoad() {
         title = NSLocalizedString("products", comment: "")
         setupSearchBar()
-        getProducts()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -81,9 +80,7 @@ final class ProductsListViewController: UIViewController {
             if productsList?.count == 0 {
                 ModelManager().getAllRecords({ [weak self] error in
                     guard let strongSelf = self else { return }
-                    if error == nil {
-                        strongSelf.productsList = try! strongSelf.modelManager.getProducts()
-                    }
+                    if error == nil { strongSelf.productsList = try! strongSelf.modelManager.getProducts() }
                 })
             }
         } catch {}

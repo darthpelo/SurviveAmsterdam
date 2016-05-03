@@ -142,7 +142,7 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
             self.shop?.setupModel(shopName, address: nil, shopImage: nil)
         }
         
-        newProduct.setupModel(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
+        newProduct.setupModelName(name, shop: shop, productImage: imageData, productThumbnail: thumbnail)
         
         let manager = ModelManager()
         

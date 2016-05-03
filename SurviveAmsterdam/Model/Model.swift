@@ -20,8 +20,19 @@ class Product: Object {
         return "id"
     }
     
-    func setupModel(name:String, shop:Shop?, productImage:NSData?, productThumbnail:NSData?) {
+    func setupModelName(name:String, shop:Shop?, productImage:NSData?, productThumbnail:NSData?) {
         self.id = NSUUID().UUIDString
+        self.name = name
+        self.productImage = productImage
+        self.productThumbnail = productThumbnail
+        
+        if let shop = shop {
+            self.shops.append(shop)
+        }
+    }
+    
+    func setupModelID(id:String, name:String, shop:Shop?, productImage:NSData?, productThumbnail:NSData?) {
+        self.id = id
         self.name = name
         self.productImage = productImage
         self.productThumbnail = productThumbnail
