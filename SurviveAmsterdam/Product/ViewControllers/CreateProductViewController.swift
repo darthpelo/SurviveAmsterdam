@@ -102,7 +102,7 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
             }
             return
         }
-        
+        /*
         guard let thumbnail = photoImageView.convertImageToData() else {
             if #available(iOS 9, *) {
                 let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("add.product.no.name.alert", comment: ""), preferredStyle: .Alert)
@@ -132,10 +132,12 @@ final class CreateProductViewController: UIViewController, UIAlertViewDelegate {
             }
             return
         }
-        
+        */
         let newProduct = Product()
-
-        let imageData = UIImageJPEGRepresentation(image, 1)
+        let thumbnail = photoImageView.convertImageToData()
+        var imageData:NSData?
+        
+        if (productImage != nil) { imageData = UIImageJPEGRepresentation(productImage!, 1) }
         
         if self.shop == nil {
             self.shop = Shop()

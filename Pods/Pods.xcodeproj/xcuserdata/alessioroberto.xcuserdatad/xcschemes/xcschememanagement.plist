@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-SurviveAmsterdam.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SurviveAmsterdamTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3DC9C34E13067FE0927E9764748F12F2</key>
+		<key>3B9FDB1749C117AE16779326725B6B76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>694EA63FBDEE79425478CFA2710B6B58</key>
+		<key>4A446646993EF5DDD68731106BA9F6A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7FA26806CD3A3B7726B736D86A10932</key>
+		<key>8E60835E9765730AADBCC4E6DBC0F8B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A93356AE33F1C736072754DB82D110CC</key>
+		<key>A4E91FE99C9314DBE21777344DAEE8EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDA00293E106CE9FAF4C8E9E08DB6992</key>
+		<key>B31699463D0C93A4D076E467093482E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBD303948D71B09AB912899AF678E5C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

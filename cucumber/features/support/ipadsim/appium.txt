@@ -1,0 +1,9 @@
+[caps]
+platformName = "ios"
+deviceName = "iPad Air"
+platformVersion = "9.3"
+app = "../../KIFTest/build/KIFTest.app.zip"
+
+[appium_lib]
+sauce_username = false
+sauce_access_key = false

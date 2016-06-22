@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4218C969CE24429C6C9E86AF'
+               BlueprintIdentifier = '4A446646993EF5DDD68731106BA9F6A4'
                BlueprintName = 'QuadratTouch'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'QuadratTouch.framework'>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93DBCDC84051FB0C5850CAEE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E956F80539400BE4C65325 /* Pods.framework */; };
+		A14A199693EE9C76552618A9 /* Pods_SurviveAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297EE3B3E5EF776540C05E55 /* Pods_SurviveAmsterdam.framework */; };
 		D905AF041C8B688900BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
 		D905AF061C8B68D400BF541D /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF051C8B68D400BF541D /* ModelTests.swift */; };
 		D905AF081C8B691E00BF541D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D905AF031C8B688900BF541D /* Model.swift */; };
@@ -54,6 +54,7 @@
 		D9EBC1DE1CA9CEC2000F7885 /* SanFranciscoText-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9EBC1C71CA9CEC2000F7885 /* SanFranciscoText-SemiboldItalic.otf */; };
 		D9EBC1DF1CA9CEC2000F7885 /* SanFranciscoText-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9EBC1C81CA9CEC2000F7885 /* SanFranciscoText-Thin.otf */; };
 		D9EBC1E01CA9CEC2000F7885 /* SanFranciscoText-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9EBC1C91CA9CEC2000F7885 /* SanFranciscoText-ThinItalic.otf */; };
+		FE58C646F599BBD33EA14DEE /* Pods_SurviveAmsterdamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505ACE1F2A5007894EF1F513 /* Pods_SurviveAmsterdamTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +68,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		089AFE7701B5F8CAAFFE7954 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		0A2337336C8DDB938F140873 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2014FE0DA31D5F8CF2AAF2AC /* Pods-SurviveAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
+		297EE3B3E5EF776540C05E55 /* Pods_SurviveAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurviveAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505ACE1F2A5007894EF1F513 /* Pods_SurviveAmsterdamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurviveAmsterdamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F00FBD1AD4378BF1ACBE180 /* Pods-SurviveAmsterdamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.release.xcconfig"; sourceTree = "<group>"; };
+		9AA65141A173B992527FDAC2 /* Pods-SurviveAmsterdamTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdamTests.test.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.test.xcconfig"; sourceTree = "<group>"; };
 		A2E956F80539400BE4C65325 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65817A84911EFA62BED4DEC /* Pods-SurviveAmsterdamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D905AF031C8B688900BF541D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		D905AF051C8B68D400BF541D /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		D91225E31CD260CA00903FB3 /* SurviveAmsterdam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SurviveAmsterdam.entitlements; sourceTree = "<group>"; };
@@ -123,6 +128,8 @@
 		D9EBC1C71CA9CEC2000F7885 /* SanFranciscoText-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoText-SemiboldItalic.otf"; path = "Fonts/SanFranciscoText-SemiboldItalic.otf"; sourceTree = SOURCE_ROOT; };
 		D9EBC1C81CA9CEC2000F7885 /* SanFranciscoText-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoText-Thin.otf"; path = "Fonts/SanFranciscoText-Thin.otf"; sourceTree = SOURCE_ROOT; };
 		D9EBC1C91CA9CEC2000F7885 /* SanFranciscoText-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SanFranciscoText-ThinItalic.otf"; path = "Fonts/SanFranciscoText-ThinItalic.otf"; sourceTree = SOURCE_ROOT; };
+		E674445DDA4D9DE9D8A4CE32 /* Pods-SurviveAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdam.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
+		ED0D8AE6957ECC50A8ABB68B /* Pods-SurviveAmsterdam.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurviveAmsterdam.test.xcconfig"; path = "Pods/Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.test.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93DBCDC84051FB0C5850CAEE /* Pods.framework in Frameworks */,
 				D91225E51CD260F000903FB3 /* CloudKit.framework in Frameworks */,
+				A14A199693EE9C76552618A9 /* Pods_SurviveAmsterdam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,26 +146,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE58C646F599BBD33EA14DEE /* Pods_SurviveAmsterdamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43D2FE47B8643B1AC37EF9DA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				089AFE7701B5F8CAAFFE7954 /* Pods.debug.xcconfig */,
-				0A2337336C8DDB938F140873 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7FA760C025724AE2F20AA3AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D91225E41CD260F000903FB3 /* CloudKit.framework */,
 				A2E956F80539400BE4C65325 /* Pods.framework */,
+				297EE3B3E5EF776540C05E55 /* Pods_SurviveAmsterdam.framework */,
+				505ACE1F2A5007894EF1F513 /* Pods_SurviveAmsterdamTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,8 +220,8 @@
 				D9C5309A1C8B3EA800958961 /* SurviveAmsterdam */,
 				D9C530B11C8B3EA900958961 /* SurviveAmsterdamTests */,
 				D9C530991C8B3EA800958961 /* Products */,
-				43D2FE47B8643B1AC37EF9DA /* Pods */,
 				7FA760C025724AE2F20AA3AA /* Frameworks */,
+				FC11D71175F462E09D586EFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,6 +324,19 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		FC11D71175F462E09D586EFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2014FE0DA31D5F8CF2AAF2AC /* Pods-SurviveAmsterdam.debug.xcconfig */,
+				E674445DDA4D9DE9D8A4CE32 /* Pods-SurviveAmsterdam.release.xcconfig */,
+				ED0D8AE6957ECC50A8ABB68B /* Pods-SurviveAmsterdam.test.xcconfig */,
+				C65817A84911EFA62BED4DEC /* Pods-SurviveAmsterdamTests.debug.xcconfig */,
+				8F00FBD1AD4378BF1ACBE180 /* Pods-SurviveAmsterdamTests.release.xcconfig */,
+				9AA65141A173B992527FDAC2 /* Pods-SurviveAmsterdamTests.test.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,14 +344,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9C530C21C8B3EA900958961 /* Build configuration list for PBXNativeTarget "SurviveAmsterdam" */;
 			buildPhases = (
-				A996296E1C0D9504A15602B3 /* Check Pods Manifest.lock */,
+				FFC4DA417BB1CAC5F8C4BDA6 /* 📦 Check Pods Manifest.lock */,
 				D94C09D71C8B4B34004256D4 /* R.Swift */,
 				D9C530941C8B3EA800958961 /* Sources */,
 				D9C530951C8B3EA800958961 /* Frameworks */,
 				D9C530961C8B3EA800958961 /* Resources */,
-				8D2CE76F8E10AFF395C96E2A /* Embed Pods Frameworks */,
-				785FD792CC47839148FFF347 /* Copy Pods Resources */,
+				CD73F8C6D27AC668B587154D /* 📦 Embed Pods Frameworks */,
+				DCE8DF02096EC0ED6CA207CC /* 📦 Copy Pods Resources */,
 				D93C41BA1C922BAF00DBC5A5 /* ShellScript */,
+				D90020591D19E49500F985D8 /* UI Test */,
 			);
 			buildRules = (
 			);
@@ -352,9 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9C530C51C8B3EA900958961 /* Build configuration list for PBXNativeTarget "SurviveAmsterdamTests" */;
 			buildPhases = (
+				B3FB77B2BEAF2CD47786C56B /* 📦 Check Pods Manifest.lock */,
 				D9C530AA1C8B3EA900958961 /* Sources */,
 				D9C530AB1C8B3EA900958961 /* Frameworks */,
 				D9C530AC1C8B3EA900958961 /* Resources */,
+				8ECE2728C8799B206E668FE9 /* 📦 Embed Pods Frameworks */,
+				6DEDA849AFA3457B10C97DF2 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,50 +475,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		785FD792CC47839148FFF347 /* Copy Pods Resources */ = {
+		6DEDA849AFA3457B10C97DF2 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8D2CE76F8E10AFF395C96E2A /* Embed Pods Frameworks */ = {
+		8ECE2728C8799B206E668FE9 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A996296E1C0D9504A15602B3 /* Check Pods Manifest.lock */ = {
+		B3FB77B2BEAF2CD47786C56B /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		CD73F8C6D27AC668B587154D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D90020591D19E49500F985D8 /* UI Test */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "UI Test";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=${PROJECT_DIR}/build\n\nif [ ! -d \"$APP_PATH\" ]; then\nmkdir $APP_PATH\nfi\n\necho ***** Zip ${EXECUTABLE_NAME}.app and move in $APP_PATH *****\n\nzip -r $APP_PATH/${EXECUTABLE_NAME}.app.zip ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\ncd ${PROJECT_DIR}/appium\n\necho ***** Start ruby test script *****\n\nrspec CodeMakerTest.rb";
 		};
 		D93C41BA1C922BAF00DBC5A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -528,6 +575,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"\n";
+		};
+		DCE8DF02096EC0ED6CA207CC /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFC4DA417BB1CAC5F8C4BDA6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -644,7 +721,7 @@
 		};
 		D96290861CA9D4D1003B5097 /* Test */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A2337336C8DDB938F140873 /* Pods.release.xcconfig */;
+			baseConfigurationReference = ED0D8AE6957ECC50A8ABB68B /* Pods-SurviveAmsterdam.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
@@ -658,6 +735,7 @@
 		};
 		D96290871CA9D4D1003B5097 /* Test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AA65141A173B992527FDAC2 /* Pods-SurviveAmsterdamTests.test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SurviveAmsterdamTests/Info.plist;
@@ -751,7 +829,7 @@
 		};
 		D9C530C31C8B3EA900958961 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 089AFE7701B5F8CAAFFE7954 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2014FE0DA31D5F8CF2AAF2AC /* Pods-SurviveAmsterdam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
@@ -766,7 +844,7 @@
 		};
 		D9C530C41C8B3EA900958961 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A2337336C8DDB938F140873 /* Pods.release.xcconfig */;
+			baseConfigurationReference = E674445DDA4D9DE9D8A4CE32 /* Pods-SurviveAmsterdam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SurviveAmsterdam/SurviveAmsterdam.entitlements;
@@ -780,6 +858,7 @@
 		};
 		D9C530C61C8B3EA900958961 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65817A84911EFA62BED4DEC /* Pods-SurviveAmsterdamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SurviveAmsterdamTests/Info.plist;
@@ -792,6 +871,7 @@
 		};
 		D9C530C71C8B3EA900958961 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F00FBD1AD4378BF1ACBE180 /* Pods-SurviveAmsterdamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SurviveAmsterdamTests/Info.plist;
