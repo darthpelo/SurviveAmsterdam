@@ -24,25 +24,24 @@ class NetworkManagerTests: XCTestCase {
     func testAllProducts() {
         let expectation = expectationWithDescription("Waiting to respond")
 
-        networkManager.getAll { (result, error) in
-            XCTAssertNil(result)
+        networkManager.getCount({ (count) in
+            XCTAssertTrue(count > 0)
             expectation.fulfill()
-        }
+        })
+        
         waitForExpectationsWithTimeout(5.0, handler:nil)
     }
     
     func testSaveProduct() {
         let expectation = expectationWithDescription("Waiting to respond")
-        let product = Product(id: 111, name: "test", productImage: nil, productThumbnail: nil)
+        let product = Product(id: 111, name: "test", place: "test", productImage: nil, productThumbnail: nil)
         
-        networkManager.save(product, onCompletition: { (result, error) in
-            XCTAssertNil(error)
-            XCTAssertNotNil(result)
-            XCTAssertTrue(product == result!)
+        networkManager.save(product, onCompletition: { (result) in
+            XCTAssertTrue(result)
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5.0, handler:nil)
+        waitForExpectationsWithTimeout(30.0, handler:nil)
     }
     
 }

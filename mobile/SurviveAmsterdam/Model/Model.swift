@@ -11,6 +11,7 @@ import Foundation
 struct Product:Equatable {
     let id:Int
     let name:String
+    let place:String
     let productImage:NSData?
     let productThumbnail:NSData?
 }
