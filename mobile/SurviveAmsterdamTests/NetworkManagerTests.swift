@@ -21,27 +21,38 @@ class NetworkManagerTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSaveProduct() {
+        let expectation = expectationWithDescription("Waiting to respond")
+        let product = Product(id: 112, name: NSUUID().UUIDString, place: "place", productImage: nil, productThumbnail: nil)
+        
+        networkManager.save(product, userid: "D91A9970-B898-47EB-B644-9C00C6ACA392", onCompletition: { (result) in
+            XCTAssertTrue(result)
+            expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(10.0, handler:nil)
+    }
+    
     func testAllProducts() {
         let expectation = expectationWithDescription("Waiting to respond")
-
+        
         networkManager.getCount({ (count) in
             XCTAssertTrue(count > 0)
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
-    func testSaveProduct() {
+    func testGetProductsForUser() {
         let expectation = expectationWithDescription("Waiting to respond")
-        let product = Product(id: 111, name: "test", place: "test", productImage: nil, productThumbnail: nil)
         
-        networkManager.save(product, onCompletition: { (result) in
-            XCTAssertTrue(result)
+        networkManager.getProducts("D91A9970-B898-47EB-B644-9C00C6ACA393") { (result) in
+            XCTAssertNotNil(result)
             expectation.fulfill()
-        })
+        }
         
-        waitForExpectationsWithTimeout(30.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
 }
