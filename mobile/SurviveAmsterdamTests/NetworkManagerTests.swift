@@ -23,20 +23,21 @@ class NetworkManagerTests: XCTestCase {
     
     func testSaveProduct() {
         let expectation = expectationWithDescription("Waiting to respond")
-        let product = Product(id: 112, name: NSUUID().UUIDString, place: "place", productImage: nil, productThumbnail: nil)
+        let product = Product(id: nil, name: "pippero", place: "place", productImage: nil, productThumbnail: nil)
         
-        networkManager.save(product, userid: "D91A9970-B898-47EB-B644-9C00C6ACA392", onCompletition: { (result) in
+        networkManager.save(product, userid: getUserID(), onCompletition: { (result) in
             XCTAssertTrue(result)
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectationsWithTimeout(30.0, handler:nil)
     }
     
-    func testAllProducts() {
+    func testTotalProducts() {
         let expectation = expectationWithDescription("Waiting to respond")
         
         networkManager.getCount({ (count) in
+            XCTAssertNotNil(count)
             XCTAssertTrue(count > 0)
             expectation.fulfill()
         })
@@ -47,7 +48,18 @@ class NetworkManagerTests: XCTestCase {
     func testGetProductsForUser() {
         let expectation = expectationWithDescription("Waiting to respond")
         
-        networkManager.getProducts("D91A9970-B898-47EB-B644-9C00C6ACA393") { (result) in
+        networkManager.getProducts(userid: getUserID()) { (result) in
+            XCTAssertNotNil(result)
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(10.0, handler:nil)
+    }
+    
+    func testGetProductsForAllUser() {
+        let expectation = expectationWithDescription("Waiting to respond")
+        
+        networkManager.getProducts(userid: nil) { (result) in
             XCTAssertNotNil(result)
             expectation.fulfill()
         }

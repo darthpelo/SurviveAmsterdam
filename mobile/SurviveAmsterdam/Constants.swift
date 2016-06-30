@@ -18,6 +18,10 @@ struct Constants {
         static let newShopsList = "com.alessioroberto.SurviveAmsterdam.newShopsList"
     }
     
+    struct NSUserDefaultsKeys {
+        static let userID = "com.alessioroberto.SurviveAmsterdam.userid"
+    }
+    
     func categoryID() -> String? {
         var keys: NSDictionary?
         
@@ -34,4 +38,6 @@ struct Constants {
         return nil
     }
 }
+
+
 

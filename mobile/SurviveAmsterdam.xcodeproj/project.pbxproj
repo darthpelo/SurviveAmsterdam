@@ -23,6 +23,7 @@
 		D9A398181D1B4327003439D0 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A398171D1B4327003439D0 /* NetworkManagerTests.swift */; };
 		D9A398191D1B434E003439D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A398131D1B427A003439D0 /* NetworkManager.swift */; };
 		D9A649FD1C90D2A8004672D8 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */; };
+		D9B8472D1D246C49005E3F8C /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8472C1D246C49005E3F8C /* ModelTests.swift */; };
 		D9C330831C98BB18008E5A5D /* NearShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */; };
 		D9C5309C1C8B3EA800958961 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5309B1C8B3EA800958961 /* AppDelegate.swift */; };
 		D9C530A31C8B3EA800958961 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C530A11C8B3EA800958961 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		D9A398131D1B427A003439D0 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D9A398171D1B4327003439D0 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		D9A649FC1C90D2A8004672D8 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Extensions/UIViewExtensions.swift; sourceTree = "<group>"; };
+		D9B8472C1D246C49005E3F8C /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		D9C330821C98BB18008E5A5D /* NearShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearShopsViewController.swift; sourceTree = "<group>"; };
 		D9C530981C8B3EA800958961 /* SurviveAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurviveAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C5309B1C8B3EA800958961 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,15 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
+		D9B8472B1D246906005E3F8C /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				D9CD4B8A1C95F18400047018 /* Constants.swift */,
+				D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		D9C5308F1C8B3EA800958961 = {
 			isa = PBXGroup;
 			children = (
@@ -252,8 +263,6 @@
 				D9C530A91C8B3EA800958961 /* Info.plist */,
 				D9CD4B881C95D3FF00047018 /* keys.plist */,
 				D9C5309B1C8B3EA800958961 /* AppDelegate.swift */,
-				D9CD4B8A1C95F18400047018 /* Constants.swift */,
-				D9D54E801CA2064A007805F4 /* FeedbackViewController.swift */,
 				D94C09E21C8B56A5004256D4 /* Localizable.strings */,
 				D9C530A41C8B3EA800958961 /* Assets.xcassets */,
 				D905AF091C8B83F900BF541D /* Extensions */,
@@ -262,6 +271,7 @@
 				D9C530D11C8B48BE00958961 /* Location */,
 				D905AF021C8B685400BF541D /* Model */,
 				D9A398121D1B3D25003439D0 /* Network */,
+				D9B8472B1D246906005E3F8C /* Others */,
 				D9C530CD1C8B487A00958961 /* Product */,
 				D94C09DD1C8B55E3004256D4 /* Storyboard */,
 			);
@@ -273,6 +283,7 @@
 			children = (
 				D9C530B41C8B3EA900958961 /* Info.plist */,
 				D9A398171D1B4327003439D0 /* NetworkManagerTests.swift */,
+				D9B8472C1D246C49005E3F8C /* ModelTests.swift */,
 			);
 			path = SurviveAmsterdamTests;
 			sourceTree = "<group>";
@@ -650,6 +661,7 @@
 				D9A398191D1B434E003439D0 /* NetworkManager.swift in Sources */,
 				D9A398181D1B4327003439D0 /* NetworkManagerTests.swift in Sources */,
 				D905AF081C8B691E00BF541D /* Model.swift in Sources */,
+				D9B8472D1D246C49005E3F8C /* ModelTests.swift in Sources */,
 				D95F77B31C8EADDF00C4C59B /* ModelManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

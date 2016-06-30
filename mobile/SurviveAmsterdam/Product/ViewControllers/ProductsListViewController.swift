@@ -73,17 +73,17 @@ final class ProductsListViewController: UIViewController {
     }
     
     private func getProducts() {
-        network.getAll { [weak self] (result, error) in
-            guard let strongSelf = self else { return }
-            guard let result = result else {
-                print(error)
-                return
-            }
-            strongSelf.productsList = result
-            dispatch_async(dispatch_get_main_queue()) {
-                strongSelf.tableView.reloadData()
-            }
-        }
+//        network.getAll { [weak self] (result, error) in
+//            guard let strongSelf = self else { return }
+//            guard let result = result else {
+//                print(error)
+//                return
+//            }
+//            strongSelf.productsList = result
+//            dispatch_async(dispatch_get_main_queue()) {
+//                strongSelf.tableView.reloadData()
+//            }
+//        }
     }
 }
 

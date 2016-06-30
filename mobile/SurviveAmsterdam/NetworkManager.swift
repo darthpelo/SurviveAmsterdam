@@ -17,9 +17,13 @@ struct endPoints {
     }
     
     struct request {
-        static let sapost = "SAPost"
-        static let count = "Count"
+        static let save = "save"
+        static let count = "count"
         static let products = "products"
+    }
+    
+    struct query {
+        static let userid = "userid"
     }
 }
 
@@ -43,7 +47,7 @@ struct NetworkManager {
                         print("\(#function) : \(#line) : RESPONSE JSON : \(result)")
                         products(result)
                     } else {
-                        print("\(#function) : \(#line) : Problem with the POST")
+                        print("\(#function) : \(#line) : Problem with the GET")
                         products(0)
                     }
                 } catch {
@@ -56,12 +60,14 @@ struct NetworkManager {
         task.resume()
     }
     
-    func getProducts(userid: String, onCompletition:([Product]?)->Void) {
-//        let getBody = "userid=\(userid)"
-        let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.products + "?userid=\(userid)")!)
+    func getProducts(userid userid: String?, onCompletition:([Product]?)->Void) {
+        var query = ""
+        if let userid = userid {
+            query = "?\(endPoints.query.userid)=\(userid)"
+        }
+        let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.products + query)!)
         req.HTTPMethod = endPoints.httpMethods.get
         req.timeoutInterval = 10.0
-//        req.HTTPBody = getBody.dataUsingEncoding(NSUTF8StringEncoding)
         
         let session = NSURLSession.sharedSession()
         
@@ -73,21 +79,18 @@ struct NetworkManager {
                 guard let data = d else { onCompletition(nil); return }
                 do {
                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-                    print(json)
                     if let result = json["products"] as? [[String:AnyObject]] where result.count > 0 {
                         var list:[Product] = []
                         for a in result {
-//                            let userid = a["userid"] as? String
                             let name = a["name"] as? String
                             let place = a["place"] as? String
-//                            let timestamp = a["time"] as? Double
-                            let p = Product(id: 112, name: name!, place: place!, productImage: nil, productThumbnail: nil)
+                            let p = Product(id: nil, name: name!, place: place!, productImage: nil, productThumbnail: nil)
                             list.append(p)
                         }
                         print("\(#function) : \(#line) : RESPONSE JSON : \(json)")
                         onCompletition(list)
                     } else {
-                        print("\(#function) : \(#line) : Problem with the POST")
+                        print("\(#function) : \(#line) : Problem with the GET")
                         onCompletition(nil)
                     }
                 } catch {
@@ -104,9 +107,9 @@ struct NetworkManager {
     func save(product: Product, userid: String, onCompletition: (Bool) -> Void) {
         let postBody = "userid=\(userid)&name=\(product.name)&place=\(product.place)"
         
-        let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.sapost)!)
+        let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.save)!)
         req.HTTPMethod = endPoints.httpMethods.post
-        req.timeoutInterval = 10.0
+        req.timeoutInterval = 30.0
         req.HTTPBody = postBody.dataUsingEncoding(NSUTF8StringEncoding)
         
         let session = NSURLSession.sharedSession()
