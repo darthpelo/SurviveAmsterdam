@@ -1,0 +1,1293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F8BAA88081220E5AEFD18C81027742 /* TouchAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208CF5CDEDC3225733B3842128F174B /* TouchAuthorizer.swift */; };
+		080003B235DA4BAE08AB4DA4E3A044D7 /* Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E6ABE3D091CBD95477C3DD8231619 /* Updates.swift */; };
+		08669F33C036F67DEF11C8808DEAFD18 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9640A9D94BFC93354FCBA554A7CB827 /* FontResource.swift */; };
+		0B8F172B14A5A3D07572EE006E272242 /* QuadratTouch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1A1C2A336E06CF81D9BAB278BF0EE /* QuadratTouch-dummy.m */; };
+		0C88BB55A19E9FC0C4483053804CD1DB /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF183271771EFA9355AC0A1CA888F6 /* UIViewController+NibResource.swift */; };
+		0DD766625928137B243370F332DA3015 /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF1CF0A59A03ED218B1DE9412AACCB0 /* NibResource+UIKit.swift */; };
+		1E69106087FBC3D3567E18B4B0DFB443 /* Multi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22A2058C1FAEB3366AD7BDD6D3859D /* Multi.swift */; };
+		1F3212F3594DDA3D5C3A60EDD187DF16 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4908B4C17C85430B64559D7ED1655 /* UINib+NibResource.swift */; };
+		29C2CD0182FD1B647AA1E14112FF7487 /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067F6F5CE244393C07CE755110A8E03 /* Venues.swift */; };
+		2D7633483A200B84A992CB3D118CA3A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */; };
+		31031998BC792D712C06B3AE97343732 /* Checkins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0395CC43E508A8B32860AE0373D3CE1C /* Checkins.swift */; };
+		313E796BA25C57CBE4C449155D822635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */; };
+		3173D28DADE3518D770EE519D5FCD1A1 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD4C9CF436B0C6E7FE6E9B7E45D260 /* Photos.swift */; };
+		3670BF2306408D526285F01A891363E1 /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE329BB4AB9007D1197B9E3330B3A64F /* UIFont+FontResource.swift */; };
+		36AA201EFF6204E04198413D64FA008D /* NSBundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D2F59E87E9CF48C77C62E76FF3A82 /* NSBundle+FileResource.swift */; };
+		3869FC6EBE29061B31516584DC618219 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BBB377D3138835CF16DB889385312 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
+		41A4F6211BFE94529CA06A947B270063 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF489BEA9307959B00E5BDB1EE26DBA /* ColorResource.swift */; };
+		4405E0E2ACDDDC5A983A0B7A0471640F /* NetworkActivityIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFE0D3568CFEF85CA2A3ABD0DAFBD91 /* NetworkActivityIndicatorController.swift */; };
+		44A243826C1A505D46BD77194A89B78E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F2AD6EEC75D29548390327A1FC950D /* Endpoint.swift */; };
+		46DD5C67D04C35A2ADC5ADE7448556C5 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FA2D2E6F73DBEA6802052F23B644A5 /* Configuration.swift */; };
+		4893281D5C356FE720D3C39EBEA38004 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE242FAD97E5C884E530930456CB1D8 /* Result.swift */; };
+		4A98D812855095C2D3D88F8D0C21C254 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E78D4C7707060D39CDFDBDA3E8C18 /* Validatable.swift */; };
+		4DB2B9240278DBE106DF9885D7BF6F23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */; };
+		4FA49B9E69FA324386F6647782A5EEBD /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD97692CFFAC6BEA88660073FC96BE71 /* Authorization.swift */; };
+		566BB671E73FE4C4E28F88A05C025A3C /* Pods-SurviveAmsterdamTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5BCF373952F4B485450D7ED0147E084 /* Pods-SurviveAmsterdamTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56C97F0B11D00C0F5C68C293EF59E41C /* QuadratTouch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A553AC62982567539CEFA1DFDE643BB1 /* QuadratTouch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5856CE98C09474AC5967136309B55373 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48311505F08B28FCAFF7E7BAD331503 /* Settings.swift */; };
+		5BB60B169451BFDC42B17034788B6686 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E814E1D4892E8666B612FBFEBEDE730 /* Identifier.swift */; };
+		60DC6E83D59356C27E041367878CEDDD /* Pods-SurviveAmsterdamTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A8BEDA8B5E689DAD267575E9D7DE68 /* Pods-SurviveAmsterdamTests-dummy.m */; };
+		6282B3396B3727A7D90385F898B5FF3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */; };
+		62D5FDB9A78F401286ACF57F7074F5A4 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9112DC549AB000BB8982C8C540B0709 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66D9AFF2CF813531FB74A511D2BA4EE7 /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CF0E83E228134B842A62EBFEAA17D /* StoryboardSegueIdentifierProtocol.swift */; };
+		6D3A16BF33A06097F2AF28DC04402625 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE96B0344684CF125BFABCEFFFD269 /* StoryboardViewControllerResource.swift */; };
+		719C711554636882A3C4D0BB05C0B250 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107BB1C827A3B78CF5A5CA4758856C05 /* Logger.swift */; };
+		7A7731F08ACCF7520E680655C0EB8324 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4560DEDC18E92F335172E9CE9586E215 /* Lists.swift */; };
+		7B5FAAE7D9D4B91E855289436EF1B5B2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9077650DC9A7CB3877511F0067B81729 /* Request.swift */; };
+		7EC984B822B16EFCA59CE458CD7D464E /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C4DB1C91822A763C5C84DD76BBD43 /* UIStoryboard+StoryboardViewControllerResource.swift */; };
+		80E201ED629073781A447E121AD45C23 /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD41922C5AA30D4CB02B8669A8CA81 /* NibResource.swift */; };
+		8899603FAEF6CA4AD2F3EFF093F47666 /* NativeTouchAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336B0F6F6FA129DF4809C4F9089B437A /* NativeTouchAuthorizer.swift */; };
+		8E5457251C7639E08FBAC6C2A9A40304 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C4F87D18C0C0B344830CB5329C5EB /* Parameters.swift */; };
+		900CE97BB653693F71DD8112269D8142 /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22370DF073704F3C7BC396AD169E82E1 /* UIStoryboard+StoryboardResource.swift */; };
+		978AD7CAA836379D86C061A73C3025E0 /* VenueGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8B4B6EFB81E9F4667013A9D8DF607 /* VenueGroups.swift */; };
+		9856F349CC9994CDF9CAC38B0C0ECEB0 /* DataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02587BE8FBA24B1D0AC9B416A4EB3370 /* DataCache.swift */; };
+		9AEB95FB16794965D9B94B23BDBD0340 /* AuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9ADC1747216DF1F95D76CE7DA330EA /* AuthorizationViewController.xib */; };
+		9D974719A3AA7C7B27B06DA791C7C94C /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341096D57223E9F75A616D3A4A74577B /* UITableView+ReuseIdentifierProtocol.swift */; };
+		9EA60154147C9402E237F76718F128F6 /* OauthErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA86BE4B7F347B67C20D505070D321 /* OauthErrors.swift */; };
+		A73031EB9534A96A8B16965E32271E92 /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0E8785034DA0C595C14FF7BDD5059 /* StoryboardResource.swift */; };
+		AB62C4561F5D628B26FCB5DB6A50A84D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE5DC5352BFB833218D5F0E5052F6C /* Users.swift */; };
+		ACB932EFA762B693B354B903034336DA /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD355B2731BF8FD69EF5A55308291F /* Keychain.swift */; };
+		B048432A62197BD1815D035D5C25C1E1 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CE285E6EC2FB2ABCA1914667CE450 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
+		B38D301DB24EEFA905C7FF4FC4F1E768 /* Pods-SurviveAmsterdam-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F6DBFB1B809CDBCE21C07FD2370F35 /* Pods-SurviveAmsterdam-dummy.m */; };
+		B55E11298E012E04E16122A758B376F6 /* QuadratTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = E54576B7E8424FF0D706A97F557B73E9 /* QuadratTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B681E6CC8919F2A843C88FB281499624 /* Authorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141031CF15E3AC3F7F0ACE57B704A6C /* Authorizer.swift */; };
+		BD9483DDDF76AC8C55665B91D8B3DF64 /* NSData+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D0A9CD86C0CF2E47CBE2FBECD185F /* NSData+FileResource.swift */; };
+		BF38E70F6FD9D624CA406E93889CD476 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD16B2606CDC4E9E57B79E4AD2B2B77 /* StoryboardResourceWithInitialController+UIKit.swift */; };
+		C1876EAD4B9BC953CE72CC601D233CC1 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFA46F33429DFA3DDFBFCBE62DBF2F /* Events.swift */; };
+		C993E3168F213AFCB1BD9448D0C539D8 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A417EEADF9027A9D85F1518DB43AA3C /* AuthorizationViewController.swift */; };
+		CA1AC9C7E61F9D425C06B8B823EC76A5 /* Specials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26F67B8CD8E02C2D4AABDD06F0E8486 /* Specials.swift */; };
+		CC3220FA71B443A4EE898E40CB212AE6 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 007425A69E4E44F24130FF6D04343A4E /* R.swift.Library-dummy.m */; };
+		CF0911F72A56496CDEC21D547278980B /* Pods-SurviveAmsterdam-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F17E71C44C8332ADC0595A3A4628993F /* Pods-SurviveAmsterdam-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1633F8F92ACEEA1459C38F829D6A877 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7219921F39E1CD4FF9E45687961DA8 /* SystemConfiguration.framework */; };
+		D24DC39CAC3685D64B42FACBF6055B46 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3428AC059F078CD8E77AD0577F249 /* Session.swift */; };
+		D281991DB487F3816ADD3BC224B96B14 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C04A8A5AD91D1A03383426B6248FB0 /* ReuseIdentifierProtocol.swift */; };
+		D70C54521C5A3CF96A4139CC51C6DDC0 /* PageUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D9186B4B17FC9A00629E009FB9F7C /* PageUpdates.swift */; };
+		DBAFA9E72F3CB5C18ADC99D292FF6EB3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B1793BE4EA458656D96A361E46D51 /* Task.swift */; };
+		E10A4D65C220E8A72C0C94B835AAE79D /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79D854C8F1DBFBB879ACF8D6D2E528 /* FileResource.swift */; };
+		ECC000D6AFE1913C4C1AAC690A11E17C /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2304FDE3407C3ED694811711862AF620 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
+		ED9DD4E425417B12B03BBAEC023725D4 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CD483013D22A67C5A28C39D0F2BA0F /* Tips.swift */; };
+		F8F9B330D6CB3C61B20116C53B77B60F /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95FE0BE52B3FE91EDF884BB9323105 /* ImageResource.swift */; };
+		F9514DD6E7F54B84178C0D9AB513C5F5 /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAD3C14044558B779F3F828F6963090 /* UIImage+ImageResource.swift */; };
+		FD90702D449820424ED9E8F097CCDD1A /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DEC4E1A2A52AF8FE80ED5A635F6249 /* Pages.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		568601DA9E99011174CA579D2BA2E4C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 182AAAA34A6841DCE091DAF17F75B05F;
+			remoteInfo = QuadratTouch;
+		};
+		A319374A6C483BA1DDA2DE818F35E052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FB5488CE4A8917E2F66D6982FB04F3;
+			remoteInfo = R.swift.Library;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		004AE778CBA1BBE7D37B1EC28FF9D1F1 /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
+		007425A69E4E44F24130FF6D04343A4E /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
+		00A4908B4C17C85430B64559D7ED1655 /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
+		02587BE8FBA24B1D0AC9B416A4EB3370 /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCache.swift; path = Source/Shared/DataCache.swift; sourceTree = "<group>"; };
+		0395CC43E508A8B32860AE0373D3CE1C /* Checkins.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checkins.swift; path = Source/Shared/Endpoints/Checkins.swift; sourceTree = "<group>"; };
+		081C1EAFE180386EEE835F2C73A064BE /* Pods_SurviveAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurviveAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09EAEE585272CD2E56402CCD0BA96CC8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D3CE285E6EC2FB2ABCA1914667CE450 /* UICollectionView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		0D7219921F39E1CD4FF9E45687961DA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		0F9ADC1747216DF1F95D76CE7DA330EA /* AuthorizationViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AuthorizationViewController.xib; path = Source/iOS/AuthorizationViewController.xib; sourceTree = "<group>"; };
+		107BB1C827A3B78CF5A5CA4758856C05 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Shared/Logger.swift; sourceTree = "<group>"; };
+		12754720166300A0133A87078C45C3E3 /* QuadratTouch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = QuadratTouch.modulemap; sourceTree = "<group>"; };
+		1E6B1793BE4EA458656D96A361E46D51 /* Task.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Source/Shared/Task.swift; sourceTree = "<group>"; };
+		1F21158A9AC8C461886D6DE305038674 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		203D9186B4B17FC9A00629E009FB9F7C /* PageUpdates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageUpdates.swift; path = Source/Shared/Endpoints/PageUpdates.swift; sourceTree = "<group>"; };
+		20B9B1A468C8ABD53BBEEC798AB5F583 /* Pods-SurviveAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
+		2208CF5CDEDC3225733B3842128F174B /* TouchAuthorizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TouchAuthorizer.swift; path = Source/iOS/TouchAuthorizer.swift; sourceTree = "<group>"; };
+		22370DF073704F3C7BC396AD169E82E1 /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
+		2304FDE3407C3ED694811711862AF620 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
+		24F2AD6EEC75D29548390327A1FC950D /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Source/Shared/Endpoints/Endpoint.swift; sourceTree = "<group>"; };
+		281613E0F93243B7951B232C39519B6D /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5F6B8694583624209E7E784FA9515F /* Pods-SurviveAmsterdamTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SurviveAmsterdamTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2D0C4F87D18C0C0B344830CB5329C5EB /* Parameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parameters.swift; path = Source/Shared/Parameters.swift; sourceTree = "<group>"; };
+		2D95FE0BE52B3FE91EDF884BB9323105 /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
+		336B0F6F6FA129DF4809C4F9089B437A /* NativeTouchAuthorizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NativeTouchAuthorizer.swift; path = Source/iOS/NativeTouchAuthorizer.swift; sourceTree = "<group>"; };
+		341096D57223E9F75A616D3A4A74577B /* UITableView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UITableView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		34934039F3930C31BE1625431D47E34A /* Pods-SurviveAmsterdamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdamTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A417EEADF9027A9D85F1518DB43AA3C /* AuthorizationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthorizationViewController.swift; path = Source/iOS/AuthorizationViewController.swift; sourceTree = "<group>"; };
+		3EE242FAD97E5C884E530930456CB1D8 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Shared/Result.swift; sourceTree = "<group>"; };
+		450F2FBFE7C8CC361C2AFC8E97009F16 /* Pods-SurviveAmsterdamTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurviveAmsterdamTests-frameworks.sh"; sourceTree = "<group>"; };
+		4560DEDC18E92F335172E9CE9586E215 /* Lists.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lists.swift; path = Source/Shared/Endpoints/Lists.swift; sourceTree = "<group>"; };
+		58F6DBFB1B809CDBCE21C07FD2370F35 /* Pods-SurviveAmsterdam-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SurviveAmsterdam-dummy.m"; sourceTree = "<group>"; };
+		5B0BBB377D3138835CF16DB889385312 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		5FEFA46F33429DFA3DDFBFCBE62DBF2F /* Events.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Events.swift; path = Source/Shared/Endpoints/Events.swift; sourceTree = "<group>"; };
+		66FA2D2E6F73DBEA6802052F23B644A5 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Source/Shared/Configuration.swift; sourceTree = "<group>"; };
+		67AA6B64392018747B4437AB93080953 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF1CF0A59A03ED218B1DE9412AACCB0 /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
+		6DB0756F9DED9EAC315D1007BF51AE85 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E7AF95ADB183DA94541580931B0290A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		706570758CA3D49EF43A92C0E4F4173D /* Pods-SurviveAmsterdamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		70C80E1A9AC411CB8B348F4FB3D19F0A /* Pods-SurviveAmsterdam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SurviveAmsterdam.modulemap"; sourceTree = "<group>"; };
+		78A8BEDA8B5E689DAD267575E9D7DE68 /* Pods-SurviveAmsterdamTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SurviveAmsterdamTests-dummy.m"; sourceTree = "<group>"; };
+		7C5C4DB1C91822A763C5C84DD76BBD43 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
+		7CD16B2606CDC4E9E57B79E4AD2B2B77 /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
+		7DA301686977BBFC0F9BA2E17B71B763 /* QuadratTouch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = QuadratTouch.xcconfig; sourceTree = "<group>"; };
+		7EAD3C14044558B779F3F828F6963090 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
+		8141031CF15E3AC3F7F0ACE57B704A6C /* Authorizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Authorizer.swift; path = Source/Shared/Authorizer.swift; sourceTree = "<group>"; };
+		8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		89CD483013D22A67C5A28C39D0F2BA0F /* Tips.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tips.swift; path = Source/Shared/Endpoints/Tips.swift; sourceTree = "<group>"; };
+		8A63C099AD75DD5096C30C91003797EA /* QuadratTouch-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QuadratTouch-prefix.pch"; sourceTree = "<group>"; };
+		8E814E1D4892E8666B612FBFEBEDE730 /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
+		8F79D854C8F1DBFBB879ACF8D6D2E528 /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
+		9077650DC9A7CB3877511F0067B81729 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Shared/Request.swift; sourceTree = "<group>"; };
+		90DE96B0344684CF125BFABCEFFFD269 /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
+		92B1A1C2A336E06CF81D9BAB278BF0EE /* QuadratTouch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "QuadratTouch-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95F566F630A88E46D306ABA9B255D24B /* Pods-SurviveAmsterdam-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SurviveAmsterdam-acknowledgements.plist"; sourceTree = "<group>"; };
+		9FCF183271771EFA9355AC0A1CA888F6 /* UIViewController+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+NibResource.swift"; path = "Library/UIKit/UIViewController+NibResource.swift"; sourceTree = "<group>"; };
+		A0835AA5044E0E35CBEA29A8DFA85051 /* QuadratTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuadratTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0EA86BE4B7F347B67C20D505070D321 /* OauthErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OauthErrors.swift; path = Source/Shared/OauthErrors.swift; sourceTree = "<group>"; };
+		A553AC62982567539CEFA1DFDE643BB1 /* QuadratTouch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "QuadratTouch-umbrella.h"; sourceTree = "<group>"; };
+		A5C04A8A5AD91D1A03383426B6248FB0 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseIdentifierProtocol.swift; path = Library/Core/ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		AC22A2058C1FAEB3366AD7BDD6D3859D /* Multi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Multi.swift; path = Source/Shared/Endpoints/Multi.swift; sourceTree = "<group>"; };
+		AF7BB0C8C8B3C3DD11FDB669483983F8 /* Pods-SurviveAmsterdam-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SurviveAmsterdam-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AFEEA58A5EBFC1120828386FE241320E /* Pods-SurviveAmsterdamTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurviveAmsterdamTests-resources.sh"; sourceTree = "<group>"; };
+		AFFE0D3568CFEF85CA2A3ABD0DAFBD91 /* NetworkActivityIndicatorController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkActivityIndicatorController.swift; path = Source/Shared/NetworkActivityIndicatorController.swift; sourceTree = "<group>"; };
+		B1AD7E34D38D2F936125D227EBFC5EE9 /* Pods_SurviveAmsterdamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurviveAmsterdamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1EE5DC5352BFB833218D5F0E5052F6C /* Users.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Source/Shared/Endpoints/Users.swift; sourceTree = "<group>"; };
+		B5BCF373952F4B485450D7ED0147E084 /* Pods-SurviveAmsterdamTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SurviveAmsterdamTests-umbrella.h"; sourceTree = "<group>"; };
+		B6A0E8785034DA0C595C14FF7BDD5059 /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
+		B6BD4C9CF436B0C6E7FE6E9B7E45D260 /* Photos.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Photos.swift; path = Source/Shared/Endpoints/Photos.swift; sourceTree = "<group>"; };
+		B6C4655D5A89AE106BFEF8426031017B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B85D0A9CD86C0CF2E47CBE2FBECD185F /* NSData+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSData+FileResource.swift"; path = "Library/Foundation/NSData+FileResource.swift"; sourceTree = "<group>"; };
+		BD276B519C88B1C9193C24B55418A1B7 /* R.swift.Library.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.xcconfig; sourceTree = "<group>"; };
+		BEC00F09593A7A0CE37C810F6416AB95 /* Pods-SurviveAmsterdam-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurviveAmsterdam-resources.sh"; sourceTree = "<group>"; };
+		C0477571FDB7D04D1BC1007161A60F2F /* Pods-SurviveAmsterdam-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurviveAmsterdam-frameworks.sh"; sourceTree = "<group>"; };
+		C48311505F08B28FCAFF7E7BAD331503 /* Settings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Source/Shared/Endpoints/Settings.swift; sourceTree = "<group>"; };
+		C8C3428AC059F078CD8E77AD0577F249 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Shared/Session.swift; sourceTree = "<group>"; };
+		C9640A9D94BFC93354FCBA554A7CB827 /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Library/Core/FontResource.swift; sourceTree = "<group>"; };
+		C9DD355B2731BF8FD69EF5A55308291F /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Source/Shared/Keychain.swift; sourceTree = "<group>"; };
+		CC6E6ABE3D091CBD95477C3DD8231619 /* Updates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Updates.swift; path = Source/Shared/Endpoints/Updates.swift; sourceTree = "<group>"; };
+		CD97692CFFAC6BEA88660073FC96BE71 /* Authorization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Authorization.swift; path = Source/iOS/Authorization.swift; sourceTree = "<group>"; };
+		D1DEC4E1A2A52AF8FE80ED5A635F6249 /* Pages.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Pages.swift; path = Source/Shared/Endpoints/Pages.swift; sourceTree = "<group>"; };
+		D26F67B8CD8E02C2D4AABDD06F0E8486 /* Specials.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Specials.swift; path = Source/Shared/Endpoints/Specials.swift; sourceTree = "<group>"; };
+		D30D2F59E87E9CF48C77C62E76FF3A82 /* NSBundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+FileResource.swift"; path = "Library/Foundation/NSBundle+FileResource.swift"; sourceTree = "<group>"; };
+		D61475378569CF558032239C598D27C9 /* Pods-SurviveAmsterdamTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SurviveAmsterdamTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D9112DC549AB000BB8982C8C540B0709 /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
+		DD8E78D4C7707060D39CDFDBDA3E8C18 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
+		DFBD41922C5AA30D4CB02B8669A8CA81 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
+		E54576B7E8424FF0D706A97F557B73E9 /* QuadratTouch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuadratTouch.h; path = Source/QuadratTouch/QuadratTouch.h; sourceTree = "<group>"; };
+		EC88A95399CCCF8E2FAF7F5253A62CEA /* Pods-SurviveAmsterdamTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SurviveAmsterdamTests.modulemap"; sourceTree = "<group>"; };
+		ECA1774B369E3A14ADA21A46BA856955 /* R.swift.Library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-prefix.pch"; sourceTree = "<group>"; };
+		EDE517166ADE43C8C8A5C0A3538B4203 /* Pods-SurviveAmsterdamTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdamTests.test.xcconfig"; sourceTree = "<group>"; };
+		EE329BB4AB9007D1197B9E3330B3A64F /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
+		EEF489BEA9307959B00E5BDB1EE26DBA /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
+		EF1A561CA70720F8A9A72ADE3FA49B9D /* Pods-SurviveAmsterdam.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdam.test.xcconfig"; sourceTree = "<group>"; };
+		F067F6F5CE244393C07CE755110A8E03 /* Venues.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Venues.swift; path = Source/Shared/Endpoints/Venues.swift; sourceTree = "<group>"; };
+		F17E71C44C8332ADC0595A3A4628993F /* Pods-SurviveAmsterdam-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SurviveAmsterdam-umbrella.h"; sourceTree = "<group>"; };
+		F33CF0E83E228134B842A62EBFEAA17D /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
+		F6D8B4B6EFB81E9F4667013A9D8DF607 /* VenueGroups.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VenueGroups.swift; path = Source/Shared/Endpoints/VenueGroups.swift; sourceTree = "<group>"; };
+		F9A5CFBC80C71FC069F6F51EE07625BD /* Pods-SurviveAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurviveAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6485D6BF09E444BDFB79B44A7CE60F6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D7633483A200B84A992CB3D118CA3A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D1CCEBCE4CFB2D2A0F25716452F27EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6282B3396B3727A7D90385F898B5FF3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8DA02E1840EC389438AF44751D1399A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB2B9240278DBE106DF9885D7BF6F23 /* Foundation.framework in Frameworks */,
+				D1633F8F92ACEEA1459C38F829D6A877 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B363F8BBF4DE65C9B2FF54B7489F134F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				313E796BA25C57CBE4C449155D822635 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C26B17F79F52AA108C4BAD462AEAEBC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69146C53D088004C8E3630DBED3A06CC /* Pods-SurviveAmsterdam */,
+				677E1C2EFB9D291C0D40BCBC81111937 /* Pods-SurviveAmsterdamTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		23E3E4C8987C4C7FB9F5994E10C07CBA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6DB0756F9DED9EAC315D1007BF51AE85 /* Info.plist */,
+				004AE778CBA1BBE7D37B1EC28FF9D1F1 /* R.swift.Library.modulemap */,
+				BD276B519C88B1C9193C24B55418A1B7 /* R.swift.Library.xcconfig */,
+				007425A69E4E44F24130FF6D04343A4E /* R.swift.Library-dummy.m */,
+				ECA1774B369E3A14ADA21A46BA856955 /* R.swift.Library-prefix.pch */,
+				D9112DC549AB000BB8982C8C540B0709 /* R.swift.Library-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/R.swift.Library";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1D77D531BDDEEE979D1705B7870C1FA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D3FBF181B24848B1D7D845B4C42BB1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F9ADC1747216DF1F95D76CE7DA330EA /* AuthorizationViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4F7D7E811A785E1C8650281710B3C752 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D37F8A40FAECE25B6C665D8E9B5278F /* Crashlytics */,
+				D43EE0D0C959FDF222502EEE3C7A638E /* Fabric */,
+				F4D9F3FAAF3A3CCE64E6EAE6E66FB9BE /* QuadratTouch */,
+				9CA015C08C938F8054D55968E7CD1B02 /* R.swift */,
+				5502F4439464FADEEB0C0EF2812298A5 /* R.swift.Library */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5502F4439464FADEEB0C0EF2812298A5 /* R.swift.Library */ = {
+			isa = PBXGroup;
+			children = (
+				EEF489BEA9307959B00E5BDB1EE26DBA /* ColorResource.swift */,
+				8F79D854C8F1DBFBB879ACF8D6D2E528 /* FileResource.swift */,
+				C9640A9D94BFC93354FCBA554A7CB827 /* FontResource.swift */,
+				8E814E1D4892E8666B612FBFEBEDE730 /* Identifier.swift */,
+				2D95FE0BE52B3FE91EDF884BB9323105 /* ImageResource.swift */,
+				DFBD41922C5AA30D4CB02B8669A8CA81 /* NibResource.swift */,
+				6AF1CF0A59A03ED218B1DE9412AACCB0 /* NibResource+UIKit.swift */,
+				D30D2F59E87E9CF48C77C62E76FF3A82 /* NSBundle+FileResource.swift */,
+				B85D0A9CD86C0CF2E47CBE2FBECD185F /* NSData+FileResource.swift */,
+				A5C04A8A5AD91D1A03383426B6248FB0 /* ReuseIdentifierProtocol.swift */,
+				B6A0E8785034DA0C595C14FF7BDD5059 /* StoryboardResource.swift */,
+				7CD16B2606CDC4E9E57B79E4AD2B2B77 /* StoryboardResourceWithInitialController+UIKit.swift */,
+				F33CF0E83E228134B842A62EBFEAA17D /* StoryboardSegueIdentifierProtocol.swift */,
+				90DE96B0344684CF125BFABCEFFFD269 /* StoryboardViewControllerResource.swift */,
+				2304FDE3407C3ED694811711862AF620 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */,
+				0D3CE285E6EC2FB2ABCA1914667CE450 /* UICollectionView+ReuseIdentifierProtocol.swift */,
+				EE329BB4AB9007D1197B9E3330B3A64F /* UIFont+FontResource.swift */,
+				7EAD3C14044558B779F3F828F6963090 /* UIImage+ImageResource.swift */,
+				00A4908B4C17C85430B64559D7ED1655 /* UINib+NibResource.swift */,
+				22370DF073704F3C7BC396AD169E82E1 /* UIStoryboard+StoryboardResource.swift */,
+				7C5C4DB1C91822A763C5C84DD76BBD43 /* UIStoryboard+StoryboardViewControllerResource.swift */,
+				341096D57223E9F75A616D3A4A74577B /* UITableView+ReuseIdentifierProtocol.swift */,
+				9FCF183271771EFA9355AC0A1CA888F6 /* UIViewController+NibResource.swift */,
+				5B0BBB377D3138835CF16DB889385312 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */,
+				DD8E78D4C7707060D39CDFDBDA3E8C18 /* Validatable.swift */,
+				23E3E4C8987C4C7FB9F5994E10C07CBA /* Support Files */,
+			);
+			path = R.swift.Library;
+			sourceTree = "<group>";
+		};
+		677E1C2EFB9D291C0D40BCBC81111937 /* Pods-SurviveAmsterdamTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6C4655D5A89AE106BFEF8426031017B /* Info.plist */,
+				EC88A95399CCCF8E2FAF7F5253A62CEA /* Pods-SurviveAmsterdamTests.modulemap */,
+				2A5F6B8694583624209E7E784FA9515F /* Pods-SurviveAmsterdamTests-acknowledgements.markdown */,
+				D61475378569CF558032239C598D27C9 /* Pods-SurviveAmsterdamTests-acknowledgements.plist */,
+				78A8BEDA8B5E689DAD267575E9D7DE68 /* Pods-SurviveAmsterdamTests-dummy.m */,
+				450F2FBFE7C8CC361C2AFC8E97009F16 /* Pods-SurviveAmsterdamTests-frameworks.sh */,
+				AFEEA58A5EBFC1120828386FE241320E /* Pods-SurviveAmsterdamTests-resources.sh */,
+				B5BCF373952F4B485450D7ED0147E084 /* Pods-SurviveAmsterdamTests-umbrella.h */,
+				706570758CA3D49EF43A92C0E4F4173D /* Pods-SurviveAmsterdamTests.debug.xcconfig */,
+				34934039F3930C31BE1625431D47E34A /* Pods-SurviveAmsterdamTests.release.xcconfig */,
+				EDE517166ADE43C8C8A5C0A3538B4203 /* Pods-SurviveAmsterdamTests.test.xcconfig */,
+			);
+			name = "Pods-SurviveAmsterdamTests";
+			path = "Target Support Files/Pods-SurviveAmsterdamTests";
+			sourceTree = "<group>";
+		};
+		69146C53D088004C8E3630DBED3A06CC /* Pods-SurviveAmsterdam */ = {
+			isa = PBXGroup;
+			children = (
+				67AA6B64392018747B4437AB93080953 /* Info.plist */,
+				70C80E1A9AC411CB8B348F4FB3D19F0A /* Pods-SurviveAmsterdam.modulemap */,
+				AF7BB0C8C8B3C3DD11FDB669483983F8 /* Pods-SurviveAmsterdam-acknowledgements.markdown */,
+				95F566F630A88E46D306ABA9B255D24B /* Pods-SurviveAmsterdam-acknowledgements.plist */,
+				58F6DBFB1B809CDBCE21C07FD2370F35 /* Pods-SurviveAmsterdam-dummy.m */,
+				C0477571FDB7D04D1BC1007161A60F2F /* Pods-SurviveAmsterdam-frameworks.sh */,
+				BEC00F09593A7A0CE37C810F6416AB95 /* Pods-SurviveAmsterdam-resources.sh */,
+				F17E71C44C8332ADC0595A3A4628993F /* Pods-SurviveAmsterdam-umbrella.h */,
+				20B9B1A468C8ABD53BBEEC798AB5F583 /* Pods-SurviveAmsterdam.debug.xcconfig */,
+				F9A5CFBC80C71FC069F6F51EE07625BD /* Pods-SurviveAmsterdam.release.xcconfig */,
+				EF1A561CA70720F8A9A72ADE3FA49B9D /* Pods-SurviveAmsterdam.test.xcconfig */,
+			);
+			name = "Pods-SurviveAmsterdam";
+			path = "Target Support Files/Pods-SurviveAmsterdam";
+			sourceTree = "<group>";
+		};
+		744015B770B5F7BE63DECC22D3A332A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E7AF95ADB183DA94541580931B0290A /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D37F8A40FAECE25B6C665D8E9B5278F /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				744015B770B5F7BE63DECC22D3A332A7 /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				4F7D7E811A785E1C8650281710B3C752 /* Pods */,
+				C3532E17FA5E5A1A9A050D8045CF34C1 /* Products */,
+				0C26B17F79F52AA108C4BAD462AEAEBC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7ED305B0381BCA73B78A2E47323FEF2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F21158A9AC8C461886D6DE305038674 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CA015C08C938F8054D55968E7CD1B02 /* R.swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = R.swift;
+			sourceTree = "<group>";
+		};
+		B1D77D531BDDEEE979D1705B7870C1FA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8300F47EEB39E49255907D5DFC5B2A48 /* Foundation.framework */,
+				0D7219921F39E1CD4FF9E45687961DA8 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C3532E17FA5E5A1A9A050D8045CF34C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				081C1EAFE180386EEE835F2C73A064BE /* Pods_SurviveAmsterdam.framework */,
+				B1AD7E34D38D2F936125D227EBFC5EE9 /* Pods_SurviveAmsterdamTests.framework */,
+				A0835AA5044E0E35CBEA29A8DFA85051 /* QuadratTouch.framework */,
+				281613E0F93243B7951B232C39519B6D /* Rswift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D22EF61F9B6F9AEB9C67A000A479D242 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				09EAEE585272CD2E56402CCD0BA96CC8 /* Info.plist */,
+				12754720166300A0133A87078C45C3E3 /* QuadratTouch.modulemap */,
+				7DA301686977BBFC0F9BA2E17B71B763 /* QuadratTouch.xcconfig */,
+				92B1A1C2A336E06CF81D9BAB278BF0EE /* QuadratTouch-dummy.m */,
+				8A63C099AD75DD5096C30C91003797EA /* QuadratTouch-prefix.pch */,
+				A553AC62982567539CEFA1DFDE643BB1 /* QuadratTouch-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/QuadratTouch";
+			sourceTree = "<group>";
+		};
+		D43EE0D0C959FDF222502EEE3C7A638E /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				7ED305B0381BCA73B78A2E47323FEF2A /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		F4D9F3FAAF3A3CCE64E6EAE6E66FB9BE /* QuadratTouch */ = {
+			isa = PBXGroup;
+			children = (
+				CD97692CFFAC6BEA88660073FC96BE71 /* Authorization.swift */,
+				3A417EEADF9027A9D85F1518DB43AA3C /* AuthorizationViewController.swift */,
+				8141031CF15E3AC3F7F0ACE57B704A6C /* Authorizer.swift */,
+				0395CC43E508A8B32860AE0373D3CE1C /* Checkins.swift */,
+				66FA2D2E6F73DBEA6802052F23B644A5 /* Configuration.swift */,
+				02587BE8FBA24B1D0AC9B416A4EB3370 /* DataCache.swift */,
+				24F2AD6EEC75D29548390327A1FC950D /* Endpoint.swift */,
+				5FEFA46F33429DFA3DDFBFCBE62DBF2F /* Events.swift */,
+				C9DD355B2731BF8FD69EF5A55308291F /* Keychain.swift */,
+				4560DEDC18E92F335172E9CE9586E215 /* Lists.swift */,
+				107BB1C827A3B78CF5A5CA4758856C05 /* Logger.swift */,
+				AC22A2058C1FAEB3366AD7BDD6D3859D /* Multi.swift */,
+				336B0F6F6FA129DF4809C4F9089B437A /* NativeTouchAuthorizer.swift */,
+				AFFE0D3568CFEF85CA2A3ABD0DAFBD91 /* NetworkActivityIndicatorController.swift */,
+				A0EA86BE4B7F347B67C20D505070D321 /* OauthErrors.swift */,
+				D1DEC4E1A2A52AF8FE80ED5A635F6249 /* Pages.swift */,
+				203D9186B4B17FC9A00629E009FB9F7C /* PageUpdates.swift */,
+				2D0C4F87D18C0C0B344830CB5329C5EB /* Parameters.swift */,
+				B6BD4C9CF436B0C6E7FE6E9B7E45D260 /* Photos.swift */,
+				E54576B7E8424FF0D706A97F557B73E9 /* QuadratTouch.h */,
+				9077650DC9A7CB3877511F0067B81729 /* Request.swift */,
+				3EE242FAD97E5C884E530930456CB1D8 /* Result.swift */,
+				C8C3428AC059F078CD8E77AD0577F249 /* Session.swift */,
+				C48311505F08B28FCAFF7E7BAD331503 /* Settings.swift */,
+				D26F67B8CD8E02C2D4AABDD06F0E8486 /* Specials.swift */,
+				1E6B1793BE4EA458656D96A361E46D51 /* Task.swift */,
+				89CD483013D22A67C5A28C39D0F2BA0F /* Tips.swift */,
+				2208CF5CDEDC3225733B3842128F174B /* TouchAuthorizer.swift */,
+				CC6E6ABE3D091CBD95477C3DD8231619 /* Updates.swift */,
+				B1EE5DC5352BFB833218D5F0E5052F6C /* Users.swift */,
+				F6D8B4B6EFB81E9F4667013A9D8DF607 /* VenueGroups.swift */,
+				F067F6F5CE244393C07CE755110A8E03 /* Venues.swift */,
+				4D3FBF181B24848B1D7D845B4C42BB1D /* Resources */,
+				D22EF61F9B6F9AEB9C67A000A479D242 /* Support Files */,
+			);
+			path = QuadratTouch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		122E130B23925AE67505DD52283A9CC6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				566BB671E73FE4C4E28F88A05C025A3C /* Pods-SurviveAmsterdamTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28DFF0BA53B509059BC45B84618E24A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56C97F0B11D00C0F5C68C293EF59E41C /* QuadratTouch-umbrella.h in Headers */,
+				B55E11298E012E04E16122A758B376F6 /* QuadratTouch.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F27FEF4F9785FF2C2B913AF8B96847C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62D5FDB9A78F401286ACF57F7074F5A4 /* R.swift.Library-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACCF6F2B9859C780D3BCA056950FB6D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0911F72A56496CDEC21D547278980B /* Pods-SurviveAmsterdam-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		182AAAA34A6841DCE091DAF17F75B05F /* QuadratTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2368AB1603E89F115C6211B6B5F4F91E /* Build configuration list for PBXNativeTarget "QuadratTouch" */;
+			buildPhases = (
+				65AF7837ECF61BEB4E45757D11551C3F /* Sources */,
+				A8DA02E1840EC389438AF44751D1399A /* Frameworks */,
+				28DFF0BA53B509059BC45B84618E24A2 /* Headers */,
+				4D85175E5DFE45EF6607CA9470DDE3D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuadratTouch;
+			productName = QuadratTouch;
+			productReference = A0835AA5044E0E35CBEA29A8DFA85051 /* QuadratTouch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		48A397F578437FAB5920FA08B2D68E4D /* Pods-SurviveAmsterdam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CA057B063C2DD009927B4FD03AC3C8 /* Build configuration list for PBXNativeTarget "Pods-SurviveAmsterdam" */;
+			buildPhases = (
+				32091A00C336A5A73E23546DB16D3366 /* Sources */,
+				6485D6BF09E444BDFB79B44A7CE60F6A /* Frameworks */,
+				EACCF6F2B9859C780D3BCA056950FB6D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8539822D6358E70DD07C93A2433F7BAF /* PBXTargetDependency */,
+				58597BC434A9D858260D965E83DEC760 /* PBXTargetDependency */,
+			);
+			name = "Pods-SurviveAmsterdam";
+			productName = "Pods-SurviveAmsterdam";
+			productReference = 081C1EAFE180386EEE835F2C73A064BE /* Pods_SurviveAmsterdam.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A4E91FE99C9314DBE21777344DAEE8EE /* Pods-SurviveAmsterdamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 502E965FEEC880198DA90F094F1909F7 /* Build configuration list for PBXNativeTarget "Pods-SurviveAmsterdamTests" */;
+			buildPhases = (
+				CB1A1E60031FD536E9D8604350CE48D8 /* Sources */,
+				B363F8BBF4DE65C9B2FF54B7489F134F /* Frameworks */,
+				122E130B23925AE67505DD52283A9CC6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SurviveAmsterdamTests";
+			productName = "Pods-SurviveAmsterdamTests";
+			productReference = B1AD7E34D38D2F936125D227EBFC5EE9 /* Pods_SurviveAmsterdamTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C9FB5488CE4A8917E2F66D6982FB04F3 /* R.swift.Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 620730D174DC91D53E0BD1BB7D8511F2 /* Build configuration list for PBXNativeTarget "R.swift.Library" */;
+			buildPhases = (
+				F604F4AD06AACC7840FB03AAAB1C541A /* Sources */,
+				6D1CCEBCE4CFB2D2A0F25716452F27EF /* Frameworks */,
+				6F27FEF4F9785FF2C2B913AF8B96847C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = R.swift.Library;
+			productName = R.swift.Library;
+			productReference = 281613E0F93243B7951B232C39519B6D /* Rswift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C3532E17FA5E5A1A9A050D8045CF34C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48A397F578437FAB5920FA08B2D68E4D /* Pods-SurviveAmsterdam */,
+				A4E91FE99C9314DBE21777344DAEE8EE /* Pods-SurviveAmsterdamTests */,
+				182AAAA34A6841DCE091DAF17F75B05F /* QuadratTouch */,
+				C9FB5488CE4A8917E2F66D6982FB04F3 /* R.swift.Library */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D85175E5DFE45EF6607CA9470DDE3D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEB95FB16794965D9B94B23BDBD0340 /* AuthorizationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32091A00C336A5A73E23546DB16D3366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B38D301DB24EEFA905C7FF4FC4F1E768 /* Pods-SurviveAmsterdam-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65AF7837ECF61BEB4E45757D11551C3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FA49B9E69FA324386F6647782A5EEBD /* Authorization.swift in Sources */,
+				C993E3168F213AFCB1BD9448D0C539D8 /* AuthorizationViewController.swift in Sources */,
+				B681E6CC8919F2A843C88FB281499624 /* Authorizer.swift in Sources */,
+				31031998BC792D712C06B3AE97343732 /* Checkins.swift in Sources */,
+				46DD5C67D04C35A2ADC5ADE7448556C5 /* Configuration.swift in Sources */,
+				9856F349CC9994CDF9CAC38B0C0ECEB0 /* DataCache.swift in Sources */,
+				44A243826C1A505D46BD77194A89B78E /* Endpoint.swift in Sources */,
+				C1876EAD4B9BC953CE72CC601D233CC1 /* Events.swift in Sources */,
+				ACB932EFA762B693B354B903034336DA /* Keychain.swift in Sources */,
+				7A7731F08ACCF7520E680655C0EB8324 /* Lists.swift in Sources */,
+				719C711554636882A3C4D0BB05C0B250 /* Logger.swift in Sources */,
+				1E69106087FBC3D3567E18B4B0DFB443 /* Multi.swift in Sources */,
+				8899603FAEF6CA4AD2F3EFF093F47666 /* NativeTouchAuthorizer.swift in Sources */,
+				4405E0E2ACDDDC5A983A0B7A0471640F /* NetworkActivityIndicatorController.swift in Sources */,
+				9EA60154147C9402E237F76718F128F6 /* OauthErrors.swift in Sources */,
+				FD90702D449820424ED9E8F097CCDD1A /* Pages.swift in Sources */,
+				D70C54521C5A3CF96A4139CC51C6DDC0 /* PageUpdates.swift in Sources */,
+				8E5457251C7639E08FBAC6C2A9A40304 /* Parameters.swift in Sources */,
+				3173D28DADE3518D770EE519D5FCD1A1 /* Photos.swift in Sources */,
+				0B8F172B14A5A3D07572EE006E272242 /* QuadratTouch-dummy.m in Sources */,
+				7B5FAAE7D9D4B91E855289436EF1B5B2 /* Request.swift in Sources */,
+				4893281D5C356FE720D3C39EBEA38004 /* Result.swift in Sources */,
+				D24DC39CAC3685D64B42FACBF6055B46 /* Session.swift in Sources */,
+				5856CE98C09474AC5967136309B55373 /* Settings.swift in Sources */,
+				CA1AC9C7E61F9D425C06B8B823EC76A5 /* Specials.swift in Sources */,
+				DBAFA9E72F3CB5C18ADC99D292FF6EB3 /* Task.swift in Sources */,
+				ED9DD4E425417B12B03BBAEC023725D4 /* Tips.swift in Sources */,
+				00F8BAA88081220E5AEFD18C81027742 /* TouchAuthorizer.swift in Sources */,
+				080003B235DA4BAE08AB4DA4E3A044D7 /* Updates.swift in Sources */,
+				AB62C4561F5D628B26FCB5DB6A50A84D /* Users.swift in Sources */,
+				978AD7CAA836379D86C061A73C3025E0 /* VenueGroups.swift in Sources */,
+				29C2CD0182FD1B647AA1E14112FF7487 /* Venues.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1A1E60031FD536E9D8604350CE48D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DC6E83D59356C27E041367878CEDDD /* Pods-SurviveAmsterdamTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F604F4AD06AACC7840FB03AAAB1C541A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A4F6211BFE94529CA06A947B270063 /* ColorResource.swift in Sources */,
+				E10A4D65C220E8A72C0C94B835AAE79D /* FileResource.swift in Sources */,
+				08669F33C036F67DEF11C8808DEAFD18 /* FontResource.swift in Sources */,
+				5BB60B169451BFDC42B17034788B6686 /* Identifier.swift in Sources */,
+				F8F9B330D6CB3C61B20116C53B77B60F /* ImageResource.swift in Sources */,
+				0DD766625928137B243370F332DA3015 /* NibResource+UIKit.swift in Sources */,
+				80E201ED629073781A447E121AD45C23 /* NibResource.swift in Sources */,
+				36AA201EFF6204E04198413D64FA008D /* NSBundle+FileResource.swift in Sources */,
+				BD9483DDDF76AC8C55665B91D8B3DF64 /* NSData+FileResource.swift in Sources */,
+				CC3220FA71B443A4EE898E40CB212AE6 /* R.swift.Library-dummy.m in Sources */,
+				D281991DB487F3816ADD3BC224B96B14 /* ReuseIdentifierProtocol.swift in Sources */,
+				A73031EB9534A96A8B16965E32271E92 /* StoryboardResource.swift in Sources */,
+				BF38E70F6FD9D624CA406E93889CD476 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */,
+				66D9AFF2CF813531FB74A511D2BA4EE7 /* StoryboardSegueIdentifierProtocol.swift in Sources */,
+				6D3A16BF33A06097F2AF28DC04402625 /* StoryboardViewControllerResource.swift in Sources */,
+				ECC000D6AFE1913C4C1AAC690A11E17C /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */,
+				B048432A62197BD1815D035D5C25C1E1 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */,
+				3670BF2306408D526285F01A891363E1 /* UIFont+FontResource.swift in Sources */,
+				F9514DD6E7F54B84178C0D9AB513C5F5 /* UIImage+ImageResource.swift in Sources */,
+				1F3212F3594DDA3D5C3A60EDD187DF16 /* UINib+NibResource.swift in Sources */,
+				900CE97BB653693F71DD8112269D8142 /* UIStoryboard+StoryboardResource.swift in Sources */,
+				7EC984B822B16EFCA59CE458CD7D464E /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */,
+				9D974719A3AA7C7B27B06DA791C7C94C /* UITableView+ReuseIdentifierProtocol.swift in Sources */,
+				0C88BB55A19E9FC0C4483053804CD1DB /* UIViewController+NibResource.swift in Sources */,
+				3869FC6EBE29061B31516584DC618219 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */,
+				4A98D812855095C2D3D88F8D0C21C254 /* Validatable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58597BC434A9D858260D965E83DEC760 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = R.swift.Library;
+			target = C9FB5488CE4A8917E2F66D6982FB04F3 /* R.swift.Library */;
+			targetProxy = A319374A6C483BA1DDA2DE818F35E052 /* PBXContainerItemProxy */;
+		};
+		8539822D6358E70DD07C93A2433F7BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QuadratTouch;
+			target = 182AAAA34A6841DCE091DAF17F75B05F /* QuadratTouch */;
+			targetProxy = 568601DA9E99011174CA579D2BA2E4C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		034014829C1E4434983CF3A690C12017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0949B16CEDA0154063122F9ECA22283A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD276B519C88B1C9193C24B55418A1B7 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		19074473C43A2CFBA2AF38E7127A0E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9A5CFBC80C71FC069F6F51EE07625BD /* Pods-SurviveAmsterdam.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdam/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdam;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1F99CA9435B67D697921EE6F9AD46508 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF1A561CA70720F8A9A72ADE3FA49B9D /* Pods-SurviveAmsterdam.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdam/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdam;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		2307D3D81388D38B8A899C381272E2ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA301686977BBFC0F9BA2E17B71B763 /* QuadratTouch.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QuadratTouch/QuadratTouch-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QuadratTouch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QuadratTouch/QuadratTouch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = QuadratTouch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2FBA6A57B5B66F083A4297432C202BEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34934039F3930C31BE1625431D47E34A /* Pods-SurviveAmsterdamTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdamTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		43A2F31482EE3D6127A2C19DFBD6196E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20B9B1A468C8ABD53BBEEC798AB5F583 /* Pods-SurviveAmsterdam.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdam/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdam/Pods-SurviveAmsterdam.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdam;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		54EA111446D466CB2DF974AB51C8D90A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD276B519C88B1C9193C24B55418A1B7 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		81A6C29CBFFF7F62E44010DE24167AA9 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA301686977BBFC0F9BA2E17B71B763 /* QuadratTouch.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QuadratTouch/QuadratTouch-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QuadratTouch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QuadratTouch/QuadratTouch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = QuadratTouch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		856B8579259286834C5AB7C12E7C72E1 /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Test;
+		};
+		85EBC772D3A074E3D10B5CA11FF62255 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD276B519C88B1C9193C24B55418A1B7 /* R.swift.Library.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/R.swift.Library/R.swift.Library-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/R.swift.Library/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/R.swift.Library/R.swift.Library.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rswift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		9BF7E7D64F63795F08583C593953D4FD /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDE517166ADE43C8C8A5C0A3538B4203 /* Pods-SurviveAmsterdamTests.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdamTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		B83BC219409A005F055123D861A14D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA301686977BBFC0F9BA2E17B71B763 /* QuadratTouch.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/QuadratTouch/QuadratTouch-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/QuadratTouch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/QuadratTouch/QuadratTouch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = QuadratTouch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BBDEE9C16D6DB1AD60B05600A73D34B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 706570758CA3D49EF43A92C0E4F4173D /* Pods-SurviveAmsterdamTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SurviveAmsterdamTests/Pods-SurviveAmsterdamTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SurviveAmsterdamTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2368AB1603E89F115C6211B6B5F4F91E /* Build configuration list for PBXNativeTarget "QuadratTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2307D3D81388D38B8A899C381272E2ED /* Debug */,
+				B83BC219409A005F055123D861A14D1D /* Release */,
+				81A6C29CBFFF7F62E44010DE24167AA9 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034014829C1E4434983CF3A690C12017 /* Debug */,
+				C7E474A03CAE21F1CB6046E7344C59BD /* Release */,
+				856B8579259286834C5AB7C12E7C72E1 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		502E965FEEC880198DA90F094F1909F7 /* Build configuration list for PBXNativeTarget "Pods-SurviveAmsterdamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBDEE9C16D6DB1AD60B05600A73D34B9 /* Debug */,
+				2FBA6A57B5B66F083A4297432C202BEF /* Release */,
+				9BF7E7D64F63795F08583C593953D4FD /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		620730D174DC91D53E0BD1BB7D8511F2 /* Build configuration list for PBXNativeTarget "R.swift.Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54EA111446D466CB2DF974AB51C8D90A /* Debug */,
+				0949B16CEDA0154063122F9ECA22283A /* Release */,
+				85EBC772D3A074E3D10B5CA11FF62255 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CA057B063C2DD009927B4FD03AC3C8 /* Build configuration list for PBXNativeTarget "Pods-SurviveAmsterdam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43A2F31482EE3D6127A2C19DFBD6196E /* Debug */,
+				19074473C43A2CFBA2AF38E7127A0E11 /* Release */,
+				1F99CA9435B67D697921EE6F9AD46508 /* Test */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
