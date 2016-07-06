@@ -27,6 +27,10 @@ struct endPoints {
     }
 }
 
+enum ResponseCode:String {
+    case OK, NOK, PRS
+}
+
 struct NetworkManager {
     func getCount(products:(Int) -> Void) {
         let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.count)!)
@@ -109,7 +113,7 @@ struct NetworkManager {
         
         let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.save)!)
         req.HTTPMethod = endPoints.httpMethods.post
-        req.timeoutInterval = 30.0
+        req.timeoutInterval = 10.0
         req.HTTPBody = postBody.dataUsingEncoding(NSUTF8StringEncoding)
         
         let session = NSURLSession.sharedSession()
@@ -123,11 +127,20 @@ struct NetworkManager {
                 guard let data = d else { onCompletition(false); return }
                 do {
                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-                    if let result = json["result"] as? String where result == "OK" {
-                        print("\(#function) : \(#line) : RESPONSE JSON : \(json)")
-                        onCompletition(true)
+                    if let result = json["result"] as? String {
+                        switch result {
+                        case ResponseCode.OK.rawValue:
+                            print("\(#function) : \(#line) : RESPONSE JSON : \(json)")
+                            onCompletition(true)
+                        case ResponseCode.PRS.rawValue:
+                            print("\(#function) : \(#line) : Duplicate item")
+                            onCompletition(false)
+                        default:
+                            print("\(#function) : \(#line) : Problem with the POST")
+                            onCompletition(false)
+                        }
                     } else {
-                        print("\(#function) : \(#line) : Problem with the POST")
+                        print("\(#function) : \(#line) : Problem with the Response")
                         onCompletition(false)
                     }
                 } catch {
