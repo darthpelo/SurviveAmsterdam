@@ -37,7 +37,7 @@ final class ProductsListViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         if searchProductList == nil { getProducts() }
     }
 
@@ -46,9 +46,9 @@ final class ProductsListViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
             let indexPath = tableView.indexPathForSelectedRow {
-//            let list = searchProductList != nil ? searchProductList : productsList
+            let list = searchProductList != nil ? searchProductList : productsList
             if let vc = segue.destinationViewController as? ProductDetailViewController {
-//                let product = list![indexPath.row]
+                let product = list![indexPath.row]
 //                vc.productId = product.id
             }
         }
@@ -73,7 +73,7 @@ final class ProductsListViewController: UIViewController {
     }
     
     private func getProducts() {
-        network.getProducts(userid: getUserID()) { [weak self](result) in
+        network.getProducts(userid: nil) { [weak self](result) in
             guard let strongSelf = self else { return }
             guard let result = result else { return }
             
@@ -86,34 +86,33 @@ final class ProductsListViewController: UIViewController {
 }
 
 extension ProductsListViewController: UITableViewDataSource {    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            if let product = productsList?[indexPath.row] {
-                do {
-//                    try modelManager.deleteProcut(product)
-                    tableView.reloadData()
-                } catch ModelManagerError.DeleteFailed {
-                    print(ErrorType)
-                } catch {}
-            }
-        }
-    }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+//            // handle delete (by removing the data from your array and updating the tableview)
+//            if let product = productsList?[indexPath.row] {
+//                do {
+////                    try modelManager.deleteProcut(product)
+//                    tableView.reloadData()
+//                } catch ModelManagerError.DeleteFailed {
+//                    print(ErrorType)
+//                } catch {}
+//            }
+//        }
+//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return searchProductList?.count ?? (productsList?.count ?? 0)
-        return 0
+        return searchProductList?.count ?? (productsList?.count ?? 0)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.productCell.identifier, forIndexPath: indexPath) as! ProductCell
         
-//        let productsList = searchProductList != nil ? searchProductList : self.productsList
+        let productsList = searchProductList != nil ? searchProductList : self.productsList
         
         let product = productsList![indexPath.row]
         
         cell.productNameLabel.text = product.name
-//        cell.shopNameLabel.text = product.shops.first?.name
+        cell.shopNameLabel.text = product.place
         
         if let image = product.productThumbnail {
             cell.thumbView.image = UIImage(data: image)?.resizeByWidth(cell.thumbView.bounds.width)
