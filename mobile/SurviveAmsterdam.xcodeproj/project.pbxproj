@@ -570,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_PATH=${PROJECT_DIR}/build\n\nif [ ! -d \"$APP_PATH\" ]; then\nmkdir $APP_PATH\nfi\n\necho ***** Zip ${EXECUTABLE_NAME}.app and move in $APP_PATH *****\n\nzip -r $APP_PATH/${EXECUTABLE_NAME}.app.zip ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\ncd ${PROJECT_DIR}/appium\n\necho ***** Start ruby test script *****\n\n#rspec CodeMakerTest.rb";
+			shellScript = "APP_PATH=${PROJECT_DIR}/build\n\nif [ ! -d \"$APP_PATH\" ]; then\nmkdir $APP_PATH\nfi\n\necho ***** Zip ${EXECUTABLE_NAME}.app and move in $APP_PATH *****\n\nzip -r $APP_PATH/${EXECUTABLE_NAME}.app.zip ${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\ncd ${PROJECT_DIR}/appium\n\n#echo ***** Start ruby test script *****\n\n#rspec CodeMakerTest.rb";
 		};
 		D93C41BA1C922BAF00DBC5A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
