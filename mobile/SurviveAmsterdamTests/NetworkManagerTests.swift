@@ -67,4 +67,21 @@ class NetworkManagerTests: XCTestCase {
         waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
+    func testDeteleProduct() {
+        let expectation = expectationWithDescription("Waiting to respond")
+        
+        let product = Product(id: nil, name: "test", place: "place", productImage: nil, productThumbnail: nil)
+        
+        networkManager.save(product, userid: getUserID(), onCompletition: { [weak self] (result) in
+            XCTAssertTrue(result)
+            
+            self!.networkManager.delete(product, userid: getUserID()) { (result) in
+                XCTAssertTrue(result)
+                expectation.fulfill()
+            }
+        })
+        
+        waitForExpectationsWithTimeout(10.0, handler:nil)
+    }
+    
 }

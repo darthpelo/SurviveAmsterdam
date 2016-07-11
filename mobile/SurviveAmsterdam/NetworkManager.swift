@@ -20,6 +20,7 @@ struct endPoints {
         static let save = "save"
         static let count = "count"
         static let products = "products"
+        static let delete = "delete"
     }
     
     struct query {
@@ -118,8 +119,7 @@ struct NetworkManager {
         
         let session = NSURLSession.sharedSession()
         
-        let task = session.dataTaskWithRequest(req, completionHandler: {
-            (d:NSData?, res:NSURLResponse?, e:NSError?) -> Void in
+        let task = session.dataTaskWithRequest(req, completionHandler: { (d:NSData?, res:NSURLResponse?, e:NSError?) -> Void in
             if let _ = e {
                 print("Request failed with error \(e!)")
                 onCompletition(false)
@@ -148,6 +148,51 @@ struct NetworkManager {
                     onCompletition(false)
                 }
 
+            }
+        })
+        
+        task.resume()
+    }
+    
+    func delete(product: Product, userid: String, onCompletition: (Bool) -> Void) {
+        let postBody = "userid=\(userid)&name=\(product.name)&place=\(product.place)"
+        
+        let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.delete)!)
+        req.HTTPMethod = endPoints.httpMethods.post
+        req.timeoutInterval = 10.0
+        req.HTTPBody = postBody.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(req, completionHandler: { (d:NSData?, res:NSURLResponse?, e:NSError?) -> Void in
+            if let _ = e {
+                print("Request failed with error \(e!)")
+                onCompletition(false)
+            } else {
+                guard let data = d else { onCompletition(false); return }
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+                    if let result = json["result"] as? String {
+                        switch result {
+                        case ResponseCode.OK.rawValue:
+                            print("\(#function) : \(#line) : RESPONSE JSON : \(json)")
+                            onCompletition(true)
+                        case ResponseCode.PRS.rawValue:
+                            print("\(#function) : \(#line) : Duplicate item")
+                            onCompletition(false)
+                        default:
+                            print("\(#function) : \(#line) : Problem with the POST")
+                            onCompletition(false)
+                        }
+                    } else {
+                        print("\(#function) : \(#line) : Problem with the Response")
+                        onCompletition(false)
+                    }
+                } catch {
+                    print("\(#function) : \(#line) : ERROR: \(error)")
+                    onCompletition(false)
+                }
+                
             }
         })
         

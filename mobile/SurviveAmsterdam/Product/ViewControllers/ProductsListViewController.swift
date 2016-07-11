@@ -83,22 +83,30 @@ final class ProductsListViewController: UIViewController {
             }
         }
     }
+    
+    private func deleteProducts(index: Int) {
+        // handle delete (by removing the data from your array and updating the tableview)
+        if let product = productsList?[index] {
+            network.delete(product, userid: getUserID(), onCompletition: { [weak self](result) in
+                guard let strongSelf = self else { return }
+                
+                if result {
+                    strongSelf.productsList?.removeAtIndex(index)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        strongSelf.tableView.reloadData()
+                    }
+                }
+                })
+        }
+    }
 }
 
-extension ProductsListViewController: UITableViewDataSource {    
-//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-//            // handle delete (by removing the data from your array and updating the tableview)
-//            if let product = productsList?[indexPath.row] {
-//                do {
-////                    try modelManager.deleteProcut(product)
-//                    tableView.reloadData()
-//                } catch ModelManagerError.DeleteFailed {
-//                    print(ErrorType)
-//                } catch {}
-//            }
-//        }
-//    }
+extension ProductsListViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            deleteProducts(indexPath.row)
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProductList?.count ?? (productsList?.count ?? 0)
