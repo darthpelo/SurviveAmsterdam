@@ -43,16 +43,16 @@ final class ProductsListViewController: UIViewController {
 
     @IBAction func addButtonPressed(sender: AnyObject) {}
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
-            let indexPath = tableView.indexPathForSelectedRow {
-            let list = searchProductList != nil ? searchProductList : productsList
-            if let vc = segue.destinationViewController as? ProductDetailViewController {
-                let product = list![indexPath.row]
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
+//            let indexPath = tableView.indexPathForSelectedRow {
+//            let list = searchProductList != nil ? searchProductList : productsList
+//            if let vc = segue.destinationViewController as? ProductDetailViewController {
+//                let product = list![indexPath.row]
 //                vc.productId = product.id
-            }
-        }
-    }
+//            }
+//        }
+//    }
 
     private func setupSearchBar() {
         searchController.searchResultsUpdater = self

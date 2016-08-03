@@ -8,7 +8,8 @@ target 'SurviveAmsterdam' do
   pod 'R.swift'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'QuadratTouch', '>= 1.0'
+  #pod 'QuadratTouch', '>= 1.0'
+  pod 'QuadratTouch', :git => 'https://github.com/darthpelo/das-quadrat.git', :branch => 'swift2.3' 
 
   target 'SurviveAmsterdamTests' do
     inherit! :search_paths

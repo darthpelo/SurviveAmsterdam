@@ -13,17 +13,15 @@ public enum FoursquareResponse {
     case Error(NSError)
 }
 
-
-
 public class Task {
-    private var         task               : NSURLSessionTask?
-    private weak var    session            : Session?
-    private let         completionHandler  : ResponseClosure?
+    private var task: NSURLSessionTask?
+    private weak var session: Session?
+    private let completionHandler: ResponseClosure?
     
-    var                 request            : Request
+    var request: Request
     
     /** The identifier of network activity. */
-    var                 networkActivityId  : Int?
+    var networkActivityId: Int?
     
     init (session: Session, request: Request, completionHandler: ResponseClosure?) {
         self.session = session
@@ -38,11 +36,11 @@ public class Task {
         if self.session == nil {
             fatalError("No session for this task.")
         }
-        if (self.task == nil) {
+        if self.task == nil {
             self.constructURLSessionTask()
         }
-        if self.task != nil {
-            self.task?.resume()
+        if let task = self.task {
+            task.resume()
             networkActivityId = session!.networkActivityController?.beginNetworkActivity()
         }
     }
@@ -60,8 +58,8 @@ public class Task {
 
 class DataTask: Task {
     override func constructURLSessionTask() {
-        let URLsession = self.session?.URLSession
-        self.task = URLsession?.dataTaskWithRequest(request.URLRequest()) {
+        let urlSession = self.session?.urlSession
+        self.task = urlSession?.dataTaskWithRequest(request.URLRequest()) {
             (data, response, error) -> Void in
             self.session?.networkActivityController?.endNetworkActivity(self.networkActivityId)
             
@@ -79,11 +77,12 @@ class UploadTask: Task {
     var  fileURL: NSURL?
     
     override func constructURLSessionTask() {
-        let mutableRequest = self.request.URLRequest().mutableCopy() as! NSMutableURLRequest
+        // swiftlint:disable force_cast
+        let mutableRequest = self.request.URLRequest().mutableCopy() as? NSMutableURLRequest
         
         let boundary = NSUUID().UUIDString
         let contentType = "multipart/form-data; boundary=" + boundary
-        mutableRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
+        mutableRequest?.addValue(contentType, forHTTPHeaderField: "Content-Type")
         let body = NSMutableData()
         let appendStringBlock = {
             (string: String) in
@@ -103,7 +102,7 @@ class UploadTask: Task {
         }
         appendStringBlock("\r\n--\(boundary)--\r\n")
         
-        self.task = self.session?.URLSession.uploadTaskWithRequest(mutableRequest, fromData: body) {
+        self.task = self.session?.urlSession.uploadTaskWithRequest(mutableRequest!, fromData: body) {
             (data, response, error) -> Void in
             self.session?.networkActivityController?.endNetworkActivity(self.networkActivityId)
             

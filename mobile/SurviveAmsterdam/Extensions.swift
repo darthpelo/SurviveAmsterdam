@@ -14,7 +14,7 @@ extension UIImage {
         self.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
     public func resizeByHeight(newHeight: CGFloat) -> UIImage {
         let scale = newHeight / self.size.height
@@ -23,7 +23,7 @@ extension UIImage {
         self.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
 }
 

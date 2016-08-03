@@ -38,7 +38,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if let location = locations.first where location != lastLocation {
             lastLocation = location
             
-            let session = Session.sharedSession()
+            let session = Session.getSharedSession()
             
             var parameters = location.parameters()
             let cat = Constants().categoryID() ?? ""

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public let QuadratOauthErrorDomain = "QuadratOauthErrorDomain"
-public let QuadratOauthErrorOriginalStringKey = "QuadratErrorOriginalString"
+public let quadratOauthErrorDomain = "QuadratOauthErrorDomain"
+public let quadratOauthErrorOriginalStringKey = "QuadratErrorOriginalString"
 
 /** Oauth errors. */
-public enum QuadratOauthErrorCode : Int {
+public enum QuadratOauthErrorCode: Int {
     case OauthInvalidRequest        = -999
     case OauthInvalidClient         = -998
     case OauthInvalidGrant          = -997
@@ -25,8 +25,8 @@ extension NSError {
     
     /** Creates an error from string error returned by Foursquare server. */
     class func quadratOauthErrorForString(string: String) -> NSError {
-        var code : QuadratOauthErrorCode!
-        var description : String!
+        var code: QuadratOauthErrorCode!
+        var description: String!
         
         switch string {
             case "invalid_request":
@@ -54,7 +54,7 @@ extension NSError {
                 description = "Oauth unknown error"
         }
         
-        let info = [NSLocalizedDescriptionKey:description, QuadratOauthErrorOriginalStringKey: string]
-        return NSError(domain: QuadratOauthErrorDomain, code: code.rawValue, userInfo: info)
+        let info = [NSLocalizedDescriptionKey: description, quadratOauthErrorOriginalStringKey: string]
+        return NSError(domain: quadratOauthErrorDomain, code: code.rawValue, userInfo: info)
     }
 }
