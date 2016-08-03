@@ -23,10 +23,10 @@ class Authorizer: AuthorizationDelegate {
     convenience init(configuration: Configuration) {
         let baseURL = configuration.server.oauthBaseURL
         let parameters = [
-            Parameter.clientId        : configuration.client.identifier,
-            Parameter.redirectUri     : configuration.client.redirectURL,
+            Parameter.client_id        : configuration.client.identifier,
+            Parameter.redirect_uri     : configuration.client.redirectURL,
             Parameter.v                : configuration.version,
-            Parameter.responseType    : "token"
+            Parameter.response_type    : "token"
         ]
         
         let authorizationURL = Parameter.buildURL(NSURL(string: baseURL)!, parameters: parameters)

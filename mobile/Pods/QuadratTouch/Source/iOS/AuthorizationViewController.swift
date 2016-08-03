@@ -94,7 +94,7 @@ public class AuthorizationViewController: UIViewController, UIWebViewDelegate {
     public func webView(webView: UIWebView, shouldStartLoadWithRequest
         request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
             if let URLString = request.URL?.absoluteString {
-                if URLString.hasPrefix(self.redirectURL.absoluteString!) {
+                if URLString.hasPrefix(self.redirectURL.absoluteString) {
                     // If we've reached redirect URL we should let know delegate.
                     self.authorizationDelegate?.didReachRedirectURL(request.URL!)
                     return false

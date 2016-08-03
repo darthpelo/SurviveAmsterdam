@@ -2,7 +2,7 @@ PODS:
   - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - QuadratTouch (1.1.4)
+  - QuadratTouch (2.0.0)
   - R.swift (2.4.0):
     - R.swift.Library (~> 2.2.0)
   - R.swift.Library (2.2.0)
@@ -10,26 +10,26 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - QuadratTouch (from `https://github.com/darthpelo/das-quadrat.git`, branch `swift2.3`)
+  - QuadratTouch (from `https://github.com/darthpelo/das-quadrat.git`, branch `develop`)
   - R.swift
 
 EXTERNAL SOURCES:
   QuadratTouch:
-    :branch: swift2.3
+    :branch: develop
     :git: https://github.com/darthpelo/das-quadrat.git
 
 CHECKOUT OPTIONS:
   QuadratTouch:
-    :commit: 67e56e4ca48138d8058319d3142e30f5995897e6
+    :commit: a833d7a6713a6787d88131809433d42fad1bd760
     :git: https://github.com/darthpelo/das-quadrat.git
 
 SPEC CHECKSUMS:
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  QuadratTouch: d7c51b089d09f743a4ae0468f0141fbb0bfef1a7
+  QuadratTouch: 99dfd9d0e1bf4840858adf875d345d827f6ef201
   R.swift: 0ef9c42dc6c94ac44a3c78a7639c73f855a8e159
   R.swift.Library: 31a487b65381f37a7d203a6f1f935b43c9be35b0
 
-PODFILE CHECKSUM: f5accddaa7a4adf20f3c8b9d9add8f281867b13f
+PODFILE CHECKSUM: b23e50587992850143be33b1525c2d825adc0adc
 
 COCOAPODS: 1.0.0

@@ -13,12 +13,12 @@ import UIKit
 #endif
 
 /** Last issued identifier. */
-private var currentIdentifier: Int = 0
+private var _currentIdentifier: Int = 0
 
 /** Active identifiers. If it's empty network activity indicator should be hidden. */
-private var activeIdentifiers: [Int:Int]! = [Int:Int]()
+private var _activeIdentifiers: [Int:Int]! = [Int:Int]()
 
-public let invalidNetworkActivityIdentifier = -1
+public let InvalidNetworkActivityIdentifier = -1
 
 /** Controlls network activity indicator on iOS. Does nothing on OSX. */
 public class NetworkActivityIndicatorController {
@@ -28,14 +28,14 @@ public class NetworkActivityIndicatorController {
     /** Shows network activity indicator and return activity identifier. */
     func beginNetworkActivity() -> Int {
         #if os(iOS)
-            let result = currentIdentifier + 1
-            activeIdentifiers[result] = result
+            let result = _currentIdentifier + 1
+            _activeIdentifiers[result] = result
             self.mainQueue.addOperationWithBlock {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             }
             return result
         #else
-            return invalidNetworkActivityIdentifier
+            return InvalidNetworkActivityIdentifier
         #endif
     }
     
@@ -45,9 +45,9 @@ public class NetworkActivityIndicatorController {
             return
         }
         #if os(iOS)
-            activeIdentifiers.removeValueForKey(identifier!)
+            _activeIdentifiers.removeValueForKey(identifier!)
             self.mainQueue.addOperationWithBlock {
-                if activeIdentifiers.count == 0 {
+                if _activeIdentifiers.count == 0 {
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
             }

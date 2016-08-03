@@ -8,8 +8,8 @@
 
 import Foundation
 
-public let quadratOauthErrorDomain = "QuadratOauthErrorDomain"
-public let quadratOauthErrorOriginalStringKey = "QuadratErrorOriginalString"
+public let QuadratOauthErrorDomain = "QuadratOauthErrorDomain"
+public let QuadratOauthErrorOriginalStringKey = "QuadratErrorOriginalString"
 
 /** Oauth errors. */
 public enum QuadratOauthErrorCode: Int {
@@ -54,7 +54,7 @@ extension NSError {
                 description = "Oauth unknown error"
         }
         
-        let info = [NSLocalizedDescriptionKey: description, quadratOauthErrorOriginalStringKey: string]
-        return NSError(domain: quadratOauthErrorDomain, code: code.rawValue, userInfo: info)
+        let info = [NSLocalizedDescriptionKey: description, QuadratOauthErrorOriginalStringKey: string]
+        return NSError(domain: QuadratOauthErrorDomain, code: code.rawValue, userInfo: info)
     }
 }
