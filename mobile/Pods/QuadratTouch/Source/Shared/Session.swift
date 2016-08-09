@@ -15,7 +15,7 @@ public typealias AuthorizationHandler = (Bool, NSError?) -> Void
 public typealias ResponseClosure = (result: Result) -> Void
 
 /** A nandler for image downloading. */
-public typealias DownloadImageClosure = (imageData: NSData?, error: NSError?) -> Void
+public typealias DownloadImageClosure = (imageData: Data?, error: NSError?) -> Void
 
 /** Typealias for parameters dictionary. */
 public typealias Parameters = [String:String]
@@ -34,7 +34,7 @@ public class Session {
     let configuration: Configuration
     
     /** The session which perform all network requests. */
-    let URLSession: NSURLSession
+    let URLSession: Foundation.URLSession
     
     /** The current authorizer. */
     var authorizer: Authorizer?
@@ -43,7 +43,7 @@ public class Session {
     let dataCache: DataCache
     
     /** The queue on which tasks have to call completion handlers. */
-    let completionQueue: NSOperationQueue
+    let completionQueue: OperationQueue
    
     /** The keychain. */
     let keychain: Keychain
@@ -113,17 +113,17 @@ public class Session {
         return Multi(session: self)
     }()
     
-    public init(configuration: Configuration, completionQueue: NSOperationQueue = NSOperationQueue.mainQueue()) {
+    public init(configuration: Configuration, completionQueue: OperationQueue = OperationQueue.main) {
         if configuration.shouldControllNetworkActivityIndicator {
             self.networkActivityController = NetworkActivityIndicatorController()
         }
         self.configuration = configuration
         self.completionQueue = completionQueue
-        let URLConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let URLConfiguration = URLSessionConfiguration.default
         URLConfiguration.timeoutIntervalForRequest = configuration.timeoutInterval
-        let delegateQueue = NSOperationQueue()
+        let delegateQueue = OperationQueue()
         delegateQueue.maxConcurrentOperationCount = 1
-        self.URLSession = NSURLSession(configuration: URLConfiguration, delegate: nil, delegateQueue: delegateQueue)
+        self.URLSession = Foundation.URLSession(configuration: URLConfiguration, delegate: nil, delegateQueue: delegateQueue)
         self.dataCache = DataCache(name: configuration.userTag)
         if configuration.debugEnabled {
             self.logger = ConsoleLogger()
@@ -132,8 +132,8 @@ public class Session {
         self.keychain.logger = self.logger
     }
     
-    public class func setupSharedSessionWithConfiguration(configuration: Configuration,
-        completionQueue: NSOperationQueue = NSOperationQueue.mainQueue()) {
+    public class func setupSharedSessionWithConfiguration(_ configuration: Configuration,
+        completionQueue: OperationQueue = OperationQueue.main) {
             if _sharedSession == nil {
                 _sharedSession = Session(configuration: configuration, completionQueue: completionQueue)
             } else {
@@ -180,30 +180,30 @@ public class Session {
     }
     
     /** Returns cached image data. */
-    public func cachedImageDataForURL(URL: NSURL) -> NSData? {
-        return self.dataCache.dataForKey("\(URL.hash)")
+    public func cachedImageDataForURL(_ URL: Foundation.URL) -> Data? {
+        return self.dataCache.dataForKey("\((URL as NSURL).hash)")
     }
     
     /** Downloads image at URL and puts in cache. */
-    public func downloadImageAtURL(URL: NSURL, completionHandler: DownloadImageClosure) {
-        let request = NSURLRequest(URL: URL)
+    public func downloadImageAtURL(_ URL: Foundation.URL, completionHandler: DownloadImageClosure) {
+        let request = URLRequest(url: URL)
         let identifier = networkActivityController?.beginNetworkActivity()
-        let task = self.URLSession.downloadTaskWithRequest(request) {
+        let task = self.URLSession.downloadTask(with: request) {
             (fileURL, response, error) -> Void in
             self.networkActivityController?.endNetworkActivity(identifier)
-            var data: NSData?
+            var data: Data?
             if let fileURL = fileURL {
-                data = NSData(contentsOfURL: fileURL)
-                self.dataCache.addFileAtURL(fileURL, withKey: "\(URL.hash)")
+                data = try? Data(contentsOf: fileURL)
+                self.dataCache.addFileAtURL(fileURL, withKey: "\((URL as NSURL).hash)")
             }
-            self.completionQueue.addOperationWithBlock {
+            self.completionQueue.addOperation {
                 completionHandler(imageData: data, error: error)
             }
         }
         task.resume()
     }
     
-    func processResult(result: Result) {
+    func processResult(_ result: Result) {
         if result.HTTPSTatusCode == 401 && self.isAuthorized() {
             self.deathorizeAndNotify()
         }
@@ -212,9 +212,9 @@ public class Session {
 
     private func deathorizeAndNotify() {
         self.deauthorize()
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             let name = QuadratSessionDidBecomeUnauthorizedNotification
-            NSNotificationCenter.defaultCenter().postNotificationName(name, object: self)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: self)
         }
     }
 

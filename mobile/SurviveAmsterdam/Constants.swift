@@ -25,7 +25,7 @@ struct Constants {
     func categoryID() -> String? {
         var keys: NSDictionary?
         
-        if let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist") {
+        if let path = Bundle.main.pathForResource("keys", ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
         }
         

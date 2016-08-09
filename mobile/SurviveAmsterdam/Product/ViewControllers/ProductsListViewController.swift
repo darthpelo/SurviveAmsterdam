@@ -15,7 +15,7 @@ final class ProductCell: UITableViewCell {
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var separatorView: UIView! {
         didSet {
-            separatorView.backgroundColor = UIColor.orangeColor()
+            separatorView.backgroundColor = UIColor.orange()
         }
     }
 }
@@ -35,13 +35,13 @@ final class ProductsListViewController: UIViewController {
         setupSearchBar()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
         if searchProductList == nil { getProducts() }
     }
 
-    @IBAction func addButtonPressed(sender: AnyObject) {}
+    @IBAction func addButtonPressed(_ sender: AnyObject) {}
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if segue.identifier == R.segue.productsListViewController.productDetailSegue.identifier,
@@ -64,9 +64,9 @@ final class ProductsListViewController: UIViewController {
         }
         searchController.searchBar.placeholder = NSLocalizedString("searchbar.placeolder", comment: "")
         searchController.searchBar.delegate = self
-        searchController.searchBar.tintColor = UIColor.whiteColor()
-        searchController.searchBar.barTintColor = UIColor.orangeColor()
-        searchController.searchBar.translucent = true
+        searchController.searchBar.tintColor = UIColor.white()
+        searchController.searchBar.barTintColor = UIColor.orange()
+        searchController.searchBar.isTranslucent = true
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar
@@ -78,21 +78,21 @@ final class ProductsListViewController: UIViewController {
             guard let result = result else { return }
             
             strongSelf.productsList = result
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 strongSelf.tableView.reloadData()
             }
         }
     }
     
-    private func deleteProducts(index: Int) {
+    private func deleteProducts(_ index: Int) {
         // handle delete (by removing the data from your array and updating the tableview)
         if let product = productsList?[index] {
             network.delete(product, userid: getUserID(), onCompletition: { [weak self](result) in
                 guard let strongSelf = self else { return }
                 
                 if result {
-                    strongSelf.productsList?.removeAtIndex(index)
-                    dispatch_async(dispatch_get_main_queue()) {
+                    strongSelf.productsList?.remove(at: index)
+                    DispatchQueue.main.async {
                         strongSelf.tableView.reloadData()
                     }
                 }
@@ -102,22 +102,22 @@ final class ProductsListViewController: UIViewController {
 }
 
 extension ProductsListViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            deleteProducts(indexPath.row)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            deleteProducts((indexPath as NSIndexPath).row)
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchProductList?.count ?? (productsList?.count ?? 0)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.productCell.identifier, forIndexPath: indexPath) as! ProductCell
         
         let productsList = searchProductList != nil ? searchProductList : self.productsList
         
-        let product = productsList![indexPath.row]
+        let product = productsList![(indexPath as NSIndexPath).row]
         
         cell.productNameLabel.text = product.name
         cell.shopNameLabel.text = product.place
@@ -131,19 +131,19 @@ extension ProductsListViewController: UITableViewDataSource {
 }
 
 extension ProductsListViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegueWithIdentifier(R.segue.productsListViewController.productDetailSegue, sender: self)
     }
 }
 
 extension ProductsListViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 //        searchProductList = nil
         getProducts()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        if let query = searchController.searchBar.text where searchController.active && !query.isEmpty {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let query = searchController.searchBar.text where searchController.isActive && !query.isEmpty {
             do {
 //                searchProductList = try modelManager.getProductsMatching(query)
                 tableView.reloadData()

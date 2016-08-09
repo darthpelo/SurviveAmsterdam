@@ -21,14 +21,14 @@ class FeedbackViewController: UIViewController {
         self.sendButton.title = NSLocalizedString("send", comment: "")
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         textView.becomeFirstResponder()
     }
     
 
-    @IBAction func saveButtonPressed(sender: AnyObject) {
+    @IBAction func saveButtonPressed(_ sender: AnyObject) {
         if !MFMailComposeViewController.canSendMail() {
             print("Mail services are not available")
             return
@@ -43,16 +43,16 @@ class FeedbackViewController: UIViewController {
         composeVC.setMessageBody(textView.text, isHTML: false)
         
         // Present the view controller modally.
-        self.presentViewController(composeVC, animated: true, completion: nil)
+        self.present(composeVC, animated: true, completion: nil)
     }
 }
 
 extension FeedbackViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(controller: MFMailComposeViewController,
-                               didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: NSError?) {
         // Check the result or perform other tasks.
         
         // Dismiss the mail compose view controller.
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
 }

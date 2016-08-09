@@ -35,7 +35,7 @@ public class Result: CustomStringConvertible {
     /** 
         The URL which has been requested. 
     */
-    public var URL: NSURL?
+    public var URL: Foundation.URL?
     
     
     /*
@@ -80,7 +80,7 @@ public class Result: CustomStringConvertible {
 /** Response creation from HTTP response. */
 extension Result {
     
-    class func createResult(HTTPResponse: NSHTTPURLResponse?, JSON: [String:AnyObject]?, error: NSError? ) -> Result {
+    class func createResult(_ HTTPResponse: HTTPURLResponse?, JSON: [String:AnyObject]?, error: NSError? ) -> Result {
         let result = Result()
         if let error = error {
             result.error = error
@@ -90,7 +90,7 @@ extension Result {
         if let HTTPResponse = HTTPResponse {
             result.HTTPHeaders = HTTPResponse.allHeaderFields
             result.HTTPSTatusCode = HTTPResponse.statusCode
-            result.URL = HTTPResponse.URL
+            result.URL = HTTPResponse.url
         }
         
         if let JSON = JSON {
@@ -115,15 +115,15 @@ extension Result {
         return result
     }
     
-    class func resultFromURLSessionResponse(response: NSURLResponse?, data: NSData?, error: NSError?) -> Result {
-        let HTTPResponse = response as? NSHTTPURLResponse
+    class func resultFromURLSessionResponse(_ response: URLResponse?, data: Data?, error: NSError?) -> Result {
+        let HTTPResponse = response as? HTTPURLResponse
         var JSONResult: [String: AnyObject]?
         var JSONError = error
         
-        if let data = data where JSONError == nil && HTTPResponse?.MIMEType == "application/json" {
+        if let data = data where JSONError == nil && HTTPResponse?.mimeType == "application/json" {
             do {
-                JSONResult = try NSJSONSerialization.JSONObjectWithData(data,
-                                options: NSJSONReadingOptions(rawValue: 0)) as? [String: AnyObject]
+                JSONResult = try JSONSerialization.jsonObject(with: data,
+                                options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: AnyObject]
             } catch let error as NSError {
                 JSONError = error
             }

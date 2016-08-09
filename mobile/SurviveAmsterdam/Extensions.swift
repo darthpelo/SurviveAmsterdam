@@ -7,20 +7,20 @@ import QuadratTouch
 
 //  Created by Sem Shafiq on 11/12/15.
 extension UIImage {
-    public func resizeByWidth(newWidth: CGFloat) -> UIImage {
+    public func resizeByWidth(_ newWidth: CGFloat) -> UIImage {
         let scale = newWidth / self.size.width
         let newHeight = self.size.height * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        self.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
     }
-    public func resizeByHeight(newHeight: CGFloat) -> UIImage {
+    public func resizeByHeight(_ newHeight: CGFloat) -> UIImage {
         let scale = newHeight / self.size.height
         let newWidth = self.size.width * scale
-        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
-        self.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!
@@ -33,7 +33,7 @@ extension UIImageView {
      
      - returns: Optional NSData rappresentation of the image
      */
-    public func convertImageToData() -> NSData? {
+    public func convertImageToData() -> Data? {
         guard let image = self.image else {
             return nil
         }
@@ -60,7 +60,7 @@ extension CLLocation {
 
 extension UIViewController {
     func dismiss() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -71,13 +71,13 @@ extension String {
 }
 
 extension UISearchBar {
-    func setBarTintColorWithAnimation(color:UIColor) {
+    func setBarTintColorWithAnimation(_ color:UIColor) {
         let transition = CATransition()
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionFade
         transition.duration = 0.2
         
-        layer.addAnimation(transition, forKey: nil)
+        layer.add(transition, forKey: nil)
         barTintColor = color
     }
 }

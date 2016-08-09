@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.sharedSDK().debug = true
         Fabric.with([Crashlytics.self])
@@ -32,14 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation:  AnyObject) -> Bool {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation:  AnyObject) -> Bool {
         return Session.getSharedSession().handleURL(url)
     }
     
     private func foursquareSetup() {
         var keys: NSDictionary?
         
-        if let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist") {
+        if let path = Bundle.main.pathForResource("keys", ofType: "plist") {
             keys = NSDictionary(contentsOfFile: path)
         }
         
@@ -59,10 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func applicationAppearance() {
-        UITabBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orange()
         
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().tintColor = UIColor.white()
+        UINavigationBar.appearance().barTintColor = UIColor.orange()
         UINavigationBar.appearance().titleTextAttributes =  [
             NSFontAttributeName: R.font.sanFranciscoDisplayMedium(size: 16)!,
             NSForegroundColorAttributeName: UIColor.whiteColor()
@@ -73,7 +73,7 @@ extension AppDelegate {
                 NSFontAttributeName: R.font.sanFranciscoDisplayLight(size: 16)!,
                 NSForegroundColorAttributeName: UIColor.whiteColor()
             ],
-            forState: UIControlState.Normal
+            for: UIControlState.Normal
         )
     }
 }

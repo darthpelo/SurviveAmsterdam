@@ -18,7 +18,7 @@ class EditProductViewController: UIViewController, UITextFieldDelegate {
     
     var product:Product?
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let product = self.product {
@@ -30,13 +30,13 @@ class EditProductViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         closeKeyboard()
         
         dismiss()
     }
     
-    @IBAction func saveButtonPressed(sender: AnyObject) {
+    @IBAction func saveButtonPressed(_ sender: AnyObject) {
         closeKeyboard()
         
         if let newName = nameTextField.text where newName.length > 0 {

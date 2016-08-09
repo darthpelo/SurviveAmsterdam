@@ -22,7 +22,7 @@ class NetworkManagerTests: XCTestCase {
     }
     
     func testSaveProduct() {
-        let expectation = expectationWithDescription("Waiting to respond")
+        let expectation = self.expectation(description: "Waiting to respond")
         let product = Product(id: nil, name: "pippero", place: "place", productImage: nil, productThumbnail: nil)
         
         networkManager.save(product, userid: getUserID(), onCompletition: { (result) in
@@ -30,11 +30,11 @@ class NetworkManagerTests: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(30.0, handler:nil)
+        waitForExpectations(timeout: 30.0, handler:nil)
     }
     
     func testTotalProducts() {
-        let expectation = expectationWithDescription("Waiting to respond")
+        let expectation = self.expectation(description: "Waiting to respond")
         
         networkManager.getCount({ (count) in
             XCTAssertNotNil(count)
@@ -42,33 +42,33 @@ class NetworkManagerTests: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectations(timeout: 10.0, handler:nil)
     }
     
     func testGetProductsForUser() {
-        let expectation = expectationWithDescription("Waiting to respond")
+        let expectation = self.expectation(description: "Waiting to respond")
         
         networkManager.getProducts(userid: getUserID()) { (result) in
             XCTAssertNotNil(result)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectations(timeout: 10.0, handler:nil)
     }
     
     func testGetProductsForAllUser() {
-        let expectation = expectationWithDescription("Waiting to respond")
+        let expectation = self.expectation(description: "Waiting to respond")
         
         networkManager.getProducts(userid: nil) { (result) in
             XCTAssertNotNil(result)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectations(timeout: 10.0, handler:nil)
     }
     
     func testDeteleProduct() {
-        let expectation = expectationWithDescription("Waiting to respond")
+        let expectation = self.expectation(description: "Waiting to respond")
         
         let product = Product(id: nil, name: "test", place: "place", productImage: nil, productThumbnail: nil)
         
@@ -81,7 +81,7 @@ class NetworkManagerTests: XCTestCase {
             }
         })
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectations(timeout: 10.0, handler:nil)
     }
     
 }

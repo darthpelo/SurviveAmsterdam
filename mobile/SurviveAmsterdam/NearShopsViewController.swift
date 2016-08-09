@@ -34,13 +34,13 @@ final class NearShopsViewController: UIViewController {
             self.tableView.reloadData()
         } else {
             self.activityIndicator.startAnimating()
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: .updateShopsTableNotification, name: Constants.observer.newShopsList, object: nil)
+            NotificationCenter.default.addObserver(self, selector: .updateShopsTableNotification, name: NSNotification.Name(rawValue: Constants.observer.newShopsList), object: nil)
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func updateShopsTableNotification() {
@@ -51,14 +51,14 @@ final class NearShopsViewController: UIViewController {
 }
 
 extension NearShopsViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shopsList.count ?? 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.nearShopCell.identifier, forIndexPath: indexPath)
         
-        let shop = shopsList[indexPath.row]
+        let shop = shopsList[(indexPath as NSIndexPath).row]
         
         cell.textLabel?.text = shop.shopName
         cell.detailTextLabel?.text = shop.address
@@ -68,13 +68,13 @@ extension NearShopsViewController: UITableViewDataSource {
 }
 
 extension NearShopsViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print(indexPath)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let shop = shopsList[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let shop = shopsList[(indexPath as NSIndexPath).row]
         selectShopAction!(shop)
     }
 }

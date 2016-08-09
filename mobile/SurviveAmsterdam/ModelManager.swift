@@ -8,12 +8,12 @@
 
 import CloudKit
 
-enum ModelManagerError: ErrorType {
-    case SaveFailed
-    case QueryFailed
-    case DeleteFailed
-    case UpdateFailed
-    case CloudKtFailed
+enum ModelManagerError: ErrorProtocol {
+    case saveFailed
+    case queryFailed
+    case deleteFailed
+    case updateFailed
+    case cloudKtFailed
 }
 
 class ModelManager {

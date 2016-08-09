@@ -21,15 +21,15 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: .editProductButtonTapped)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("edit", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: .editProductButtonTapped)
         navigationItem.rightBarButtonItem?.accessibilityHint = NSLocalizedString("editHint", comment: "")
         
         let image = R.image.shareIcon()?.imageWithRenderingMode(.AlwaysTemplate)
         shareButton.setImage(image, forState: .Normal)
-        shareButton.tintColor = UIColor.orangeColor()
+        shareButton.tintColor = UIColor.orange()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
 //        if let productId = productId {
@@ -48,7 +48,7 @@ class ProductDetailViewController: UIViewController {
 //        }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == R.segue.productDetailViewController.editProductSegue.identifier {
             if let navBar = segue.destinationViewController as? UINavigationController,
                 let vc = navBar.topViewController as? EditProductViewController,
@@ -62,7 +62,7 @@ class ProductDetailViewController: UIViewController {
         self.performSegueWithIdentifier(R.segue.productDetailViewController.editProductSegue.identifier, sender: self)
     }
     
-    @IBAction func shareButtonTapped(sender: UIButton) {
+    @IBAction func shareButtonTapped(_ sender: UIButton) {
 //        if let name = product?.name,
 //            let image = product?.productImage,
 //            let shopName = product?.shops.first?.name {

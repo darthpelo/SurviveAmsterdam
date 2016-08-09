@@ -12,13 +12,13 @@ struct Product:Equatable {
     let id:Int?
     let name:String
     let place:String
-    let productImage:NSData?
-    let productThumbnail:NSData?
+    let productImage:Data?
+    let productThumbnail:Data?
 }
 
 
 extension Product {
-    internal func isEqual(object: AnyObject?) -> Bool {
+    internal func isEqual(_ object: AnyObject?) -> Bool {
         guard let product = object as? Product else { return false }
         return self == product
     }
@@ -30,10 +30,10 @@ func ==(lhs: Product, rhs: Product) -> Bool {
 }
 
 public func getUserID() -> String {
-    guard let userID = NSUserDefaults.standardUserDefaults().stringForKey("com.alessioroberto.SurviveSmsterdam.userid") else {
-        let user = NSUUID().UUIDString
-        NSUserDefaults.standardUserDefaults().setObject(user, forKey: "com.alessioroberto.SurviveSmsterdam.userid")
-        NSUserDefaults.standardUserDefaults().synchronize()
+    guard let userID = UserDefaults.standard.string(forKey: "com.alessioroberto.SurviveSmsterdam.userid") else {
+        let user = UUID().uuidString
+        UserDefaults.standard.set(user, forKey: "com.alessioroberto.SurviveSmsterdam.userid")
+        UserDefaults.standard.synchronize()
         return user
     }
     

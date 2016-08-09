@@ -1,6 +1,6 @@
 {
   "name": "QuadratTouch",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "summary": "Das Quadrat is Foursquare API wrapper written in Swift.",
   "homepage": "https://github.com/Constantine-Fry/das-quadrat",
   "license": "BSD 2-Clause",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/Constantine-Fry/das-quadrat.git",
-    "tag": "2.0.0"
+    "tag": "3.0.0"
   },
   "source_files": [
     "Source/iOS",
