@@ -37,15 +37,12 @@ struct NetworkManager {
         let req = NSMutableURLRequest(url: URL(string: endPoints.END_POINT + endPoints.request.count)!)
         req.httpMethod = endPoints.httpMethods.get
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: req, completionHandler: {
-            (d:Data?, res:URLResponse?, e:NSError?) -> Void in
-            if let _ = e {
-                print("Request failed with error \(e!)")
+        let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: {(data, response, error) in
+            if let _ = error {
+                print("Request failed with error \(error!)")
                 products(0)
             } else {
-                guard let data = d else { products(0); return }
+                guard let data = data else { products(0); return }
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                     if let result = json["count"] as? Int {
@@ -61,7 +58,6 @@ struct NetworkManager {
                 }
             }
         })
-        
         task.resume()
     }
     
@@ -74,17 +70,15 @@ struct NetworkManager {
         req.httpMethod = endPoints.httpMethods.get
         req.timeoutInterval = 10.0
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: req, completionHandler: { (d:Data?, res:URLResponse?, e:NSError?) -> Void in
-            if let _ = e {
-                print("Request failed with error \(e!)")
+        let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: {(data, response, error) in
+            if let _ = error {
+                print("Request failed with error \(error!)")
                 onCompletition(nil)
             } else {
-                guard let data = d else { onCompletition(nil); return }
+                guard let data = data else { onCompletition(nil); return }
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                    if let result = json["products"] as? [[String:AnyObject]] where result.count > 0 {
+                    if let result = json["products"] as? [[String:AnyObject]] , result.count > 0 {
                         var list:[Product] = []
                         for a in result {
                             let name = a["name"] as? String
@@ -117,14 +111,12 @@ struct NetworkManager {
         req.timeoutInterval = 10.0
         req.httpBody = postBody.data(using: String.Encoding.utf8)
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: req, completionHandler: { (d:Data?, res:URLResponse?, e:NSError?) -> Void in
-            if let _ = e {
-                print("Request failed with error \(e!)")
+        let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: {(data, response, error) in
+            if let _ = error {
+                print("Request failed with error \(error!)")
                 onCompletition(false)
             } else {
-                guard let data = d else { onCompletition(false); return }
+                guard let data = data else { onCompletition(false); return }
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                     if let result = json["result"] as? String {
@@ -162,14 +154,12 @@ struct NetworkManager {
         req.timeoutInterval = 10.0
         req.httpBody = postBody.data(using: String.Encoding.utf8)
         
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: req, completionHandler: { (d:Data?, res:URLResponse?, e:NSError?) -> Void in
-            if let _ = e {
-                print("Request failed with error \(e!)")
+        let task = URLSession.shared.dataTask(with: req as URLRequest, completionHandler: {(data, response, error) in
+            if let _ = error {
+                print("Request failed with error \(error!)")
                 onCompletition(false)
             } else {
-                guard let data = d else { onCompletition(false); return }
+                guard let data = data else { onCompletition(false); return }
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                     if let result = json["result"] as? String {

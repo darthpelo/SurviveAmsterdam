@@ -8,7 +8,7 @@
 
 import CloudKit
 
-enum ModelManagerError: ErrorProtocol {
+enum ModelManagerError: Error {
     case saveFailed
     case queryFailed
     case deleteFailed
