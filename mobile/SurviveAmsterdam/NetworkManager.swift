@@ -33,6 +33,7 @@ enum ResponseCode:String {
 }
 
 struct NetworkManager {
+    /// Returns the number of all elements saved in the remote DB
     func getCount(products:(Int) -> Void) {
         let req = NSMutableURLRequest(URL: NSURL(string: endPoints.END_POINT + endPoints.request.count)!)
         req.HTTPMethod = endPoints.httpMethods.get
@@ -65,6 +66,7 @@ struct NetworkManager {
         task.resume()
     }
     
+    /// Returns all the products saved by an user
     func getProducts(userid userid: String?, onCompletition:([Product]?)->Void) {
         var query = ""
         if let userid = userid {
@@ -109,6 +111,7 @@ struct NetworkManager {
         task.resume()
     }
     
+    /// Save a new product
     func save(product: Product, userid: String, onCompletition: (Bool) -> Void) {
         let postBody = "userid=\(userid)&name=\(product.name)&place=\(product.place)"
         
@@ -154,6 +157,7 @@ struct NetworkManager {
         task.resume()
     }
     
+    /// Delete a saved product
     func delete(product: Product, userid: String, onCompletition: (Bool) -> Void) {
         let postBody = "userid=\(userid)&name=\(product.name)&place=\(product.place)"
         

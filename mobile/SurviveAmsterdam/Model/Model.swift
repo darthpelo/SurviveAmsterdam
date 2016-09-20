@@ -29,6 +29,7 @@ func ==(lhs: Product, rhs: Product) -> Bool {
     return lhs.id == rhs.id && lhs.name == rhs.name
 }
 
+/// Return or create a new User ID
 public func getUserID() -> String {
     guard let userID = NSUserDefaults.standardUserDefaults().stringForKey("com.alessioroberto.SurviveSmsterdam.userid") else {
         let user = NSUUID().UUIDString
