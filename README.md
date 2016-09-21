@@ -5,6 +5,8 @@ application (mobile and [API services](https://github.com/darthpelo/SurviveAmste
 
 [Here](https://github.com/darthpelo/SurviveAmsterdam/tree/swift2.3) the Swift 2.3 version.
 
+[Here](https://github.com/darthpelo/SurviveAmsterdam/tree/swift3.0) the Swift 3.0 version. It is still in progress because `R.swift` pod is not ready.
+
 ### Note
 Before build the project, it is necessary to add a *plist* file to the project, with the name `keys.plist` and add your Foursquare API key and secret key, in this format:
 ```xml
